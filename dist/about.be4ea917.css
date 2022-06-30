@@ -7,4 +7,17 @@ h1 {
   font-size: 40px;
 }
 
+.cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 15;
+  pointer-events: none;
+  height: 20px;
+  width: 20px;
+  background: #4E3B1F;
+  border-radius: 50%;
+  display: block;
+}
+
 /*# sourceMappingURL=/about.be4ea917.css.map */

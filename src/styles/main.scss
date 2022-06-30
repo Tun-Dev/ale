@@ -6,3 +6,35 @@
 h1 {
     font-size: 40px;
 }
+
+.cursor {
+    position: fixed;
+    // position: absolute;
+    // scroll-margin: 0;
+    // scroll-snap-type: mandatory;
+    top: 0;
+    left: 0;
+    z-index: 15;
+    // contain: layout style size;
+    pointer-events: none;
+    height: 20px;
+    width: 20px;
+    background: #4E3B1F;
+
+    border-radius: 50%;
+
+    display: block;
+
+    // &::before {
+    //   content: "";
+    //   position: absolute;
+    //   top: -4px;
+    //   left: -4px;
+    //   display: block;
+    //   width: 25px;
+    //   height: 25px;
+    //   // transform: scale(0.2);
+    //   background: black;
+    //   border-radius: 100%;
+    // }
+}
