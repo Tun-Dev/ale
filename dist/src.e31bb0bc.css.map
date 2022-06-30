@@ -1,0 +1,1 @@
+{"version":3,"sources":["styles/main.scss"],"names":[],"mappings":"AAAA;EACI;EACA;;;AAGJ;EACI","file":"src.e31bb0bc.css","sourceRoot":"../src","sourcesContent":["* {\n    margin: 0;\n    padding: 0;\n}\n\nh1 {\n    font-size: 40px;\n}"]}
