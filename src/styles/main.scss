@@ -1,6 +1,60 @@
+*,
+*::after,
+*::before {
+    box-sizing: border-box;
+}
+
 * {
     margin: 0;
     padding: 0;
+}
+
+@font-face {
+    font-family: "Palagio";
+    src: url("../fonts/PalagioPersonalUse-nRoPM.otf");
+}
+
+@font-face {
+    font-family: "Circula";
+    src: url("../fonts/circula-medium.otf");
+}
+
+@font-face {
+    font-family: "SF Pro Text Light";
+    src: url("../fonts/FontsFree-Net-SFProText-Light-1.ttf");
+}
+
+@font-face {
+    font-family: "SF Pro Text Regular";
+    src: url("../fonts/FontsFree-Net-SFProText-Regular-1.ttf");
+}
+
+@font-face {
+    font-family: "Nympha Trial Light";
+    src: url("../fonts/NymphaTrial-Light.ttf");
+}
+
+@font-face {
+    font-family: "Nympha Trial Reg";
+    src: url("../fonts/NymphaTrial-Regular.ttf");
+}
+
+
+html body {
+    margin: 0;
+    // padding: 0;
+    color: #000000;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+    /* Hide horizontal scrollbar */
+    scroll-behavior: smooth;
+    // height: 100%;
+    transition: 0.3s;
+    font-family: "Circula";
+    font-weight: 400;
+    background-color: #E2E1CA;
+    // cursor: none;
 }
 
 h1 {
@@ -9,9 +63,6 @@ h1 {
 
 .cursor {
     position: fixed;
-    // position: absolute;
-    // scroll-margin: 0;
-    // scroll-snap-type: mandatory;
     top: 0;
     left: 0;
     z-index: 15;
@@ -24,17 +75,214 @@ h1 {
     border-radius: 50%;
 
     display: block;
+}
 
-    // &::before {
-    //   content: "";
-    //   position: absolute;
-    //   top: -4px;
-    //   left: -4px;
-    //   display: block;
-    //   width: 25px;
-    //   height: 25px;
-    //   // transform: scale(0.2);
-    //   background: black;
-    //   border-radius: 100%;
-    // }
+
+.HomeContainer {
+    height: 100vh;
+    // margin: 0 auto;
+    // background-color: #E2E1CA;
+    // border: 1px solid red;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .innercon {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        .name {
+            position: relative;
+            // display: flex;
+            // flex-direction: column;
+            // border: 1px solid red;
+            // height: 400px;
+
+            h1 {
+                font-size: 180px;
+                font-family: "Palagio";
+                font-weight: 400;
+                // line-height: 209px;
+                // border: 1px solid black;
+                margin: 0;
+
+                span {
+                    color: #4E3B1F;
+                }
+
+            }
+
+            img {
+                position: absolute;
+                bottom: 0;
+                margin-bottom: 20px;
+                right: 0;
+                z-index: -1;
+                width: 182px;
+            }
+        }
+
+        .title {
+            display: flex;
+            flex-direction: row;
+            // border: 1px solid red;
+            width: 100%;
+            justify-content: space-between;
+            margin-top: 10px;
+
+            h4 {
+                font-family: "SF Pro Text Regular";
+                font-size: 40px;
+                font-weight: 500;
+                margin: 0;
+            }
+        }
+
+        .writeup {
+            // border: 1px solid red;
+            margin-top: 50px;
+
+            h5 {
+                font-family: "SF Pro Text Regular";
+                font-size: 20px;
+                font-weight: 500;
+                line-height: 23px;
+                width: 269px;
+                margin: 0;
+                text-align: center;
+            }
+        }
+
+        .links {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-evenly;
+            margin-top: 79px;
+            margin-bottom: 10px;
+            width: 100%;
+            // border: 1px solid black;
+
+            li {
+                list-style: none;
+                font-family: "SF Pro Text Regular";
+                font-size: 24px;
+                font-weight: 500;
+                // border: 1px solid red;
+                height: 30px;
+                cursor: pointer;
+
+                &::after {
+                    // border-bottom: 1px solid black;
+                    content: '';
+                    display: block;
+                    width: 0;
+                    height: 2px;
+                    background: #000;
+                    transition: width .5s;
+                }
+
+                &:hover::after {
+                    width: 100%;
+                }
+
+                a {
+                    text-decoration: none;
+                    color: #000;
+                }
+            }
+        }
+    }
+}
+
+ul.transition {
+    display: flex;
+    position: absolute;
+    z-index: 10;
+    height: 100vh;
+    width: 100%;
+    top: 0;
+    left: 0;
+    margin: 0;
+    pointer-events: none;
+}
+
+ul.transition li {
+    transform: scaleY(0);
+    background: #000;
+    width: 20%;
+}
+
+.navbar3 {
+    // border: 1px solid red;
+    // height: 80px;
+
+    .inner {
+        // border: 1px solid black;
+        display: flex;
+        flex-direction: row;
+        height: 60px;
+        width: 90%;
+        margin: 0 auto;
+    }
+
+    .innerleft {
+        width: 70%;
+        // border: 1px solid blue;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+
+        a {
+            text-decoration: none;
+            color: black;
+            cursor: pointer;
+            font-family: "Palagio";
+            font-size: 30px;
+            font-weight: 500;
+        }
+    }
+
+    .innerright {
+        display: flex;
+        align-items: center;
+        width: 30%;
+        // border: 1px solid blue;
+        justify-content: space-between;
+
+        a {
+            // text-decoration: none;
+            // color: black;
+            // cursor: pointer;
+            // font-family: "Palagio";
+            // font-size: 30px;
+            // font-weight: 500;
+
+            text-decoration: none;
+            color: #000;
+            // font-family: "Circula";
+            font-family: "Palagio";
+            font-size: 22px;
+            font-weight: 400;
+            // border: 1px solid red;
+            // height: 30px;
+            cursor: pointer;
+
+            &::after {
+                // border-bottom: 1px solid black;
+                content: '';
+                display: block;
+                width: 0;
+                height: 2px;
+                background: #000;
+                transition: width .5s;
+            }
+
+            &:hover::after {
+                width: 100%;
+            }
+
+
+        }
+    }
 }

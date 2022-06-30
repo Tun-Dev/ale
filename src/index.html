@@ -6,13 +6,52 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
   </head>
-  <body>
+  <body data-barba="wrapper">
     <div class="cursor"></div>
-    <h1>My page</h1>
-    <h2>test</h2>
-    <a href="./about.html">About</a>
-    <h2>T</h2>
 
-    <script src="./index.js"></script>
+    <ul class="transition">
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+    </ul>
+
+    <!-- Home section -->
+    <main data-barba="container" data-barba-namespace="home">
+      <div class="HomeContainer">
+        <div class="innercon">
+          <div class="name">
+            <h1>Aleruchi Kin<span>ika</span></h1>
+            <img src="../src/assets/images/ikabg.png" alt="land" />
+          </div>
+          <div class="title">
+            <h4>Photographer</h4>
+            <h4>Writer</h4>
+            <h4>Mother to Boris</h4>
+          </div>
+          <div class="writeup">
+            <h5>
+              Stories told through the eyes of the lens a selection of pictures
+              around the world
+            </h5>
+          </div>
+          <div class="links">
+            <li class="link">
+              <a href="./kinika.html">KINIKA</a>
+            </li>
+            <li className="link">
+              <a href="./gallery.html">GALLERY</a>
+            </li>
+            <li>
+              <a href="./articles.html">ARTICLES</a>
+            </li>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <script src="https://unpkg.com/@barba/core"></script>
+    <script src="./js/index.js"></script>
   </body>
 </html>

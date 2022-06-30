@@ -1,0 +1,91 @@
+.profilecon {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  height: 100vh;
+}
+
+.profilecon .innercon {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.profilecon .left {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.profilecon .left img {
+  width: 80%;
+}
+
+.profilecon .right {
+  width: 70%;
+}
+
+.profilecon .right h1 {
+  font-family: "Palagio";
+  font-weight: 400;
+  font-size: 64px;
+  width: 211px;
+  margin: 0;
+  margin-bottom: 30px;
+}
+
+.profilecon .right h5 {
+  font-family: "SF Pro Text Regular";
+  font-weight: 400;
+  font-size: 25px;
+  width: 95%;
+  margin: 0;
+  margin-bottom: 40px;
+}
+
+ul.transition {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: absolute;
+  z-index: 10;
+  height: 100vh;
+  width: 100%;
+  top: 0;
+  left: 0;
+  margin: 0;
+  pointer-events: none;
+}
+
+ul.transition li {
+  -webkit-transform: scaleY(0);
+          transform: scaleY(0);
+  background: #000;
+  width: 20%;
+}
+/*# sourceMappingURL=kinika.css.map */
