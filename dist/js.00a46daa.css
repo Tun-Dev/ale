@@ -38,17 +38,12 @@ html body {
   color: #000000;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  overflow-x: hidden;
   /* Hide horizontal scrollbar */
   scroll-behavior: smooth;
   transition: 0.3s;
   font-family: "Circula";
   font-weight: 400;
   background-color: #E2E1CA;
-}
-
-h1 {
-  font-size: 40px;
 }
 
 .cursor {
@@ -170,6 +165,29 @@ ul.transition li {
   width: 20%;
 }
 
+.loading-screen {
+  position: relative;
+  padding-left: 0;
+  padding-right: 0;
+  padding-top: 0;
+  background-color: #4BEDC2;
+  width: 100%;
+  height: 100%;
+  transform: scaleY(0) skewX(0);
+  transform-origin: top left;
+}
+
+.loading-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  z-index: 10;
+  pointer-events: none;
+}
+
 .navbar3 .inner {
   display: flex;
   flex-direction: row;
@@ -215,6 +233,77 @@ ul.transition li {
 }
 .navbar3 .innerright a:hover::after {
   width: 100%;
+}
+
+.profilecon {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+.profilecon .innercon {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+.profilecon .left {
+  width: fit-content;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.profilecon .left img {
+  width: 80%;
+}
+.profilecon .right {
+  width: 70%;
+}
+.profilecon .right h1 {
+  font-family: "Palagio";
+  font-weight: 400;
+  font-size: 64px;
+  width: 211px;
+  margin: 0;
+  margin-bottom: 30px;
+}
+.profilecon .right h5 {
+  font-family: "SF Pro Text Regular";
+  font-weight: 400;
+  font-size: 25px;
+  width: 95%;
+  margin: 0;
+  margin-bottom: 40px;
+}
+
+.gallerycon {
+  display: flex;
+  flex-direction: column;
+}
+.gallerycon .galleryinner {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.gallerycards {
+  width: 500px;
+  margin-bottom: 55px;
+}
+.gallerycards .coninner {
+  display: flex;
+  flex-direction: column;
+}
+.gallerycards .coninner img {
+  width: 500px;
+}
+.gallerycards .coninner h5 {
+  font-family: "Nympha Trial Reg";
+  font-size: 20px;
+  font-weight: 400;
+  margin: 0;
+  margin-top: 19px;
 }
 
 /*# sourceMappingURL=/js.00a46daa.css.map */

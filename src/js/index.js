@@ -1,5 +1,7 @@
 import "../styles/main.scss";
+// import "../styles/kinika.scss";
 import { Cursor } from "./cursor";
+import barba from "@barba/core";
 import gsap from "gsap/dist/gsap";
 
 let cursorPick = document.querySelector(".cursor");
@@ -17,15 +19,15 @@ function pageTransition() {
   tl.to("ul.transition li", {
     duration: 0.7,
     scaleY: 0,
-    transformOrigin: "bottom left",
+    transformOrigin: "top left",
     stagger: 0.1,
-    delay: 0.2,
+    delay: 0.5,
   });
 }
 
 function contentAnimation() {
   var tl = gsap.timeline();
-  tl.from(".HomeContainer", { duration: 1.5, opacity: 0 });
+  // tl.from(".HomeContainer", { duration: 1.5, opacity: 0 });
 }
 
 function delay(n) {
@@ -46,7 +48,7 @@ barba.init({
         const done = this.async();
 
         pageTransition();
-        await delay(500);
+        await delay(1500);
         done();
       },
 
