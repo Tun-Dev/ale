@@ -117,79 +117,7 @@ parcelRequire = (function (modules, cache, entry, globalName) {
   }
 
   return newRequire;
-})({"../node_modules/parcel-bundler/src/builtins/bundle-url.js":[function(require,module,exports) {
-var bundleURL = null;
-
-function getBundleURLCached() {
-  if (!bundleURL) {
-    bundleURL = getBundleURL();
-  }
-
-  return bundleURL;
-}
-
-function getBundleURL() {
-  // Attempt to find the URL of the current script and use that as the base URL
-  try {
-    throw new Error();
-  } catch (err) {
-    var matches = ('' + err.stack).match(/(https?|file|ftp|chrome-extension|moz-extension):\/\/[^)\n]+/g);
-
-    if (matches) {
-      return getBaseURL(matches[0]);
-    }
-  }
-
-  return '/';
-}
-
-function getBaseURL(url) {
-  return ('' + url).replace(/^((?:https?|file|ftp|chrome-extension|moz-extension):\/\/.+)?\/[^/]+(?:\?.*)?$/, '$1') + '/';
-}
-
-exports.getBundleURL = getBundleURLCached;
-exports.getBaseURL = getBaseURL;
-},{}],"../node_modules/parcel-bundler/src/builtins/css-loader.js":[function(require,module,exports) {
-var bundle = require('./bundle-url');
-
-function updateLink(link) {
-  var newLink = link.cloneNode();
-
-  newLink.onload = function () {
-    link.remove();
-  };
-
-  newLink.href = link.href.split('?')[0] + '?' + Date.now();
-  link.parentNode.insertBefore(newLink, link.nextSibling);
-}
-
-var cssTimeout = null;
-
-function reloadCSS() {
-  if (cssTimeout) {
-    return;
-  }
-
-  cssTimeout = setTimeout(function () {
-    var links = document.querySelectorAll('link[rel="stylesheet"]');
-
-    for (var i = 0; i < links.length; i++) {
-      if (bundle.getBaseURL(links[i].href) === bundle.getBundleURL()) {
-        updateLink(links[i]);
-      }
-    }
-
-    cssTimeout = null;
-  }, 50);
-}
-
-module.exports = reloadCSS;
-},{"./bundle-url":"../node_modules/parcel-bundler/src/builtins/bundle-url.js"}],"styles/main.scss":[function(require,module,exports) {
-var reloadCSS = require('_css_loader');
-
-module.hot.dispose(reloadCSS);
-module.hot.accept(reloadCSS);
-},{"./../fonts/PalagioPersonalUse-nRoPM.otf":[["PalagioPersonalUse-nRoPM.b07c9bea.otf","fonts/PalagioPersonalUse-nRoPM.otf"],"fonts/PalagioPersonalUse-nRoPM.otf"],"./../fonts/circula-medium.otf":[["circula-medium.2fc76941.otf","fonts/circula-medium.otf"],"fonts/circula-medium.otf"],"./../fonts/FontsFree-Net-SFProText-Light-1.ttf":[["FontsFree-Net-SFProText-Light-1.516bd2a0.ttf","fonts/FontsFree-Net-SFProText-Light-1.ttf"],"fonts/FontsFree-Net-SFProText-Light-1.ttf"],"./../fonts/FontsFree-Net-SFProText-Regular-1.ttf":[["FontsFree-Net-SFProText-Regular-1.a9474e53.ttf","fonts/FontsFree-Net-SFProText-Regular-1.ttf"],"fonts/FontsFree-Net-SFProText-Regular-1.ttf"],"./../fonts/NymphaTrial-Light.ttf":[["NymphaTrial-Light.15501aea.ttf","fonts/NymphaTrial-Light.ttf"],"fonts/NymphaTrial-Light.ttf"],"./../fonts/NymphaTrial-Regular.ttf":[["NymphaTrial-Regular.998b1241.ttf","fonts/NymphaTrial-Regular.ttf"],"fonts/NymphaTrial-Regular.ttf"],"_css_loader":"../node_modules/parcel-bundler/src/builtins/css-loader.js"}],"../node_modules/gsap/dist/gsap.js":[function(require,module,exports) {
+})({"../node_modules/gsap/dist/gsap.js":[function(require,module,exports) {
 var define;
 var global = arguments[3];
 (function (global, factory) {
@@ -5466,8 +5394,6 @@ var define;
 },{}],"js/index.js":[function(require,module,exports) {
 "use strict";
 
-require("../styles/main.scss");
-
 var _cursor = require("./cursor");
 
 var _core = _interopRequireDefault(require("@barba/core"));
@@ -5509,24 +5435,16 @@ function contentAnimation() {
   var tl = _gsap.default.timeline(); // tl.from(".HomeContainer", { duration: 1.5, opacity: 0 });
   // tl.from(".galleryinner", { duration: 4.5, opacity: 0 });
   // Animation for cursor to increase when hovering on links
+  // document.querySelectorAll("a").forEach((link) => {
+  //   link.addEventListener("mouseenter", () => cursor.enter());
+  //   link.addEventListener("mouseleave", () => cursor.leave());
+  // });
+  // document.querySelectorAll("button").forEach((link) => {
+  //   link.addEventListener("mouseenter", () => cursor.enter());
+  //   link.addEventListener("mouseleave", () => cursor.leave());
+  // });
+  // Skew scrolling for gallery page
 
-
-  document.querySelectorAll("a").forEach(function (link) {
-    link.addEventListener("mouseenter", function () {
-      return cursor.enter();
-    });
-    link.addEventListener("mouseleave", function () {
-      return cursor.leave();
-    });
-  });
-  document.querySelectorAll("button").forEach(function (link) {
-    link.addEventListener("mouseenter", function () {
-      return cursor.enter();
-    });
-    link.addEventListener("mouseleave", function () {
-      return cursor.leave();
-    });
-  }); // Skew scrolling for gallery page
 
   var section = document.querySelector(".galleryinner");
   var currentPos = window.pageYOffset;
@@ -5537,11 +5455,13 @@ function contentAnimation() {
     var speed = diff * 0.15;
     section.style.transform = "skewY(".concat(speed, "deg)");
     currentPos = newPos;
-    requestAnimationFrame(update);
+    requestAnimationFrame(function () {
+      return update();
+    });
   }; // console.log(window.location.pathname);
 
 
-  if (window.location.pathname === "/gallery.html" || "/gallery") {
+  if (window.location.pathname === "/gallery") {
     update();
   }
 }
@@ -5617,7 +5537,7 @@ _core.default.init({
     }
   }]
 });
-},{"../styles/main.scss":"styles/main.scss","./cursor":"js/cursor.js","@barba/core":"../node_modules/@barba/core/dist/barba.umd.js","gsap/dist/gsap":"../node_modules/gsap/dist/gsap.js"}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+},{"./cursor":"js/cursor.js","@barba/core":"../node_modules/@barba/core/dist/barba.umd.js","gsap/dist/gsap":"../node_modules/gsap/dist/gsap.js"}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;

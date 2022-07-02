@@ -1,4 +1,4 @@
-import "../styles/main.scss";
+// import "../styles/main.scss";
 // import "../styles/kinika.scss";
 import { Cursor } from "./cursor";
 import barba from "@barba/core";
@@ -31,14 +31,14 @@ function contentAnimation() {
   // tl.from(".galleryinner", { duration: 4.5, opacity: 0 });
 
   // Animation for cursor to increase when hovering on links
-  document.querySelectorAll("a").forEach((link) => {
-    link.addEventListener("mouseenter", () => cursor.enter());
-    link.addEventListener("mouseleave", () => cursor.leave());
-  });
-  document.querySelectorAll("button").forEach((link) => {
-    link.addEventListener("mouseenter", () => cursor.enter());
-    link.addEventListener("mouseleave", () => cursor.leave());
-  });
+  // document.querySelectorAll("a").forEach((link) => {
+  //   link.addEventListener("mouseenter", () => cursor.enter());
+  //   link.addEventListener("mouseleave", () => cursor.leave());
+  // });
+  // document.querySelectorAll("button").forEach((link) => {
+  //   link.addEventListener("mouseenter", () => cursor.enter());
+  //   link.addEventListener("mouseleave", () => cursor.leave());
+  // });
 
   // Skew scrolling for gallery page
 
@@ -55,12 +55,12 @@ function contentAnimation() {
 
     currentPos = newPos;
 
-    requestAnimationFrame(update);
+    requestAnimationFrame(() => update());
   };
 
   // console.log(window.location.pathname);
 
-  if (window.location.pathname === "/gallery.html" || "/gallery") {
+  if (window.location.pathname === "/gallery") {
     update();
   }
 }
