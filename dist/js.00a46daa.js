@@ -5538,11 +5538,10 @@ function contentAnimation() {
     section.style.transform = "skewY(".concat(speed, "deg)");
     currentPos = newPos;
     requestAnimationFrame(update);
-  };
+  }; // console.log(window.location.pathname);
 
-  console.log(window.location.pathname);
 
-  if (window.location.pathname === "/gallery.html") {
+  if (window.location.pathname === "/gallery.html" || "/gallery") {
     update();
   }
 }
