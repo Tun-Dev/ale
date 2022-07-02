@@ -1,4 +1,4 @@
-import "../styles/kinika.scss";
+// import "../styles/kinika.scss";
 // import barba from "@barba/core";
 // import gsap from "gsap/dist/gsap";
 

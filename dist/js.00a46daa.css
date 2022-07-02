@@ -38,6 +38,7 @@ html body {
   color: #000000;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
   /* Hide horizontal scrollbar */
   scroll-behavior: smooth;
   transition: 0.3s;
@@ -54,7 +55,7 @@ html body {
   pointer-events: none;
   height: 20px;
   width: 20px;
-  background: #4E3B1F;
+  background: #424135;
   border-radius: 50%;
   display: block;
 }
@@ -161,7 +162,8 @@ ul.transition {
 
 ul.transition li {
   transform: scaleY(0);
-  background: #000;
+  list-style: none;
+  background: #424135;
   width: 20%;
 }
 
@@ -285,6 +287,9 @@ ul.transition li {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
+  width: 100%;
+  transition: transform 0.25s;
+  will-change: transform;
 }
 
 .gallerycards {
@@ -304,6 +309,138 @@ ul.transition li {
   font-weight: 400;
   margin: 0;
   margin-top: 19px;
+}
+
+.contactcon {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+.contactcon .innercontact {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.contactcon .top {
+  height: 90%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.contactcon .top h1 {
+  width: 90%;
+  margin: 0 auto;
+  font-family: "Nympha Trial Reg";
+  font-size: 32px;
+  font-weight: 400;
+}
+.contactcon .top a {
+  text-decoration: none;
+  color: black;
+}
+.contactcon .top a p {
+  width: 90%;
+  margin: 0 auto;
+  text-align: center;
+  font-family: "Nympha Trial Reg";
+  font-size: 96px;
+  font-weight: 400;
+}
+.contactcon .bottom {
+  height: 10%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.contactcon .bottom .botcon {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 90%;
+  margin: 0 auto;
+}
+.contactcon .bottom .botcon h2 {
+  margin: 0;
+  font-family: "Palagio";
+  font-weight: 400;
+  font-size: 32px;
+}
+.contactcon .bottom .botcon div {
+  display: flex;
+  width: 110px;
+  justify-content: space-between;
+}
+
+.Articlecon {
+  display: flex;
+  flex-direction: column;
+}
+.Articlecon .articleinner {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.ArticleCard {
+  width: 350px;
+  margin-bottom: 20px;
+  padding: 15px;
+}
+.ArticleCard .inner {
+  display: flex;
+  flex-direction: column;
+}
+.ArticleCard .top {
+  border: 3px solid #4E3B1F;
+  border-radius: 10px;
+  padding: 15px;
+  box-shadow: 10px 5px rgba(0, 0, 0, 0.5);
+  height: 296px;
+}
+.ArticleCard .top h1 {
+  font-family: "SF Pro Text Regular";
+  font-size: 32px;
+  font-weight: 400;
+  margin: 0;
+}
+.ArticleCard .top p {
+  font-family: "SF Pro Text Regular";
+  font-size: 16px;
+}
+.ArticleCard .bottom {
+  margin-top: 20px;
+}
+.ArticleCard .bottom button {
+  width: 157px;
+  height: 35px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  background: none;
+  border: 1px solid rgba(66, 65, 53, 0.8509803922);
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.45s;
+}
+.ArticleCard .bottom button img {
+  width: 32px;
+}
+.ArticleCard .bottom button h5 {
+  font-family: "SF Pro Text Regular";
+  font-size: 16px;
+  font-weight: 300;
+}
+.ArticleCard .bottom button:hover, .ArticleCard .bottom button:focus {
+  box-shadow: 0 0 0 0 rgba(66, 65, 53, 0.8509803922), inset 0 -4.5em 0 0 rgba(66, 65, 53, 0.8509803922);
+}
+.ArticleCard .bottom button:hover {
+  color: #E2E1CA;
+}
+.ArticleCard .bottom button:hover img {
+  filter: invert(100%);
 }
 
 /*# sourceMappingURL=/js.00a46daa.css.map */

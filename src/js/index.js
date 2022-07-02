@@ -28,6 +28,41 @@ function pageTransition() {
 function contentAnimation() {
   var tl = gsap.timeline();
   // tl.from(".HomeContainer", { duration: 1.5, opacity: 0 });
+  // tl.from(".galleryinner", { duration: 4.5, opacity: 0 });
+
+  // Animation for cursor to increase when hovering on links
+  document.querySelectorAll("a").forEach((link) => {
+    link.addEventListener("mouseenter", () => cursor.enter());
+    link.addEventListener("mouseleave", () => cursor.leave());
+  });
+  document.querySelectorAll("button").forEach((link) => {
+    link.addEventListener("mouseenter", () => cursor.enter());
+    link.addEventListener("mouseleave", () => cursor.leave());
+  });
+
+  // Skew scrolling for gallery page
+
+  const section = document.querySelector(".galleryinner");
+
+  let currentPos = window.pageYOffset;
+
+  const update = () => {
+    const newPos = window.pageYOffset;
+    const diff = newPos - currentPos;
+    const speed = diff * 0.15;
+
+    section.style.transform = `skewY(${speed}deg)`;
+
+    currentPos = newPos;
+
+    requestAnimationFrame(update);
+  };
+
+  console.log(window.location.pathname);
+
+  if (window.location.pathname === "/gallery.html") {
+    update();
+  }
 }
 
 function delay(n) {

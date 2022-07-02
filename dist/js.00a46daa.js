@@ -5507,7 +5507,44 @@ function pageTransition() {
 
 function contentAnimation() {
   var tl = _gsap.default.timeline(); // tl.from(".HomeContainer", { duration: 1.5, opacity: 0 });
+  // tl.from(".galleryinner", { duration: 4.5, opacity: 0 });
+  // Animation for cursor to increase when hovering on links
 
+
+  document.querySelectorAll("a").forEach(function (link) {
+    link.addEventListener("mouseenter", function () {
+      return cursor.enter();
+    });
+    link.addEventListener("mouseleave", function () {
+      return cursor.leave();
+    });
+  });
+  document.querySelectorAll("button").forEach(function (link) {
+    link.addEventListener("mouseenter", function () {
+      return cursor.enter();
+    });
+    link.addEventListener("mouseleave", function () {
+      return cursor.leave();
+    });
+  }); // Skew scrolling for gallery page
+
+  var section = document.querySelector(".galleryinner");
+  var currentPos = window.pageYOffset;
+
+  var update = function update() {
+    var newPos = window.pageYOffset;
+    var diff = newPos - currentPos;
+    var speed = diff * 0.15;
+    section.style.transform = "skewY(".concat(speed, "deg)");
+    currentPos = newPos;
+    requestAnimationFrame(update);
+  };
+
+  console.log(window.location.pathname);
+
+  if (window.location.pathname === "/gallery.html") {
+    update();
+  }
 }
 
 function delay(n) {
@@ -5609,7 +5646,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "33903" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "46581" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
