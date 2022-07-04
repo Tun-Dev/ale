@@ -60,6 +60,37 @@ html body {
   display: block;
 }
 
+.exit-h1 {
+  overflow: hidden;
+}
+
+.exit-transition {
+  position: fixed;
+  background: #424135;
+  height: 100vh;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  height: 0;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.exit-transition h1 {
+  letter-spacing: -0.1em;
+  color: #ffffff;
+  padding-right: 10px;
+  margin-right: -10px;
+  font-family: "Nympha Trial Reg";
+  font-size: 70px;
+  font-weight: 500;
+}
+.exit-transition span {
+  display: inline-block;
+}
+
 .HomeContainer {
   height: 100vh;
   display: flex;
@@ -73,20 +104,23 @@ html body {
 }
 .HomeContainer .innercon .name {
   position: relative;
+  overflow: hidden;
 }
 .HomeContainer .innercon .name h1 {
   font-size: 180px;
   font-family: "Palagio";
   font-weight: 400;
   margin: 0;
+  margin-top: 20px;
+  transform: translateY(100%);
 }
 .HomeContainer .innercon .name h1 span {
   color: #4E3B1F;
+  margin: 0;
 }
-.HomeContainer .innercon .name img {
+.HomeContainer .innercon .name .imgcon {
   position: absolute;
   bottom: 0;
-  margin-bottom: 20px;
   right: 0;
   z-index: -1;
   width: 182px;
@@ -97,24 +131,26 @@ html body {
   width: 100%;
   justify-content: space-between;
   margin-top: 10px;
+  overflow: hidden;
 }
 .HomeContainer .innercon .title h4 {
   font-family: "SF Pro Text Regular";
   font-size: 40px;
   font-weight: 500;
   margin: 0;
+  transform: translateY(100%);
 }
 .HomeContainer .innercon .writeup {
   margin-top: 50px;
+  overflow: hidden;
 }
 .HomeContainer .innercon .writeup h5 {
   font-family: "SF Pro Text Regular";
   font-size: 20px;
   font-weight: 500;
   line-height: 23px;
-  width: 269px;
-  margin: 0;
   text-align: center;
+  transform: translateY(200%);
 }
 .HomeContainer .innercon .links {
   display: flex;
@@ -123,6 +159,7 @@ html body {
   margin-top: 79px;
   margin-bottom: 10px;
   width: 100%;
+  overflow: hidden;
 }
 .HomeContainer .innercon .links li {
   list-style: none;
@@ -131,6 +168,7 @@ html body {
   font-weight: 500;
   height: 30px;
   cursor: pointer;
+  transform: translateY(100%);
 }
 .HomeContainer .innercon .links li::after {
   content: "";

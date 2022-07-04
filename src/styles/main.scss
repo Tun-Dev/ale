@@ -77,6 +77,41 @@ html body {
     display: block;
 }
 
+.exit-h1 {
+    overflow: hidden;
+}
+
+.exit-transition {
+    position: fixed;
+    background: #424135;
+    height: 100vh;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    height: 0;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    h1 {
+        letter-spacing: -0.1em;
+        color: #ffffff;
+        padding-right: 10px;
+        margin-right: -10px;
+        // font-family: "Palagio";
+        font-family: "Nympha Trial Reg";
+        font-size: 70px;
+        font-weight: 500;
+        // font-style: italic;
+    }
+
+    span {
+        display: inline-block;
+    }
+}
+
 
 .HomeContainer {
     height: 100vh;
@@ -94,10 +129,12 @@ html body {
 
         .name {
             position: relative;
+            overflow: hidden;
+            // height: fit-content;
             // display: flex;
             // flex-direction: column;
             // border: 1px solid red;
-            // height: 400px;
+            // height: 200px;
 
             h1 {
                 font-size: 180px;
@@ -106,17 +143,26 @@ html body {
                 // line-height: 209px;
                 // border: 1px solid black;
                 margin: 0;
+                margin-top: 20px;
+                // overflow: hidden;
+                // display: inline-block;
+                transform: translateY(100%);
 
                 span {
                     color: #4E3B1F;
+                    margin: 0;
                 }
 
             }
 
-            img {
+            // .imgcon {
+            //     z-index: -1;
+            // }
+
+            .imgcon {
                 position: absolute;
                 bottom: 0;
-                margin-bottom: 20px;
+                // margin-bottom: 20px;
                 right: 0;
                 z-index: -1;
                 width: 182px;
@@ -130,27 +176,29 @@ html body {
             width: 100%;
             justify-content: space-between;
             margin-top: 10px;
+            overflow: hidden;
 
             h4 {
                 font-family: "SF Pro Text Regular";
                 font-size: 40px;
                 font-weight: 500;
                 margin: 0;
+                transform: translateY(100%);
             }
         }
 
         .writeup {
             // border: 1px solid red;
             margin-top: 50px;
+            overflow: hidden;
 
             h5 {
                 font-family: "SF Pro Text Regular";
                 font-size: 20px;
                 font-weight: 500;
                 line-height: 23px;
-                width: 269px;
-                margin: 0;
                 text-align: center;
+                transform: translateY(200%);
             }
         }
 
@@ -161,6 +209,7 @@ html body {
             margin-top: 79px;
             margin-bottom: 10px;
             width: 100%;
+            overflow: hidden;
             // border: 1px solid black;
 
             li {
@@ -171,6 +220,7 @@ html body {
                 // border: 1px solid red;
                 height: 30px;
                 cursor: pointer;
+                transform: translateY(100%);
 
                 &::after {
                     // border-bottom: 1px solid black;
