@@ -41,6 +41,7 @@ html body {
   overflow-x: hidden;
   /* Hide horizontal scrollbar */
   scroll-behavior: smooth;
+  height: 100%;
   transition: 0.3s;
   font-family: "Circula";
   font-weight: 400;
@@ -71,7 +72,7 @@ html body {
   bottom: 0;
   left: 0;
   width: 100%;
-  z-index: 1000;
+  z-index: 1;
   height: 0;
   overflow: hidden;
   display: flex;
@@ -349,6 +350,37 @@ ul.transition li {
   margin-top: 19px;
 }
 
+.galcon {
+  position: fixed;
+  background: #E2E1CA;
+  height: 100vh;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.galcon .innercon-galcon {
+  text-align: center;
+  overflow: hidden;
+}
+.galcon .innercon-galcon h4 {
+  font-family: "Nympha Trial Reg";
+  font-size: 32px;
+  font-weight: 500;
+  margin: 0;
+}
+.galcon .innercon-galcon h5 {
+  font-family: "Nympha Trial Reg";
+  font-size: 55px;
+  font-weight: 500;
+  margin: 0;
+  margin-top: 10px;
+}
+
 .contactcon {
   height: 100vh;
   display: flex;
@@ -414,28 +446,28 @@ ul.transition li {
 .Articlecon {
   display: flex;
   flex-direction: column;
+  height: 100vh;
 }
 .Articlecon .articleinner {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
+  height: 100%;
+  margin: 0 auto;
 }
 
 .ArticleCard {
   width: 350px;
-  margin-bottom: 20px;
   padding: 15px;
+  position: relative;
 }
 .ArticleCard .inner {
   display: flex;
   flex-direction: column;
 }
 .ArticleCard .top {
-  border: 3px solid #4E3B1F;
   border-radius: 10px;
-  padding: 15px;
-  box-shadow: 10px 5px rgba(0, 0, 0, 0.5);
-  height: 296px;
+  height: 250px;
 }
 .ArticleCard .top h1 {
   font-family: "SF Pro Text Regular";
@@ -444,6 +476,7 @@ ul.transition li {
   margin: 0;
 }
 .ArticleCard .top p {
+  margin-top: 30px;
   font-family: "SF Pro Text Regular";
   font-size: 16px;
 }

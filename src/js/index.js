@@ -109,13 +109,68 @@ function contentAnimation() {
     },
     "-=.5"
   );
-  tl.to(".links li", {
-    duration: 0.5,
-    y: "0%",
-    stagger: {
-      amount: 0.5,
+  tl.to(
+    ".links li",
+    {
+      duration: 0.5,
+      y: "0%",
+      stagger: {
+        amount: 0.5,
+      },
     },
+    "-=.5"
+  );
+
+  var tll = gsap.timeline();
+
+  // Gallery Page Transition
+  gsap.set(".galcon", {
+    delay: 2.5,
+    zIndex: 30,
+    top: "unset",
+    bottom: 0,
   });
+  gsap.set("innercon-galcon", {
+    opacity: 1,
+  });
+  tll.to(".galcon", {
+    height: window.innerHeight,
+    // duration: 1.5,
+    duration: 1,
+    ease: "Expo.easeInOut",
+  });
+  tll.set(".galcon", {
+    top: 0,
+    bottom: "unset",
+  });
+  tll
+    .from([".innercon-galcon h4", ".innercon-galcon h5"], {
+      delay: 1.5,
+      yPercent: 300,
+      duration: 1.5,
+      // skewY: 10,
+      stagger: {
+        amount: 0.3,
+      },
+      ease: "power2.out",
+    })
+    .to(".innercon-galcon", {
+      delay: 3,
+      opacity: 0,
+      duration: 1,
+      ease: "power4.out",
+    })
+    .to(
+      ".galcon",
+      {
+        delay: 0.9,
+        height: 0,
+        duration: 1.5,
+        ease: "Expo.easeInOut",
+      },
+      "-=1"
+    );
+
   // tl.from(".HomeContainer", { duration: 1.5, opacity: 0 });
   // tl.from(".galleryinner", { duration: 4.5, opacity: 0 });
 

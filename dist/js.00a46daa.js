@@ -5510,7 +5510,52 @@ function contentAnimation() {
     stagger: {
       amount: 0.5
     }
-  }); // tl.from(".HomeContainer", { duration: 1.5, opacity: 0 });
+  }, "-=.5");
+
+  var tll = _gsap.default.timeline(); // Gallery Page Transition
+
+
+  _gsap.default.set(".galcon", {
+    delay: 2.5,
+    zIndex: 30,
+    top: "unset",
+    bottom: 0
+  });
+
+  _gsap.default.set("innercon-galcon", {
+    opacity: 1
+  });
+
+  tll.to(".galcon", {
+    height: window.innerHeight,
+    // duration: 1.5,
+    duration: 1,
+    ease: "Expo.easeInOut"
+  });
+  tll.set(".galcon", {
+    top: 0,
+    bottom: "unset"
+  });
+  tll.from([".innercon-galcon h4", ".innercon-galcon h5"], {
+    delay: 1.5,
+    yPercent: 300,
+    duration: 1.5,
+    // skewY: 10,
+    stagger: {
+      amount: 0.3
+    },
+    ease: "power2.out"
+  }).to(".innercon-galcon", {
+    delay: 3,
+    opacity: 0,
+    duration: 1,
+    ease: "power4.out"
+  }).to(".galcon", {
+    delay: 0.9,
+    height: 0,
+    duration: 1.5,
+    ease: "Expo.easeInOut"
+  }, "-=1"); // tl.from(".HomeContainer", { duration: 1.5, opacity: 0 });
   // tl.from(".galleryinner", { duration: 4.5, opacity: 0 });
   // Animation for cursor to increase when hovering on links
 
@@ -5650,7 +5695,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "46581" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "38141" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
