@@ -187,6 +187,84 @@ html body {
   color: #000;
 }
 
+.home-loader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: #E2E1CA;
+}
+.home-loader .load-words {
+  position: relative;
+  width: 700px;
+  overflow: hidden;
+  height: 50px;
+}
+.home-loader .load-words h1 {
+  margin: 0 auto;
+  position: absolute;
+  height: 50px;
+  width: 100%;
+  text-align: center;
+  font-size: 40px;
+  font-family: "Nympha Trial Reg";
+  font-weight: 500;
+  transform: translateY(110%);
+}
+.home-loader .word7 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+.home-loader .word7 span {
+  border: 2px solid #424135;
+  padding: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  height: 55px;
+  width: 100px;
+  transform: translateY(110%);
+}
+.home-loader .word7 span a {
+  text-decoration: none;
+  list-style: none;
+  color: #424135;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 25px;
+  font-family: "Nympha Trial Reg";
+  font-weight: 500;
+  justify-self: center;
+  margin: 0;
+}
+.home-loader .load-bar {
+  border: 1px solid #424135;
+  width: 350px;
+  height: 20px;
+  margin: 20px;
+  position: relative;
+}
+.home-loader .load-bar .bar {
+  position: absolute;
+  left: 0;
+  background: #424135;
+  /* top: 100%; */
+  width: 0%;
+  height: 100%;
+  overflow: hidden;
+  overflow-x: hidden;
+}
+
 ul.transition {
   display: flex;
   position: absolute;
