@@ -7,6 +7,10 @@ import gsap from "gsap/dist/gsap";
 let cursorPick = document.querySelector(".cursor");
 const cursor = new Cursor(cursorPick);
 
+window.onload = () => {
+  localStorage.removeItem("pageloadcount");
+};
+
 function pageTransition() {
   var tl = gsap.timeline();
 
@@ -74,85 +78,7 @@ function pageTransition() {
 }
 
 function loader() {
-  var tl = gsap.timeline();
-
-  tl.from(".load-bar", { delay: 0.5, opacity: 0, duration: 1 });
-  tl.to(".word1", { duration: 0.7, y: "0%" })
-    .to(".word1", {
-      delay: 0.3,
-      duration: 0.5,
-      opacity: 0,
-    })
-    .to(".word2", { duration: 0.7, y: "0%" })
-    .to(".word2", {
-      delay: 0.7,
-      duration: 0.5,
-      opacity: 0,
-    })
-    .to(".word3", { duration: 0.7, y: "0%" })
-    .to(".word3", {
-      delay: 0.7,
-      duration: 0.5,
-      opacity: 0,
-    })
-    .to(".word4", { duration: 0.7, y: "0%" })
-    .to(".word4", {
-      delay: 0.7,
-      duration: 0.5,
-      opacity: 0,
-    })
-    .to(".word5", { duration: 0.7, y: "0%" })
-    .to(".word5", {
-      delay: 0.5,
-      duration: 0.5,
-      opacity: 0,
-    })
-    .to(".word6", { duration: 0.7, y: "0%" });
-  tl.to(
-    ".bar",
-    {
-      width: "30%",
-      duration: 6,
-      ease: "power4.out",
-    },
-    "-=9"
-  )
-    .to(
-      ".bar",
-      {
-        width: "70%",
-        duration: 6,
-        ease: "power4.out",
-      },
-      "-=7"
-    )
-    .to(
-      ".bar",
-      {
-        width: "100%",
-        duration: 6,
-        ease: "power4.out",
-      },
-      "-=4"
-    );
-  tl.to([".load-words", ".load-bar"], { delay: 0, opacity: 0 }).to(
-    ".home-loader",
-    {
-      delay: 0.9,
-      height: 0,
-      duration: 1.5,
-      ease: "Expo.easeInOut",
-    },
-    "-=1"
-  );
-}
-
-function contentAnimation() {
-  var tl = gsap.timeline();
   var loderTl = gsap.timeline();
-
-  // Home page Transitions
-  // tl.set(".imgcon", { autoAlpha: 1 });
 
   loderTl.from(".load-bar", { delay: 0.5, opacity: 0, duration: 1 });
   loderTl
@@ -186,13 +112,7 @@ function contentAnimation() {
       duration: 0.5,
       opacity: 0,
     })
-    .to(".word6", { duration: 0.7, y: "0%" })
-    // .to(".word6", {
-    //   delay: 0.5,
-    //   duration: 0.5,
-    //   opacity: 0,
-    // })
-    .to(".word7 span", { duration: 0.7, y: "0%" });
+    .to(".word6", { duration: 0.7, y: "0%" });
   loderTl
     .to(
       ".bar",
@@ -201,7 +121,7 @@ function contentAnimation() {
         duration: 6,
         ease: "power4.out",
       },
-      "-=11"
+      "-=9"
     )
     .to(
       ".bar",
@@ -210,7 +130,7 @@ function contentAnimation() {
         duration: 6,
         ease: "power4.out",
       },
-      "-=9"
+      "-=7"
     )
     .to(
       ".bar",
@@ -221,9 +141,107 @@ function contentAnimation() {
       },
       "-=4"
     );
-  // .to(".word7 span", { duration: 0.7, y: "0%" });
-  // loderTl.to(".load-bar", { delay: 0, opacity: 0 }, "-=2");
+  loderTl.to([".load-words", ".load-bar"], { delay: 0, opacity: 0 }).to(
+    ".home-loader",
+    {
+      delay: 0.9,
+      opacity: 0,
+      height: 0,
+      duration: 1.5,
+      ease: "Expo.easeInOut",
+    },
+    "-=1"
+  );
+}
 
+function contentAnimation() {
+  var tl = gsap.timeline();
+
+  // Home page Transitions
+  // tl.set(".imgcon", { autoAlpha: 1 });
+
+  if (localStorage.getItem("pageloadcount")) {
+    document.querySelector(".home-loader").style.display = "none";
+  }
+
+  localStorage.setItem("pageloadcount", "1");
+
+  var loderTl = gsap.timeline();
+
+  loderTl.from(".load-bar", { delay: 0.5, opacity: 0, duration: 1 });
+  loderTl
+    .to(".word1", { duration: 0.7, y: "0%" })
+    .to(".word1", {
+      delay: 0.3,
+      duration: 0.5,
+      opacity: 0,
+    })
+    .to(".word2", { duration: 0.7, y: "0%" })
+    .to(".word2", {
+      delay: 0.7,
+      duration: 0.5,
+      opacity: 0,
+    })
+    .to(".word3", { duration: 0.7, y: "0%" })
+    .to(".word3", {
+      delay: 0.7,
+      duration: 0.5,
+      opacity: 0,
+    })
+    .to(".word4", { duration: 0.7, y: "0%" })
+    .to(".word4", {
+      delay: 0.7,
+      duration: 0.5,
+      opacity: 0,
+    })
+    .to(".word5", { duration: 0.7, y: "0%" })
+    .to(".word5", {
+      delay: 0.5,
+      duration: 0.5,
+      opacity: 0,
+    })
+    .to(".word6", { duration: 0.7, y: "0%" });
+  loderTl
+    .to(
+      ".bar",
+      {
+        width: "30%",
+        duration: 6,
+        ease: "power4.out",
+      },
+      "-=9"
+    )
+    .to(
+      ".bar",
+      {
+        width: "70%",
+        duration: 6,
+        ease: "power4.out",
+      },
+      "-=7"
+    )
+    .to(
+      ".bar",
+      {
+        width: "100%",
+        duration: 6,
+        ease: "power4.out",
+      },
+      "-=4"
+    );
+  loderTl.to([".load-words", ".load-bar"], { delay: 0, opacity: 0 }).to(
+    ".home-loader",
+    {
+      delay: 0.9,
+      opacity: 0,
+      height: 0,
+      duration: 1.5,
+      ease: "Expo.easeInOut",
+    },
+    "-=1"
+  );
+
+  // loader();
   tl.from(".imgcon", {
     duration: 1.5,
     yPercent: 200,
