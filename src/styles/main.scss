@@ -49,13 +49,17 @@ html body {
     overflow-x: hidden;
     // overflow: hidden;
     /* Hide horizontal scrollbar */
-    scroll-behavior: smooth;
+    // scroll-behavior: smooth;
     height: 100%;
     transition: 0.3s;
     font-family: "Circula";
     font-weight: 400;
     background-color: #E2E1CA;
     // cursor: none;
+}
+
+html {
+    scroll-behavior: smooth;
 }
 
 // h1 {
@@ -543,12 +547,68 @@ ul.transition li {
         // border: 1px solid red;
 
     }
+
+    .footer {
+        position: fixed;
+        height: 65px;
+        bottom: 0;
+        // border: 1px solid red;
+        width: 100%;
+        // display: none;
+        display: flex;
+        background: #E2E1CA;
+        opacity: 0;
+        pointer-events: none;
+        transition: all 1s ease-in-out;
+
+        .footer_inner {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            margin: 0 auto;
+            width: 90%;
+            justify-content: space-between;
+            // border: 1px solid black;
+
+            .left {
+                p {
+                    margin: 0;
+                    font-family: "Palagio";
+                    font-weight: 400;
+                    font-size: 32px;
+                }
+            }
+
+            .right {
+                button {
+                    width: 150px;
+                    height: 47px;
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    justify-content: space-evenly;
+                    font-family: "SF Pro Text Regular";
+                    font-size: 16px;
+                    border: none;
+                    background: none;
+                    color: #3C3C31;
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+
+    .footer.active {
+        // display: flex;
+        pointer-events: auto;
+        opacity: 1;
+    }
 }
 
 .gallerycards {
     // border: 1px solid red;
     width: 500px;
-    margin-bottom: 55px;
+    margin-bottom: 70px;
 
     .coninner {
         display: flex;
@@ -691,9 +751,25 @@ ul.transition li {
 
             div {
                 display: flex;
-                width: 110px;
+                width: 250px;
                 justify-content: space-between;
+                align-items: center;
                 // border: 1px solid red;
+
+                a {
+                    text-decoration: none;
+                    color: #000;
+                    cursor: pointer;
+                }
+
+                p {
+                    margin: 0;
+                    font-family: "Nympha Trial Reg";
+                    font-weight: 400;
+                    font-size: 32px;
+                    cursor: pointer;
+
+                }
             }
         }
     }

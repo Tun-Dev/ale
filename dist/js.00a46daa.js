@@ -5414,8 +5414,33 @@ var cursorPick = document.querySelector(".cursor");
 var cursor = new _cursor.Cursor(cursorPick);
 
 window.onload = function () {
-  localStorage.clear();
+  localStorage.removeItem("pageloadcount");
 };
+
+function galleryFooter() {
+  var footer = document.getElementById("footer");
+
+  window.onscroll = function () {
+    scrollFunction();
+  };
+
+  function scrollFunction() {
+    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+      // footer.style.display = "flex";
+      footer.classList.add("active");
+    } else {
+      footer.classList.remove("active"); // footer.style.display = "none";
+    }
+  }
+
+  var button = document.getElementById("backToTop");
+
+  button.onclick = function () {
+    document.body.scrollTop = 0; // For Safari
+
+    document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+  };
+}
 
 function pageTransition() {
   var tl = _gsap.default.timeline(); // tl.to("ul.transition li", {
@@ -5721,6 +5746,7 @@ function contentAnimation() {
       duration: 1.5,
       ease: "Expo.easeInOut"
     }, "-=1");
+    galleryFooter();
   } // tl.from(".HomeContainer", { duration: 1.5, opacity: 0 });
   // tl.from(".galleryinner", { duration: 4.5, opacity: 0 });
   // Animation for cursor to increase when hovering on links

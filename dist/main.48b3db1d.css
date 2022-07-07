@@ -40,12 +40,15 @@ html body {
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
   /* Hide horizontal scrollbar */
-  scroll-behavior: smooth;
   height: 100%;
   transition: 0.3s;
   font-family: "Circula";
   font-weight: 400;
   background-color: #E2E1CA;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 .cursor {
@@ -408,10 +411,53 @@ ul.transition li {
   transition: transform 0.25s;
   will-change: transform;
 }
+.gallerycon .footer {
+  position: fixed;
+  height: 65px;
+  bottom: 0;
+  width: 100%;
+  display: flex;
+  background: #E2E1CA;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 1s ease-in-out;
+}
+.gallerycon .footer .footer_inner {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin: 0 auto;
+  width: 90%;
+  justify-content: space-between;
+}
+.gallerycon .footer .footer_inner .left p {
+  margin: 0;
+  font-family: "Palagio";
+  font-weight: 400;
+  font-size: 32px;
+}
+.gallerycon .footer .footer_inner .right button {
+  width: 150px;
+  height: 47px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+  font-family: "SF Pro Text Regular";
+  font-size: 16px;
+  border: none;
+  background: none;
+  color: #3C3C31;
+  cursor: pointer;
+}
+.gallerycon .footer.active {
+  pointer-events: auto;
+  opacity: 1;
+}
 
 .gallerycards {
   width: 500px;
-  margin-bottom: 55px;
+  margin-bottom: 70px;
 }
 .gallerycards .coninner {
   display: flex;
@@ -517,8 +563,21 @@ ul.transition li {
 }
 .contactcon .bottom .botcon div {
   display: flex;
-  width: 110px;
+  width: 250px;
   justify-content: space-between;
+  align-items: center;
+}
+.contactcon .bottom .botcon div a {
+  text-decoration: none;
+  color: #000;
+  cursor: pointer;
+}
+.contactcon .bottom .botcon div p {
+  margin: 0;
+  font-family: "Nympha Trial Reg";
+  font-weight: 400;
+  font-size: 32px;
+  cursor: pointer;
 }
 
 .Articlecon {

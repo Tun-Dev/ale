@@ -8,8 +8,36 @@ let cursorPick = document.querySelector(".cursor");
 const cursor = new Cursor(cursorPick);
 
 window.onload = () => {
-  localStorage.clear();
+  localStorage.removeItem("pageloadcount");
 };
+
+function galleryFooter() {
+  let footer = document.getElementById("footer");
+
+  window.onscroll = function () {
+    scrollFunction();
+  };
+
+  function scrollFunction() {
+    if (
+      document.body.scrollTop > 20 ||
+      document.documentElement.scrollTop > 20
+    ) {
+      // footer.style.display = "flex";
+      footer.classList.add("active");
+    } else {
+      footer.classList.remove("active");
+
+      // footer.style.display = "none";
+    }
+  }
+
+  const button = document.getElementById("backToTop");
+  button.onclick = function () {
+    document.body.scrollTop = 0; // For Safari
+    document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+  };
+}
 
 function pageTransition() {
   var tl = gsap.timeline();
@@ -349,6 +377,8 @@ function contentAnimation() {
         },
         "-=1"
       );
+
+    galleryFooter();
   }
 
   // tl.from(".HomeContainer", { duration: 1.5, opacity: 0 });
