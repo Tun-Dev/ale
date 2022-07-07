@@ -162,7 +162,7 @@ function contentAnimation() {
 
   var loderTl = gsap.timeline();
 
-  if (window.location.pathname === "/index.html") {
+  if (window.location.pathname === "/index.html" || "/") {
     // gsap.set("home-loader", {
     //   zIndex: 30,
     //   // top: "unset",
@@ -295,7 +295,7 @@ function contentAnimation() {
   var tll = gsap.timeline();
 
   // Gallery Page Transition
-  if (window.location.pathname === "/gallery.html") {
+  if (window.location.pathname === "/gallery.html" || "/gallery") {
     gsap.set(".galcon", {
       delay: 2.5,
       zIndex: 30,
