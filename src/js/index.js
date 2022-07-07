@@ -162,7 +162,7 @@ function contentAnimation() {
 
   var loderTl = gsap.timeline();
 
-  if (window.location.pathname === "/index.html" || "/") {
+  if (window.location.pathname === "/index.html" && "/") {
     // gsap.set("home-loader", {
     //   zIndex: 30,
     //   // top: "unset",
@@ -286,7 +286,8 @@ function contentAnimation() {
 
     if (localStorage.getItem("pageloadcount")) {
       loderTl.kill();
-      document.querySelector(".home-loader").style.display = "none";
+      gsap.to(".home-loader", { opacity: 0, display: "none" });
+      // document.querySelector(".home-loader").style.display = "none";
     }
   }
   localStorage.setItem("pageloadcount", "1");
@@ -295,14 +296,14 @@ function contentAnimation() {
   var tll = gsap.timeline();
 
   // Gallery Page Transition
-  if (window.location.pathname === "/gallery.html" || "/gallery") {
+  if (window.location.pathname === "/gallery.html" && "/gallery") {
     gsap.set(".galcon", {
       delay: 2.5,
       zIndex: 30,
       top: "unset",
       bottom: 0,
     });
-    gsap.set("innercon-galcon", {
+    gsap.set(".innercon-galcon", {
       opacity: 1,
     });
     tll.to(".galcon", {

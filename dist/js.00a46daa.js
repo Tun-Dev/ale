@@ -5551,7 +5551,7 @@ function contentAnimation() {
 
   var loderTl = _gsap.default.timeline();
 
-  if (window.location.pathname === "/index.html" || "/") {
+  if (window.location.pathname === "/index.html" && "/") {
     // gsap.set("home-loader", {
     //   zIndex: 30,
     //   // top: "unset",
@@ -5665,7 +5665,12 @@ function contentAnimation() {
 
     if (localStorage.getItem("pageloadcount")) {
       loderTl.kill();
-      document.querySelector(".home-loader").style.display = "none";
+
+      _gsap.default.to(".home-loader", {
+        opacity: 0,
+        display: "none"
+      }); // document.querySelector(".home-loader").style.display = "none";
+
     }
   }
 
@@ -5674,7 +5679,7 @@ function contentAnimation() {
   var tll = _gsap.default.timeline(); // Gallery Page Transition
 
 
-  if (window.location.pathname === "/gallery.html" || "/gallery") {
+  if (window.location.pathname === "/gallery.html" && "/gallery") {
     _gsap.default.set(".galcon", {
       delay: 2.5,
       zIndex: 30,
@@ -5682,7 +5687,7 @@ function contentAnimation() {
       bottom: 0
     });
 
-    _gsap.default.set("innercon-galcon", {
+    _gsap.default.set(".innercon-galcon", {
       opacity: 1
     });
 
