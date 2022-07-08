@@ -194,11 +194,6 @@ function contentAnimation() {
     window.location.pathname === "/index.html" ||
     window.location.pathname === "/"
   ) {
-    // gsap.set("home-loader", {
-    //   zIndex: 30,
-    //   // top: "unset",
-    //   // bottom: 0,
-    // });
     loderTl.from(".load-bar", { delay: 0.5, opacity: 0, duration: 1 });
     loderTl
       .to(".word1", { duration: 0.7, y: "0%" })
@@ -273,6 +268,7 @@ function contentAnimation() {
     );
 
     tl.from(".imgcon", {
+      delay: 1,
       duration: 1.5,
       yPercent: 200,
       ease: "power2.out",
@@ -379,6 +375,57 @@ function contentAnimation() {
       );
 
     galleryFooter();
+  }
+
+  var kinikaTl = gsap.timeline();
+
+  if (
+    window.location.pathname === "/kinika.html" ||
+    window.location.pathname === "/kinika"
+  ) {
+    kinikaTl.from(".innercon .right", {
+      delay: 1.2,
+      duration: 1.5,
+      opacity: 0,
+    });
+  }
+
+  var contactTl = gsap.timeline();
+
+  if (
+    window.location.pathname === "/contact.html" ||
+    window.location.pathname === "/conatct"
+  ) {
+    contactTl.from(".contact-span", {
+      delay: 1.2,
+      yPercent: 110,
+      duration: 0.6,
+      // skewY: 10,
+      stagger: {
+        amount: 2,
+      },
+      ease: "power4.inout",
+    });
+    contactTl
+      .from(
+        ".botcon h2",
+        {
+          yPercent: 110,
+          duration: 0.6,
+        },
+        "-=2"
+      )
+      .from(
+        ".botcon div a",
+        {
+          yPercent: 110,
+          duration: 0.6,
+          stagger: {
+            amount: 1,
+          },
+        },
+        "-=2"
+      );
   }
 
   // tl.from(".HomeContainer", { duration: 1.5, opacity: 0 });

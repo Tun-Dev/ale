@@ -55,7 +55,7 @@ html {
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 15;
+  z-index: 1000;
   pointer-events: none;
   height: 20px;
   width: 20px;
@@ -119,7 +119,7 @@ html {
   transform: translateY(100%);
 }
 .HomeContainer .innercon .name h1 span {
-  color: #4E3B1F;
+  color: #9a6f2d;
   margin: 0;
 }
 .HomeContainer .innercon .name .imgcon {
@@ -528,10 +528,17 @@ ul.transition li {
   font-family: "Nympha Trial Reg";
   font-size: 32px;
   font-weight: 400;
+  overflow: hidden;
+}
+.contactcon .top h1 span {
+  display: inline-block;
 }
 .contactcon .top a {
   text-decoration: none;
   color: black;
+}
+.contactcon .top a .contact-p {
+  overflow: hidden;
 }
 .contactcon .top a p {
   width: 90%;
@@ -540,6 +547,10 @@ ul.transition li {
   font-family: "Nympha Trial Reg";
   font-size: 96px;
   font-weight: 400;
+  letter-spacing: -0.15em;
+}
+.contactcon .top a p span {
+  display: inline-block;
 }
 .contactcon .bottom {
   height: 10%;
@@ -554,6 +565,7 @@ ul.transition li {
   justify-content: space-between;
   width: 90%;
   margin: 0 auto;
+  overflow: hidden;
 }
 .contactcon .bottom .botcon h2 {
   margin: 0;

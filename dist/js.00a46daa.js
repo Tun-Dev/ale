@@ -5231,15 +5231,9 @@ var global = arguments[3];
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.map = exports.lerp = exports.getMousePos = void 0;
+exports.lerp = exports.getMousePos = void 0;
 
-var map = function map(x, a, b, c, d) {
-  return (x - a) * (d - c) / (b - a) + c;
-}; // Linear interpolation
-
-
-exports.map = map;
-
+// Linear interpolation
 var lerp = function lerp(a, b, n) {
   return (1 - n) * a + n * b;
 }; // Gets the mouse position
@@ -5577,11 +5571,6 @@ function contentAnimation() {
   var loderTl = _gsap.default.timeline();
 
   if (window.location.pathname === "/index.html" || window.location.pathname === "/") {
-    // gsap.set("home-loader", {
-    //   zIndex: 30,
-    //   // top: "unset",
-    //   // bottom: 0,
-    // });
     loderTl.from(".load-bar", {
       delay: 0.5,
       opacity: 0,
@@ -5650,6 +5639,7 @@ function contentAnimation() {
       ease: "Expo.easeInOut"
     }, "-=1");
     tl.from(".imgcon", {
+      delay: 1,
       duration: 1.5,
       yPercent: 200,
       ease: "power2.out"
@@ -5747,6 +5737,41 @@ function contentAnimation() {
       ease: "Expo.easeInOut"
     }, "-=1");
     galleryFooter();
+  }
+
+  var kinikaTl = _gsap.default.timeline();
+
+  if (window.location.pathname === "/kinika.html" || window.location.pathname === "/kinika") {
+    kinikaTl.from(".innercon .right", {
+      delay: 1.2,
+      duration: 1.5,
+      opacity: 0
+    });
+  }
+
+  var contactTl = _gsap.default.timeline();
+
+  if (window.location.pathname === "/contact.html" || window.location.pathname === "/conatct") {
+    contactTl.from(".contact-span", {
+      delay: 1.2,
+      yPercent: 110,
+      duration: 0.6,
+      // skewY: 10,
+      stagger: {
+        amount: 2
+      },
+      ease: "power4.inout"
+    });
+    contactTl.from(".botcon h2", {
+      yPercent: 110,
+      duration: 0.6
+    }, "-=2").from(".botcon div a", {
+      yPercent: 110,
+      duration: 0.6,
+      stagger: {
+        amount: 1
+      }
+    }, "-=2");
   } // tl.from(".HomeContainer", { duration: 1.5, opacity: 0 });
   // tl.from(".galleryinner", { duration: 4.5, opacity: 0 });
   // Animation for cursor to increase when hovering on links

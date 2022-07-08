@@ -70,7 +70,7 @@ html {
     position: fixed;
     top: 0;
     left: 0;
-    z-index: 15;
+    z-index: 1000;
     // contain: layout style size;
     pointer-events: none;
     height: 20px;
@@ -155,7 +155,7 @@ html {
                 transform: translateY(100%);
 
                 span {
-                    color: #4E3B1F;
+                    color: #9a6f2d;
                     margin: 0;
                 }
 
@@ -707,11 +707,20 @@ ul.transition li {
             font-family: "Nympha Trial Reg";
             font-size: 32px;
             font-weight: 400;
+            overflow: hidden;
+
+            span {
+                display: inline-block;
+            }
         }
 
         a {
             text-decoration: none;
             color: black;
+
+            .contact-p {
+                overflow: hidden;
+            }
 
             p {
                 // border: 1px solid blue;
@@ -721,8 +730,29 @@ ul.transition li {
                 font-family: "Nympha Trial Reg";
                 font-size: 96px;
                 font-weight: 400;
+                letter-spacing: -0.15em;
+                // padding-right: 10px;
+                // margin-right: -10px;
+
+                span {
+                    display: inline-block;
+                }
             }
         }
+
+
+        // h1 {
+
+        //     color: #ffffff;
+
+        //     // font-family: "Palagio";
+        //     font-family: "Nympha Trial Reg";
+        //     font-size: 70px;
+        //     font-weight: 500;
+        //     // font-style: italic;
+        // }
+
+
     }
 
     .bottom {
@@ -740,6 +770,7 @@ ul.transition li {
             justify-content: space-between;
             width: 90%;
             margin: 0 auto;
+            overflow: hidden;
             // border: 1px solid yellow;
 
             h2 {
@@ -747,6 +778,7 @@ ul.transition li {
                 font-family: "Palagio";
                 font-weight: 400;
                 font-size: 32px;
+                // transform: translateY(30%);
             }
 
             div {
@@ -760,6 +792,7 @@ ul.transition li {
                     text-decoration: none;
                     color: #000;
                     cursor: pointer;
+                    // transform: translateY(50%);
                 }
 
                 p {
