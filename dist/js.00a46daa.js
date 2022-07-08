@@ -5751,7 +5751,7 @@ function contentAnimation() {
 
   var contactTl = _gsap.default.timeline();
 
-  if (window.location.pathname === "/contact.html" || window.location.pathname === "/conatct") {
+  if (window.location.pathname === "/contact.html" || window.location.pathname === "/contact") {
     contactTl.from(".contact-span", {
       delay: 1.2,
       yPercent: 110,

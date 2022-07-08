@@ -394,7 +394,7 @@ function contentAnimation() {
 
   if (
     window.location.pathname === "/contact.html" ||
-    window.location.pathname === "/conatct"
+    window.location.pathname === "/contact"
   ) {
     contactTl.from(".contact-span", {
       delay: 1.2,
