@@ -1,8 +1,13 @@
-// import "../styles/main.scss";
+import "../styles/main.scss";
 // import "../styles/kinika.scss";
 import { Cursor } from "./cursor";
 import barba from "@barba/core";
-import gsap from "gsap/dist/gsap";
+// import CSSRulePlugin from "gsap-trial/CSSRulePlugin";
+import { gsap } from "gsap/dist/gsap";
+import { CSSPlugin } from "gsap/CSSPlugin";
+import { CSSRulePlugin } from "gsap/CSSRulePlugin";
+
+gsap.registerPlugin(CSSRulePlugin, CSSPlugin);
 
 let cursorPick = document.querySelector(".cursor");
 const cursor = new Cursor(cursorPick);
@@ -41,22 +46,6 @@ function galleryFooter() {
 
 function pageTransition() {
   var tl = gsap.timeline();
-
-  // tl.to("ul.transition li", {
-  //   duration: 0.7,
-  //   scaleY: 1,
-  //   transformOrigin: "bottom left",
-  //   stagger: 0.2,
-  //   ease: "power4.easeInOut",
-  // });
-  // tl.to("ul.transition li", {
-  //   duration: 0.7,
-  //   scaleY: 0,
-  //   transformOrigin: "top left",
-  //   stagger: 0.1,
-  //   delay: 0.7,
-  //   ease: "power4.easeInOut",
-  // });
 
   gsap.set(".exit-transition", {
     zIndex: 30,
@@ -321,6 +310,7 @@ function contentAnimation() {
   // loader();
 
   var tll = gsap.timeline();
+  var rule = CSSRulePlugin.getRule(".img-container:after");
 
   // Gallery Page Transition
   if (
@@ -373,6 +363,27 @@ function contentAnimation() {
         },
         "-=1"
       );
+    tll
+      .to(
+        ".after",
+        {
+          // delay: 0.5,
+          duration: 1.4,
+          width: "0%",
+          ease: "Power2.easeInOut",
+        },
+        "-=.5"
+      )
+      .from(
+        ".img-container img",
+        {
+          duration: 1.4,
+          scale: 1.6,
+          ease: "Power2.easeInOut",
+        },
+        "-=1.5"
+      )
+      .to(".word h5", { duration: 1.2, y: "0%", ease: "power2.out" }, "-=1");
 
     galleryFooter();
   }

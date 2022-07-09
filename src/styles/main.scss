@@ -543,7 +543,8 @@ ul.transition li {
         width: 100%;
         transition: transform 0.25s;
         will-change: transform;
-        // margin-bottom: 50px;
+        margin-top: 30px;
+        margin-bottom: 50px;
         // border: 1px solid red;
 
     }
@@ -607,7 +608,7 @@ ul.transition li {
 
 .gallerycards {
     // border: 1px solid red;
-    width: 500px;
+    width: fit-content;
     margin-bottom: 70px;
 
     .coninner {
@@ -625,21 +626,66 @@ ul.transition li {
             margin: 0;
             margin-top: 19px;
         }
+
+        .img-container {
+            width: 400px;
+            height: 400px;
+            position: relative;
+            overflow: hidden;
+
+            &:hover {
+                .hoverclass {
+                    display: flex;
+                }
+            }
+
+            img {
+                width: 400px;
+                position: absolute;
+            }
+        }
+
+        .after {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            right: 0;
+            z-index: 1;
+            background: #E2E1CA;
+            // background: red;
+        }
+
+
+        .hoverclass {
+            display: none;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            right: 0;
+            z-index: 1;
+            background: rgb(0, 0, 0, .5);
+            // background: red;
+            transition: all 1 ease-in-out;
+
+            h1 {
+                color: red;
+            }
+        }
+
+        .word {
+            // border: 1px solid black;
+            overflow: hidden;
+
+            h5 {
+                transform: translateY(100%);
+            }
+        }
     }
 }
 
 .galcon {
-    // border: 1px solid red;
-    // position: fixed;
-    // height: 100%;
-    // display: flex;
-    // justify-content: center;
-    // align-items: center;
-    // z-index: 10;
-    // width: 100%;
-
-
-
     position: fixed;
     background: #E2E1CA;
     height: 100vh;
@@ -739,20 +785,6 @@ ul.transition li {
                 }
             }
         }
-
-
-        // h1 {
-
-        //     color: #ffffff;
-
-        //     // font-family: "Palagio";
-        //     font-family: "Nympha Trial Reg";
-        //     font-size: 70px;
-        //     font-weight: 500;
-        //     // font-style: italic;
-        // }
-
-
     }
 
     .bottom {
