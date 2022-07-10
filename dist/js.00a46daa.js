@@ -189,7 +189,7 @@ var reloadCSS = require('_css_loader');
 
 module.hot.dispose(reloadCSS);
 module.hot.accept(reloadCSS);
-},{"./../fonts/PalagioPersonalUse-nRoPM.otf":[["PalagioPersonalUse-nRoPM.b07c9bea.otf","fonts/PalagioPersonalUse-nRoPM.otf"],"fonts/PalagioPersonalUse-nRoPM.otf"],"./../fonts/circula-medium.otf":[["circula-medium.2fc76941.otf","fonts/circula-medium.otf"],"fonts/circula-medium.otf"],"./../fonts/FontsFree-Net-SFProText-Light-1.ttf":[["FontsFree-Net-SFProText-Light-1.516bd2a0.ttf","fonts/FontsFree-Net-SFProText-Light-1.ttf"],"fonts/FontsFree-Net-SFProText-Light-1.ttf"],"./../fonts/FontsFree-Net-SFProText-Regular-1.ttf":[["FontsFree-Net-SFProText-Regular-1.a9474e53.ttf","fonts/FontsFree-Net-SFProText-Regular-1.ttf"],"fonts/FontsFree-Net-SFProText-Regular-1.ttf"],"./../fonts/NymphaTrial-Light.ttf":[["NymphaTrial-Light.15501aea.ttf","fonts/NymphaTrial-Light.ttf"],"fonts/NymphaTrial-Light.ttf"],"./../fonts/NymphaTrial-Regular.ttf":[["NymphaTrial-Regular.998b1241.ttf","fonts/NymphaTrial-Regular.ttf"],"fonts/NymphaTrial-Regular.ttf"],"_css_loader":"../node_modules/parcel-bundler/src/builtins/css-loader.js"}],"../node_modules/gsap/dist/gsap.js":[function(require,module,exports) {
+},{"./../fonts/PalagioPersonalUse-nRoPM.otf":[["PalagioPersonalUse-nRoPM.b07c9bea.otf","fonts/PalagioPersonalUse-nRoPM.otf"],"fonts/PalagioPersonalUse-nRoPM.otf"],"./../fonts/circula-medium.otf":[["circula-medium.2fc76941.otf","fonts/circula-medium.otf"],"fonts/circula-medium.otf"],"./../fonts/FontsFree-Net-SFProText-Light-1.ttf":[["FontsFree-Net-SFProText-Light-1.516bd2a0.ttf","fonts/FontsFree-Net-SFProText-Light-1.ttf"],"fonts/FontsFree-Net-SFProText-Light-1.ttf"],"./../fonts/FontsFree-Net-SFProText-Regular-1.ttf":[["FontsFree-Net-SFProText-Regular-1.a9474e53.ttf","fonts/FontsFree-Net-SFProText-Regular-1.ttf"],"fonts/FontsFree-Net-SFProText-Regular-1.ttf"],"./../fonts/NymphaTrial-Light.ttf":[["NymphaTrial-Light.15501aea.ttf","fonts/NymphaTrial-Light.ttf"],"fonts/NymphaTrial-Light.ttf"],"./../fonts/NymphaTrial-Regular.ttf":[["NymphaTrial-Regular.998b1241.ttf","fonts/NymphaTrial-Regular.ttf"],"fonts/NymphaTrial-Regular.ttf"],"./../assets/images/noise.gif":[["noise.92b4a529.gif","assets/images/noise.gif"],"assets/images/noise.gif"],"_css_loader":"../node_modules/parcel-bundler/src/builtins/css-loader.js"}],"../node_modules/gsap/dist/gsap.js":[function(require,module,exports) {
 var define;
 var global = arguments[3];
 (function (global, factory) {
@@ -11298,78 +11298,6 @@ function pageTransition() {
   }, "-=1");
 }
 
-function loader() {
-  var loderTl = _gsap.gsap.timeline();
-
-  loderTl.from(".load-bar", {
-    delay: 0.5,
-    opacity: 0,
-    duration: 1
-  });
-  loderTl.to(".word1", {
-    duration: 0.7,
-    y: "0%"
-  }).to(".word1", {
-    delay: 0.3,
-    duration: 0.5,
-    opacity: 0
-  }).to(".word2", {
-    duration: 0.7,
-    y: "0%"
-  }).to(".word2", {
-    delay: 0.7,
-    duration: 0.5,
-    opacity: 0
-  }).to(".word3", {
-    duration: 0.7,
-    y: "0%"
-  }).to(".word3", {
-    delay: 0.7,
-    duration: 0.5,
-    opacity: 0
-  }).to(".word4", {
-    duration: 0.7,
-    y: "0%"
-  }).to(".word4", {
-    delay: 0.7,
-    duration: 0.5,
-    opacity: 0
-  }).to(".word5", {
-    duration: 0.7,
-    y: "0%"
-  }).to(".word5", {
-    delay: 0.5,
-    duration: 0.5,
-    opacity: 0
-  }).to(".word6", {
-    duration: 0.7,
-    y: "0%"
-  });
-  loderTl.to(".bar", {
-    width: "30%",
-    duration: 6,
-    ease: "power4.out"
-  }, "-=9").to(".bar", {
-    width: "70%",
-    duration: 6,
-    ease: "power4.out"
-  }, "-=7").to(".bar", {
-    width: "100%",
-    duration: 6,
-    ease: "power4.out"
-  }, "-=4");
-  loderTl.to([".load-words", ".load-bar"], {
-    delay: 0,
-    opacity: 0
-  }).to(".home-loader", {
-    delay: 0.9,
-    opacity: 0,
-    height: 0,
-    duration: 1.5,
-    ease: "Expo.easeInOut"
-  }, "-=1");
-}
-
 function contentAnimation() {
   var tl = _gsap.gsap.timeline(); // Home page Transitions
   // tl.set(".imgcon", { autoAlpha: 1 });
@@ -11378,86 +11306,89 @@ function contentAnimation() {
   var loderTl = _gsap.gsap.timeline();
 
   if (window.location.pathname === "/index.html" || window.location.pathname === "/") {
-    loderTl.from(".load-bar", {
-      delay: 0.5,
-      opacity: 0,
-      duration: 1
-    });
-    loderTl.to(".word1", {
-      duration: 0.7,
-      y: "0%"
-    }).to(".word1", {
-      delay: 0.3,
-      duration: 0.5,
-      opacity: 0
-    }).to(".word2", {
-      duration: 0.7,
-      y: "0%"
-    }).to(".word2", {
-      delay: 0.7,
-      duration: 0.5,
-      opacity: 0
-    }).to(".word3", {
-      duration: 0.7,
-      y: "0%"
-    }).to(".word3", {
-      delay: 0.7,
-      duration: 0.5,
-      opacity: 0
-    }).to(".word4", {
-      duration: 0.7,
-      y: "0%"
-    }).to(".word4", {
-      delay: 0.7,
-      duration: 0.5,
-      opacity: 0
-    }).to(".word5", {
-      duration: 0.7,
-      y: "0%"
-    }).to(".word5", {
-      delay: 0.5,
-      duration: 0.5,
-      opacity: 0
-    }).to(".word6", {
-      duration: 0.7,
-      y: "0%"
-    });
-    loderTl.to(".bar", {
-      width: "30%",
-      duration: 6,
-      ease: "power4.out"
-    }, "-=9").to(".bar", {
-      width: "70%",
-      duration: 6,
-      ease: "power4.out"
-    }, "-=7").to(".bar", {
-      width: "100%",
-      duration: 6,
-      ease: "power4.out"
-    }, "-=4");
-    loderTl.to([".load-words", ".load-bar"], {
-      delay: 0,
-      opacity: 0
-    }).to(".home-loader", {
-      delay: 0.9,
-      opacity: 0,
-      height: 0,
-      duration: 1.5,
-      ease: "Expo.easeInOut"
-    }, "-=1");
-    tl.from(".imgcon", {
+    // loderTl.from(".load-bar", { delay: 0.5, opacity: 0, duration: 1 });
+    // loderTl
+    //   .to(".word1", { duration: 0.7, y: "0%" })
+    //   .to(".word1", {
+    //     delay: 0.3,
+    //     duration: 0.5,
+    //     opacity: 0,
+    //   })
+    //   .to(".word2", { duration: 0.7, y: "0%" })
+    //   .to(".word2", {
+    //     delay: 0.7,
+    //     duration: 0.5,
+    //     opacity: 0,
+    //   })
+    //   .to(".word3", { duration: 0.7, y: "0%" })
+    //   .to(".word3", {
+    //     delay: 0.7,
+    //     duration: 0.5,
+    //     opacity: 0,
+    //   })
+    //   .to(".word4", { duration: 0.7, y: "0%" })
+    //   .to(".word4", {
+    //     delay: 0.7,
+    //     duration: 0.5,
+    //     opacity: 0,
+    //   })
+    //   .to(".word5", { duration: 0.7, y: "0%" })
+    //   .to(".word5", {
+    //     delay: 0.5,
+    //     duration: 0.5,
+    //     opacity: 0,
+    //   })
+    //   .to(".word6", { duration: 0.7, y: "0%" });
+    // loderTl
+    //   .to(
+    //     ".bar",
+    //     {
+    //       width: "30%",
+    //       duration: 6,
+    //       ease: "power4.out",
+    //     },
+    //     "-=9"
+    //   )
+    //   .to(
+    //     ".bar",
+    //     {
+    //       width: "70%",
+    //       duration: 6,
+    //       ease: "power4.out",
+    //     },
+    //     "-=7"
+    //   )
+    //   .to(
+    //     ".bar",
+    //     {
+    //       width: "100%",
+    //       duration: 6,
+    //       ease: "power4.out",
+    //     },
+    //     "-=4"
+    //   );
+    // loderTl.to([".load-words", ".load-bar"], { delay: 0, opacity: 0 }).to(
+    //   ".home-loader",
+    //   {
+    //     delay: 0.9,
+    //     opacity: 0,
+    //     height: 0,
+    //     duration: 1.5,
+    //     ease: "Expo.easeInOut",
+    //   },
+    //   "-=1"
+    // );
+    tl.to(".imgcon-inner .after", {
       delay: 1,
       duration: 1.5,
-      yPercent: 200,
+      height: "0%",
       ease: "power2.out"
     });
-    tl.from(".imgcon img", {
-      duration: 1.5,
-      yPercent: -100,
-      scale: 1.3,
-      delay: -1.5,
-      ease: "Power2.out"
-    });
+    tl.from(".imgcon-inner img", {
+      duration: 1.4,
+      scale: 1.6,
+      ease: "Power2.easeInOut"
+    }, "-=1.5");
     tl.to(".name h1", {
       duration: 0.9,
       y: "0%",
@@ -11736,7 +11667,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "36517" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "36239" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
