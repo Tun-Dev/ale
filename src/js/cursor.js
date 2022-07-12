@@ -43,7 +43,7 @@ export class Cursor {
 
   enter() {
     this.renderedStyles["scale"].current = 2.5;
-    this.renderedStyles["opacity"].current = 0.5;
+    this.renderedStyles["opacity"].current = 0.2;
   }
   leave() {
     this.renderedStyles["scale"].current = 1;

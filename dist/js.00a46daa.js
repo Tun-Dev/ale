@@ -189,7 +189,7 @@ var reloadCSS = require('_css_loader');
 
 module.hot.dispose(reloadCSS);
 module.hot.accept(reloadCSS);
-},{"./../fonts/PalagioPersonalUse-nRoPM.otf":[["PalagioPersonalUse-nRoPM.b07c9bea.otf","fonts/PalagioPersonalUse-nRoPM.otf"],"fonts/PalagioPersonalUse-nRoPM.otf"],"./../fonts/circula-medium.otf":[["circula-medium.2fc76941.otf","fonts/circula-medium.otf"],"fonts/circula-medium.otf"],"./../fonts/FontsFree-Net-SFProText-Light-1.ttf":[["FontsFree-Net-SFProText-Light-1.516bd2a0.ttf","fonts/FontsFree-Net-SFProText-Light-1.ttf"],"fonts/FontsFree-Net-SFProText-Light-1.ttf"],"./../fonts/FontsFree-Net-SFProText-Regular-1.ttf":[["FontsFree-Net-SFProText-Regular-1.a9474e53.ttf","fonts/FontsFree-Net-SFProText-Regular-1.ttf"],"fonts/FontsFree-Net-SFProText-Regular-1.ttf"],"./../fonts/NymphaTrial-Light.ttf":[["NymphaTrial-Light.15501aea.ttf","fonts/NymphaTrial-Light.ttf"],"fonts/NymphaTrial-Light.ttf"],"./../fonts/NymphaTrial-Regular.ttf":[["NymphaTrial-Regular.998b1241.ttf","fonts/NymphaTrial-Regular.ttf"],"fonts/NymphaTrial-Regular.ttf"],"./../assets/images/noise.gif":[["noise.92b4a529.gif","assets/images/noise.gif"],"assets/images/noise.gif"],"_css_loader":"../node_modules/parcel-bundler/src/builtins/css-loader.js"}],"../node_modules/gsap/dist/gsap.js":[function(require,module,exports) {
+},{"./../fonts/PalagioPersonalUse-nRoPM.otf":[["PalagioPersonalUse-nRoPM.b07c9bea.otf","fonts/PalagioPersonalUse-nRoPM.otf"],"fonts/PalagioPersonalUse-nRoPM.otf"],"./../fonts/circula-medium.otf":[["circula-medium.2fc76941.otf","fonts/circula-medium.otf"],"fonts/circula-medium.otf"],"./../fonts/FontsFree-Net-SFProText-Light-1.ttf":[["FontsFree-Net-SFProText-Light-1.516bd2a0.ttf","fonts/FontsFree-Net-SFProText-Light-1.ttf"],"fonts/FontsFree-Net-SFProText-Light-1.ttf"],"./../fonts/FontsFree-Net-SFProText-Regular-1.ttf":[["FontsFree-Net-SFProText-Regular-1.a9474e53.ttf","fonts/FontsFree-Net-SFProText-Regular-1.ttf"],"fonts/FontsFree-Net-SFProText-Regular-1.ttf"],"./../fonts/NymphaTrial-Light.ttf":[["NymphaTrial-Light.15501aea.ttf","fonts/NymphaTrial-Light.ttf"],"fonts/NymphaTrial-Light.ttf"],"./../fonts/NymphaTrial-Regular.ttf":[["NymphaTrial-Regular.998b1241.ttf","fonts/NymphaTrial-Regular.ttf"],"fonts/NymphaTrial-Regular.ttf"],"./../fonts/EBGaramond-VariableFont_wght.ttf":[["EBGaramond-VariableFont_wght.52bf1095.ttf","fonts/EBGaramond-VariableFont_wght.ttf"],"fonts/EBGaramond-VariableFont_wght.ttf"],"./../fonts/SlipperyTrial-Regular.otf":[["SlipperyTrial-Regular.b7ceaba1.otf","fonts/SlipperyTrial-Regular.otf"],"fonts/SlipperyTrial-Regular.otf"],"./../assets/images/noise.gif":[["noise.92b4a529.gif","assets/images/noise.gif"],"assets/images/noise.gif"],"./../assets/images/ikabg.png":[["ikabg.0676b72c.png","assets/images/ikabg.png"],"assets/images/ikabg.png"],"./../assets/images/8DB28B7F-8602-486C-AB14-BD367EB6ED6D (1).webp":[["8DB28B7F-8602-486C-AB14-BD367EB6ED6D (1).87d2f9b9.webp","assets/images/8DB28B7F-8602-486C-AB14-BD367EB6ED6D (1).webp"],"assets/images/8DB28B7F-8602-486C-AB14-BD367EB6ED6D (1).webp"],"./../assets/images/IMG_0344.JPG.webp":[["IMG_0344.JPG.5f135f28.webp","assets/images/IMG_0344.JPG.webp"],"assets/images/IMG_0344.JPG.webp"],"./../assets/images/IMG_2431.JPG.webp":[["IMG_2431.JPG.86f60b3a.webp","assets/images/IMG_2431.JPG.webp"],"assets/images/IMG_2431.JPG.webp"],"./../assets/images/IMG_5969.JPG (1).webp":[["IMG_5969.JPG (1).ccb04481.webp","assets/images/IMG_5969.JPG (1).webp"],"assets/images/IMG_5969.JPG (1).webp"],"./../assets/images/IMG_6027.JPG.webp":[["IMG_6027.JPG.d5ab0e6c.webp","assets/images/IMG_6027.JPG.webp"],"assets/images/IMG_6027.JPG.webp"],"./../assets/images/The Boy With The Smear On His Face.webp":[["The Boy With The Smear On His Face.2cb15810.webp","assets/images/The Boy With The Smear On His Face.webp"],"assets/images/The Boy With The Smear On His Face.webp"],"./../assets/images/The Old Man and The Cigarette.JPG.webp":[["The Old Man and The Cigarette.JPG.870c6bc8.webp","assets/images/The Old Man and The Cigarette.JPG.webp"],"assets/images/The Old Man and The Cigarette.JPG.webp"],"_css_loader":"../node_modules/parcel-bundler/src/builtins/css-loader.js"}],"../node_modules/gsap/dist/gsap.js":[function(require,module,exports) {
 var define;
 var global = arguments[3];
 (function (global, factory) {
@@ -5420,7 +5420,7 @@ var Cursor = /*#__PURE__*/function () {
     key: "enter",
     value: function enter() {
       this.renderedStyles["scale"].current = 2.5;
-      this.renderedStyles["opacity"].current = 0.5;
+      this.renderedStyles["opacity"].current = 0.2;
     }
   }, {
     key: "leave",
@@ -11305,6 +11305,11 @@ function contentAnimation() {
 
   var loderTl = _gsap.gsap.timeline();
 
+  var shuffleTl = _gsap.gsap.timeline({
+    repeat: -1 // repeatRefresh: true,
+
+  });
+
   if (window.location.pathname === "/index.html" || window.location.pathname === "/") {
     // loderTl.from(".load-bar", { delay: 0.5, opacity: 0, duration: 1 });
     // loderTl
@@ -11378,43 +11383,68 @@ function contentAnimation() {
     //   },
     //   "-=1"
     // );
-    tl.to(".imgcon-inner .after", {
+    // tl.to(".imgcon-inner .after", {
+    //   delay: 1,
+    //   duration: 1.5,
+    //   height: "0%",
+    //   ease: "power2.out",
+    // });
+    // tl.from(
+    //   ".imgcon-inner img",
+    //   {
+    //     duration: 1.4,
+    //     scale: 1.6,
+    //     ease: "Power2.easeInOut",
+    //   },
+    //   "-=1.5"
+    // );
+    // tl.to(".name h1", { duration: 0.9, y: "0%", delay: 0.7 }, "-=2");
+    // tl.to(".title h4", {
+    //   duration: 0.5,
+    //   y: "0%",
+    //   stagger: {
+    //     amount: 0.5,
+    //   },
+    // });
+    // tl.to(
+    //   ".line",
+    //   {
+    //     duration: 0.5,
+    //     y: "0%",
+    //     stagger: {
+    //       amount: 0.5,
+    //     },
+    //   },
+    //   "-=.5"
+    // );
+    // tl.to(
+    //   ".links li",
+    //   {
+    //     duration: 0.5,
+    //     y: "0%",
+    //     stagger: {
+    //       amount: 0.5,
+    //     },
+    //   },
+    //   "-=.5"
+    // );
+    tl.from(".shuffle-con", {
+      duration: 2,
+      opacity: 0,
+      ease: "power4.in" // height: "365px",
+
+    });
+    tl.to(".shuffle-con > .block", {
+      duration: 2,
+      // y: "0%",
+      height: "100%",
+      ease: "power2.ease",
+      repeat: -1,
       delay: 1,
-      duration: 1.5,
-      height: "0%",
-      ease: "power2.out"
-    });
-    tl.from(".imgcon-inner img", {
-      duration: 1.4,
-      scale: 1.6,
-      ease: "Power2.easeInOut"
-    }, "-=1.5");
-    tl.to(".name h1", {
-      duration: 0.9,
-      y: "0%",
-      delay: 0.7
-    }, "-=2");
-    tl.to(".title h4", {
-      duration: 0.5,
-      y: "0%",
       stagger: {
-        amount: 0.5
+        each: 3
       }
     });
-    tl.to(".line", {
-      duration: 0.5,
-      y: "0%",
-      stagger: {
-        amount: 0.5
-      }
-    }, "-=.5");
-    tl.to(".links li", {
-      duration: 0.5,
-      y: "0%",
-      stagger: {
-        amount: 0.5
-      }
-    }, "-=.5");
 
     if (localStorage.getItem("pageloadcount")) {
       loderTl.kill();
@@ -11429,9 +11459,7 @@ function contentAnimation() {
 
   localStorage.setItem("pageloadcount", "1"); // loader();
 
-  var tll = _gsap.gsap.timeline();
-
-  var rule = _CSSRulePlugin.CSSRulePlugin.getRule(".img-container:after"); // Gallery Page Transition
+  var tll = _gsap.gsap.timeline(); // Gallery Page Transition
 
 
   if (window.location.pathname === "/gallery.html" || window.location.pathname === "/gallery") {

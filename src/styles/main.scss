@@ -39,6 +39,17 @@
     src: url("../fonts/NymphaTrial-Regular.ttf");
 }
 
+@font-face {
+    font-family: "EB Garamond";
+    src: url("../fonts/EBGaramond-VariableFont_wght.ttf");
+}
+
+@font-face {
+    font-family: "Slippery";
+    src: url("../fonts/SlipperyTrial-Regular.otf");
+}
+
+
 
 html body {
     margin: 0;
@@ -54,7 +65,8 @@ html body {
     transition: 0.3s;
     font-family: "Circula";
     font-weight: 400;
-    background-color: white;
+    background-color: rgba(250, 249, 246, 1);
+    // background-color: white;
     // background-color: #E2E1CA;
     // cursor: none;
 }
@@ -62,10 +74,6 @@ html body {
 html {
     scroll-behavior: smooth;
 }
-
-// h1 {
-//     font-size: 40px;
-// }
 
 .cursor {
     position: fixed;
@@ -76,12 +84,15 @@ html {
     pointer-events: none;
     height: 20px;
     width: 20px;
-    background: #424135;
+    // background: #424135;
+    background: black;
 
     border-radius: 50%;
 
     display: block;
 }
+
+
 
 .noise::before {
     position: fixed;
@@ -91,8 +102,8 @@ html {
     height: 100%;
     content: "";
     // border: 1px solid red;
-    opacity: .05;
-    z-index: 999;
+    opacity: .01;
+    z-index: -1;
     pointer-events: none;
     background: url(../assets//images/noise.gif)
 }
@@ -103,7 +114,8 @@ html {
 
 .exit-transition {
     position: fixed;
-    background: #424135;
+    background: black;
+    // background: #424135;
     height: 100vh;
     bottom: 0;
     left: 0;
@@ -122,7 +134,7 @@ html {
         padding-right: 10px;
         margin-right: -10px;
         // font-family: "Palagio";
-        font-family: "Nympha Trial Reg";
+        font-family: "EB Garamond";
         font-size: 70px;
         font-weight: 500;
         // font-style: italic;
@@ -147,6 +159,91 @@ html {
         display: flex;
         flex-direction: column;
         align-items: center;
+        width: 785px;
+        // border: 1px solid black;
+
+        .shuffle {
+            width: 287px;
+            // height: 0px;
+            height: 365px;
+            border: 1px solid black;
+        }
+
+
+
+        .shuffle-con {
+            width: 287px;
+            // top: 0;
+            // bottom: 0;
+            // height: 0px;
+            height: 365px;
+            // border: 1px solid red;
+            position: relative;
+            overflow: hidden;
+
+            .block {
+                position: absolute;
+                // top: 0;
+                bottom: 0;
+                // left: 0;
+                width: 100%;
+                height: 0%;
+                // transform: translateY(110%);
+            }
+
+            .stay {
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                border: 1px solid black;
+            }
+
+
+            .b {
+                background: url("../assets/images/ikabg.png") 50% 50% no-repeat;
+                background-size: cover;
+            }
+
+            .b-1 {
+                background: url("../assets/images/8DB28B7F-8602-486C-AB14-BD367EB6ED6D\ \(1\).webp") 50% 50% no-repeat;
+                background-size: cover;
+            }
+
+            .b-2 {
+                background: url("../assets/images/IMG_0344.JPG.webp") 50% 50% no-repeat;
+                background-size: cover;
+            }
+
+            .b-3 {
+                background: url("../assets/images/IMG_2431.JPG.webp") 50% 50% no-repeat;
+                background-size: cover;
+            }
+
+            .b-4 {
+                background: url("../assets/images/IMG_5969.JPG\ \(1\).webp") 50% 50% no-repeat;
+                background-size: cover;
+            }
+
+            .b-5 {
+                background: url("../assets/images/IMG_6027.JPG.webp") 50% 50% no-repeat;
+                background-size: cover;
+            }
+
+            .b-6 {
+                background: url("../assets/images/The\ Boy\ With\ The\ Smear\ On\ His\ Face.webp") 50% 50% no-repeat;
+                background-size: cover;
+            }
+
+            .b-7 {
+                background: url("../assets/images/The\ Old\ Man\ and\ The\ Cigarette.JPG.webp") 50% 50% no-repeat;
+                background-size: cover;
+            }
+
+            .b-8 {
+                background: url("../assets/images/ikabg.png") 50% 50% no-repeat;
+                background-size: cover;
+            }
+        }
 
         .name {
             position: relative;
@@ -158,8 +255,10 @@ html {
             // height: 200px;
 
             h1 {
-                font-size: 180px;
-                font-family: "Palagio";
+                // font-size: 180px;
+                // font-family: "Palagio";
+                font-size: 90px;
+                font-family: "EB Garamond";
                 font-weight: 400;
                 // line-height: 209px;
                 // border: 1px solid black;
@@ -167,7 +266,7 @@ html {
                 margin-top: 20px;
                 // overflow: hidden;
                 // display: inline-block;
-                transform: translateY(100%);
+                // transform: translateY(100%);
 
                 span {
                     color: #9a6f2d;
@@ -210,7 +309,8 @@ html {
                     bottom: 0;
                     right: 0;
                     z-index: 1;
-                    background: #E2E1CA;
+                    // background: #E2E1CA;
+                    background: white;
                     // background: red;
                 }
 
@@ -223,33 +323,33 @@ html {
             flex-direction: row;
             // border: 1px solid red;
             width: 100%;
-            justify-content: space-between;
+            justify-content: space-around;
             margin-top: 10px;
             overflow: hidden;
 
             h4 {
-                font-family: "SF Pro Text Regular";
-                font-size: 40px;
+                font-family: "Slippery";
+                font-size: 35px;
                 font-weight: 500;
                 margin: 0;
-                transform: translateY(100%);
+                // transform: translateY(100%);
             }
         }
 
-        .writeup {
-            // border: 1px solid red;
-            margin-top: 50px;
-            overflow: hidden;
+        // .writeup {
+        //     // border: 1px solid red;
+        //     margin-top: 50px;
+        //     overflow: hidden;
 
-            h5 {
-                font-family: "SF Pro Text Regular";
-                font-size: 20px;
-                font-weight: 500;
-                line-height: 23px;
-                text-align: center;
-                transform: translateY(200%);
-            }
-        }
+        //     h5 {
+        //         font-family: "SF Pro Text Regular";
+        //         font-size: 20px;
+        //         font-weight: 500;
+        //         line-height: 23px;
+        //         text-align: center;
+        //         // transform: translateY(200%);
+        //     }
+        // }
 
         .links {
             display: flex;
@@ -257,19 +357,19 @@ html {
             justify-content: space-evenly;
             margin-top: 79px;
             margin-bottom: 10px;
-            width: 100%;
+            width: 80%;
             overflow: hidden;
             // border: 1px solid black;
 
             li {
                 list-style: none;
-                font-family: "SF Pro Text Regular";
+                font-family: "Slippery";
                 font-size: 24px;
                 font-weight: 500;
                 // border: 1px solid red;
                 height: 30px;
                 cursor: pointer;
-                transform: translateY(100%);
+                // transform: translateY(100%);
 
                 &::after {
                     // border-bottom: 1px solid black;
@@ -466,7 +566,7 @@ ul.transition li {
             text-decoration: none;
             color: black;
             cursor: pointer;
-            font-family: "Palagio";
+            font-family: "EB Garamond";
             font-size: 30px;
             font-weight: 500;
         }
@@ -480,17 +580,12 @@ ul.transition li {
         justify-content: space-between;
 
         a {
-            // text-decoration: none;
-            // color: black;
-            // cursor: pointer;
-            // font-family: "Palagio";
-            // font-size: 30px;
-            // font-weight: 500;
+
 
             text-decoration: none;
             color: #000;
             // font-family: "Circula";
-            font-family: "Palagio";
+            font-family: "EB Garamond";
             font-size: 22px;
             font-weight: 400;
             // border: 1px solid red;
@@ -554,16 +649,16 @@ ul.transition li {
         width: 70%;
 
         h1 {
-            font-family: "Palagio";
+            font-family: "EB Garamond";
             font-weight: 400;
             font-size: 64px;
-            width: 211px;
+            // width: 211px;
             margin: 0;
             margin-bottom: 30px;
         }
 
         h5 {
-            font-family: "SF Pro Text Regular";
+            font-family: "Slippery";
             font-weight: 400;
             font-size: 25px;
             width: 95%;
@@ -617,7 +712,7 @@ ul.transition li {
             .left {
                 p {
                     margin: 0;
-                    font-family: "Palagio";
+                    font-family: "EB Garamond";
                     font-weight: 400;
                     font-size: 32px;
                 }
@@ -631,7 +726,7 @@ ul.transition li {
                     flex-direction: row;
                     align-items: center;
                     justify-content: space-evenly;
-                    font-family: "SF Pro Text Regular";
+                    font-family: "Slippery";
                     font-size: 16px;
                     border: none;
                     background: none;
@@ -663,7 +758,7 @@ ul.transition li {
         }
 
         h5 {
-            font-family: "Nympha Trial Reg";
+            font-family: "EB Garamond";
             font-size: 20px;
             font-weight: 400;
             margin: 0;
@@ -748,14 +843,14 @@ ul.transition li {
         overflow: hidden;
 
         h4 {
-            font-family: "Nympha Trial Reg";
+            font-family: "EB Garamond";
             font-size: 32px;
             font-weight: 500;
             margin: 0;
         }
 
         h5 {
-            font-family: "Nympha Trial Reg";
+            font-family: "EB Garamond";
             font-size: 55px;
             font-weight: 500;
             margin: 0;
@@ -793,7 +888,7 @@ ul.transition li {
             // border: 1px solid red;
             width: 90%;
             margin: 0 auto;
-            font-family: "Nympha Trial Reg";
+            font-family: "EB Garamond";
             font-size: 32px;
             font-weight: 400;
             overflow: hidden;
@@ -816,10 +911,10 @@ ul.transition li {
                 width: 90%;
                 margin: 0 auto;
                 text-align: center;
-                font-family: "Nympha Trial Reg";
+                font-family: "EB Garamond";
                 font-size: 96px;
                 font-weight: 400;
-                letter-spacing: -0.15em;
+                letter-spacing: -0.1em;
                 // padding-right: 10px;
                 // margin-right: -10px;
 
@@ -850,7 +945,7 @@ ul.transition li {
 
             h2 {
                 margin: 0;
-                font-family: "Palagio";
+                font-family: "EB Garamond";
                 font-weight: 400;
                 font-size: 32px;
                 // transform: translateY(30%);
@@ -872,7 +967,7 @@ ul.transition li {
 
                 p {
                     margin: 0;
-                    font-family: "Nympha Trial Reg";
+                    font-family: "Slippery";
                     font-weight: 400;
                     font-size: 32px;
                     cursor: pointer;
@@ -928,7 +1023,7 @@ ul.transition li {
         height: 250px;
 
         h1 {
-            font-family: "SF Pro Text Regular";
+            font-family: "EB Garamond";
             font-size: 32px;
             font-weight: 400;
             // border: 1px solid black;
@@ -938,7 +1033,7 @@ ul.transition li {
 
         p {
             margin-top: 30px;
-            font-family: "SF Pro Text Regular";
+            font-family: "Slippery";
             font-size: 16px;
         }
     }
@@ -964,7 +1059,7 @@ ul.transition li {
             }
 
             h5 {
-                font-family: "SF Pro Text Regular";
+                font-family: "Slippery";
                 font-size: 16px;
                 font-weight: 300;
             }

@@ -33,6 +33,14 @@
   font-family: "Nympha Trial Reg";
   src: url("/NymphaTrial-Regular.998b1241.ttf");
 }
+@font-face {
+  font-family: "EB Garamond";
+  src: url("/EBGaramond-VariableFont_wght.52bf1095.ttf");
+}
+@font-face {
+  font-family: "Slippery";
+  src: url("/SlipperyTrial-Regular.b7ceaba1.otf");
+}
 html body {
   margin: 0;
   color: #000000;
@@ -44,7 +52,7 @@ html body {
   transition: 0.3s;
   font-family: "Circula";
   font-weight: 400;
-  background-color: white;
+  background-color: rgb(250, 249, 246);
 }
 
 html {
@@ -59,7 +67,7 @@ html {
   pointer-events: none;
   height: 20px;
   width: 20px;
-  background: #424135;
+  background: black;
   border-radius: 50%;
   display: block;
 }
@@ -71,8 +79,8 @@ html {
   width: 100%;
   height: 100%;
   content: "";
-  opacity: 0.05;
-  z-index: 999;
+  opacity: 0.01;
+  z-index: -1;
   pointer-events: none;
   background: url(/noise.92b4a529.gif);
 }
@@ -83,7 +91,7 @@ html {
 
 .exit-transition {
   position: fixed;
-  background: #424135;
+  background: black;
   height: 100vh;
   bottom: 0;
   left: 0;
@@ -100,7 +108,7 @@ html {
   color: #ffffff;
   padding-right: 10px;
   margin-right: -10px;
-  font-family: "Nympha Trial Reg";
+  font-family: "EB Garamond";
   font-size: 70px;
   font-weight: 500;
 }
@@ -118,18 +126,77 @@ html {
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 785px;
+}
+.HomeContainer .innercon .shuffle {
+  width: 287px;
+  height: 365px;
+  border: 1px solid black;
+}
+.HomeContainer .innercon .shuffle-con {
+  width: 287px;
+  height: 365px;
+  position: relative;
+  overflow: hidden;
+}
+.HomeContainer .innercon .shuffle-con .block {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 0%;
+}
+.HomeContainer .innercon .shuffle-con .stay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border: 1px solid black;
+}
+.HomeContainer .innercon .shuffle-con .b {
+  background: url("/ikabg.0676b72c.png") 50% 50% no-repeat;
+  background-size: cover;
+}
+.HomeContainer .innercon .shuffle-con .b-1 {
+  background: url("/8DB28B7F-8602-486C-AB14-BD367EB6ED6D (1).87d2f9b9.webp") 50% 50% no-repeat;
+  background-size: cover;
+}
+.HomeContainer .innercon .shuffle-con .b-2 {
+  background: url("/IMG_0344.JPG.5f135f28.webp") 50% 50% no-repeat;
+  background-size: cover;
+}
+.HomeContainer .innercon .shuffle-con .b-3 {
+  background: url("/IMG_2431.JPG.86f60b3a.webp") 50% 50% no-repeat;
+  background-size: cover;
+}
+.HomeContainer .innercon .shuffle-con .b-4 {
+  background: url("/IMG_5969.JPG (1).ccb04481.webp") 50% 50% no-repeat;
+  background-size: cover;
+}
+.HomeContainer .innercon .shuffle-con .b-5 {
+  background: url("/IMG_6027.JPG.d5ab0e6c.webp") 50% 50% no-repeat;
+  background-size: cover;
+}
+.HomeContainer .innercon .shuffle-con .b-6 {
+  background: url("/The Boy With The Smear On His Face.2cb15810.webp") 50% 50% no-repeat;
+  background-size: cover;
+}
+.HomeContainer .innercon .shuffle-con .b-7 {
+  background: url("/The Old Man and The Cigarette.JPG.870c6bc8.webp") 50% 50% no-repeat;
+  background-size: cover;
+}
+.HomeContainer .innercon .shuffle-con .b-8 {
+  background: url("/ikabg.0676b72c.png") 50% 50% no-repeat;
+  background-size: cover;
 }
 .HomeContainer .innercon .name {
   position: relative;
   overflow: hidden;
 }
 .HomeContainer .innercon .name h1 {
-  font-size: 180px;
-  font-family: "Palagio";
+  font-size: 90px;
+  font-family: "EB Garamond";
   font-weight: 400;
   margin: 0;
   margin-top: 20px;
-  transform: translateY(100%);
 }
 .HomeContainer .innercon .name h1 span {
   color: #9a6f2d;
@@ -160,34 +227,21 @@ html {
   bottom: 0;
   right: 0;
   z-index: 1;
-  background: #E2E1CA;
+  background: white;
 }
 .HomeContainer .innercon .title {
   display: flex;
   flex-direction: row;
   width: 100%;
-  justify-content: space-between;
+  justify-content: space-around;
   margin-top: 10px;
   overflow: hidden;
 }
 .HomeContainer .innercon .title h4 {
-  font-family: "SF Pro Text Regular";
-  font-size: 40px;
+  font-family: "Slippery";
+  font-size: 35px;
   font-weight: 500;
   margin: 0;
-  transform: translateY(100%);
-}
-.HomeContainer .innercon .writeup {
-  margin-top: 50px;
-  overflow: hidden;
-}
-.HomeContainer .innercon .writeup h5 {
-  font-family: "SF Pro Text Regular";
-  font-size: 20px;
-  font-weight: 500;
-  line-height: 23px;
-  text-align: center;
-  transform: translateY(200%);
 }
 .HomeContainer .innercon .links {
   display: flex;
@@ -195,17 +249,16 @@ html {
   justify-content: space-evenly;
   margin-top: 79px;
   margin-bottom: 10px;
-  width: 100%;
+  width: 80%;
   overflow: hidden;
 }
 .HomeContainer .innercon .links li {
   list-style: none;
-  font-family: "SF Pro Text Regular";
+  font-family: "Slippery";
   font-size: 24px;
   font-weight: 500;
   height: 30px;
   cursor: pointer;
-  transform: translateY(100%);
 }
 .HomeContainer .innercon .links li::after {
   content: "";
@@ -360,7 +413,7 @@ ul.transition li {
   text-decoration: none;
   color: black;
   cursor: pointer;
-  font-family: "Palagio";
+  font-family: "EB Garamond";
   font-size: 30px;
   font-weight: 500;
 }
@@ -373,7 +426,7 @@ ul.transition li {
 .navbar3 .innerright a {
   text-decoration: none;
   color: #000;
-  font-family: "Palagio";
+  font-family: "EB Garamond";
   font-size: 22px;
   font-weight: 400;
   cursor: pointer;
@@ -416,15 +469,14 @@ ul.transition li {
   width: 70%;
 }
 .profilecon .right h1 {
-  font-family: "Palagio";
+  font-family: "EB Garamond";
   font-weight: 400;
   font-size: 64px;
-  width: 211px;
   margin: 0;
   margin-bottom: 30px;
 }
 .profilecon .right h5 {
-  font-family: "SF Pro Text Regular";
+  font-family: "Slippery";
   font-weight: 400;
   font-size: 25px;
   width: 95%;
@@ -467,7 +519,7 @@ ul.transition li {
 }
 .gallerycon .footer .footer_inner .left p {
   margin: 0;
-  font-family: "Palagio";
+  font-family: "EB Garamond";
   font-weight: 400;
   font-size: 32px;
 }
@@ -478,7 +530,7 @@ ul.transition li {
   flex-direction: row;
   align-items: center;
   justify-content: space-evenly;
-  font-family: "SF Pro Text Regular";
+  font-family: "Slippery";
   font-size: 16px;
   border: none;
   background: none;
@@ -502,7 +554,7 @@ ul.transition li {
   width: 500px;
 }
 .gallerycards .coninner h5 {
-  font-family: "Nympha Trial Reg";
+  font-family: "EB Garamond";
   font-size: 20px;
   font-weight: 400;
   margin: 0;
@@ -569,13 +621,13 @@ ul.transition li {
   overflow: hidden;
 }
 .galcon .innercon-galcon h4 {
-  font-family: "Nympha Trial Reg";
+  font-family: "EB Garamond";
   font-size: 32px;
   font-weight: 500;
   margin: 0;
 }
 .galcon .innercon-galcon h5 {
-  font-family: "Nympha Trial Reg";
+  font-family: "EB Garamond";
   font-size: 55px;
   font-weight: 500;
   margin: 0;
@@ -602,7 +654,7 @@ ul.transition li {
 .contactcon .top h1 {
   width: 90%;
   margin: 0 auto;
-  font-family: "Nympha Trial Reg";
+  font-family: "EB Garamond";
   font-size: 32px;
   font-weight: 400;
   overflow: hidden;
@@ -621,10 +673,10 @@ ul.transition li {
   width: 90%;
   margin: 0 auto;
   text-align: center;
-  font-family: "Nympha Trial Reg";
+  font-family: "EB Garamond";
   font-size: 96px;
   font-weight: 400;
-  letter-spacing: -0.15em;
+  letter-spacing: -0.1em;
 }
 .contactcon .top a p span {
   display: inline-block;
@@ -646,7 +698,7 @@ ul.transition li {
 }
 .contactcon .bottom .botcon h2 {
   margin: 0;
-  font-family: "Palagio";
+  font-family: "EB Garamond";
   font-weight: 400;
   font-size: 32px;
 }
@@ -663,7 +715,7 @@ ul.transition li {
 }
 .contactcon .bottom .botcon div p {
   margin: 0;
-  font-family: "Nympha Trial Reg";
+  font-family: "Slippery";
   font-weight: 400;
   font-size: 32px;
   cursor: pointer;
@@ -696,14 +748,14 @@ ul.transition li {
   height: 250px;
 }
 .ArticleCard .top h1 {
-  font-family: "SF Pro Text Regular";
+  font-family: "EB Garamond";
   font-size: 32px;
   font-weight: 400;
   margin: 0;
 }
 .ArticleCard .top p {
   margin-top: 30px;
-  font-family: "SF Pro Text Regular";
+  font-family: "Slippery";
   font-size: 16px;
 }
 .ArticleCard .bottom {
@@ -726,7 +778,7 @@ ul.transition li {
   width: 32px;
 }
 .ArticleCard .bottom button h5 {
-  font-family: "SF Pro Text Regular";
+  font-family: "Slippery";
   font-size: 16px;
   font-weight: 300;
 }

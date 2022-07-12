@@ -101,6 +101,10 @@ function contentAnimation() {
   // tl.set(".imgcon", { autoAlpha: 1 });
 
   var loderTl = gsap.timeline();
+  var shuffleTl = gsap.timeline({
+    repeat: -1,
+    // repeatRefresh: true,
+  });
 
   if (
     window.location.pathname === "/index.html" ||
@@ -179,51 +183,68 @@ function contentAnimation() {
     //   "-=1"
     // );
 
-    tl.to(".imgcon-inner .after", {
+    // tl.to(".imgcon-inner .after", {
+    //   delay: 1,
+    //   duration: 1.5,
+    //   height: "0%",
+    //   ease: "power2.out",
+    // });
+    // tl.from(
+    //   ".imgcon-inner img",
+    //   {
+    //     duration: 1.4,
+    //     scale: 1.6,
+    //     ease: "Power2.easeInOut",
+    //   },
+    //   "-=1.5"
+    // );
+    // tl.to(".name h1", { duration: 0.9, y: "0%", delay: 0.7 }, "-=2");
+    // tl.to(".title h4", {
+    //   duration: 0.5,
+    //   y: "0%",
+    //   stagger: {
+    //     amount: 0.5,
+    //   },
+    // });
+    // tl.to(
+    //   ".line",
+    //   {
+    //     duration: 0.5,
+    //     y: "0%",
+    //     stagger: {
+    //       amount: 0.5,
+    //     },
+    //   },
+    //   "-=.5"
+    // );
+    // tl.to(
+    //   ".links li",
+    //   {
+    //     duration: 0.5,
+    //     y: "0%",
+    //     stagger: {
+    //       amount: 0.5,
+    //     },
+    //   },
+    //   "-=.5"
+    // );
+    tl.from(".shuffle-con", {
+      duration: 2,
+      opacity: 0,
+      ease: "power4.in",
+      // height: "365px",
+    });
+    tl.to(".shuffle-con > .block", {
+      duration: 2,
+      // y: "0%",
+      height: "100%",
+      ease: "power2.ease",
+      repeat: -1,
       delay: 1,
-      duration: 1.5,
-      height: "0%",
-      ease: "power2.out",
-    });
-    tl.from(
-      ".imgcon-inner img",
-      {
-        duration: 1.4,
-        scale: 1.6,
-        ease: "Power2.easeInOut",
-      },
-      "-=1.5"
-    );
-    tl.to(".name h1", { duration: 0.9, y: "0%", delay: 0.7 }, "-=2");
-    tl.to(".title h4", {
-      duration: 0.5,
-      y: "0%",
       stagger: {
-        amount: 0.5,
+        each: 3,
       },
     });
-    tl.to(
-      ".line",
-      {
-        duration: 0.5,
-        y: "0%",
-        stagger: {
-          amount: 0.5,
-        },
-      },
-      "-=.5"
-    );
-    tl.to(
-      ".links li",
-      {
-        duration: 0.5,
-        y: "0%",
-        stagger: {
-          amount: 0.5,
-        },
-      },
-      "-=.5"
-    );
 
     if (localStorage.getItem("pageloadcount")) {
       loderTl.kill();
@@ -235,7 +256,6 @@ function contentAnimation() {
   // loader();
 
   var tll = gsap.timeline();
-  var rule = CSSRulePlugin.getRule(".img-container:after");
 
   // Gallery Page Transition
   if (
