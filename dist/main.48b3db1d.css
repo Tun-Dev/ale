@@ -52,7 +52,7 @@ html body {
   transition: 0.3s;
   font-family: "Circula";
   font-weight: 400;
-  background-color: rgb(250, 249, 246);
+  background-color: white;
 }
 
 html {
@@ -197,6 +197,7 @@ html {
   font-weight: 400;
   margin: 0;
   margin-top: 20px;
+  transform: translateY(100%);
 }
 .HomeContainer .innercon .name h1 span {
   color: #9a6f2d;
@@ -242,6 +243,7 @@ html {
   font-size: 35px;
   font-weight: 500;
   margin: 0;
+  transform: translateY(100%);
 }
 .HomeContainer .innercon .links {
   display: flex;
@@ -259,6 +261,7 @@ html {
   font-weight: 500;
   height: 30px;
   cursor: pointer;
+  transform: translateY(100%);
 }
 .HomeContainer .innercon .links li::after {
   content: "";
@@ -287,7 +290,7 @@ html {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background: #E2E1CA;
+  background: black;
 }
 .home-loader .load-words {
   position: relative;
@@ -302,9 +305,10 @@ html {
   width: 100%;
   text-align: center;
   font-size: 40px;
-  font-family: "Nympha Trial Reg";
+  font-family: "EB Garamond";
   font-weight: 500;
   transform: translateY(110%);
+  color: white;
 }
 .home-loader .word7 {
   display: flex;
@@ -337,7 +341,7 @@ html {
   margin: 0;
 }
 .home-loader .load-bar {
-  border: 1px solid #424135;
+  border: 1px solid white;
   width: 350px;
   height: 20px;
   margin: 20px;
@@ -346,7 +350,7 @@ html {
 .home-loader .load-bar .bar {
   position: absolute;
   left: 0;
-  background: #424135;
+  background: white;
   /* top: 100%; */
   width: 0%;
   height: 100%;
@@ -504,7 +508,7 @@ ul.transition li {
   bottom: 0;
   width: 100%;
   display: flex;
-  background: #E2E1CA;
+  background: white;
   opacity: 0;
   pointer-events: none;
   transition: all 1s ease-in-out;
@@ -534,7 +538,7 @@ ul.transition li {
   font-size: 16px;
   border: none;
   background: none;
-  color: #3C3C31;
+  color: black;
   cursor: pointer;
 }
 .gallerycon .footer.active {
@@ -580,7 +584,7 @@ ul.transition li {
   top: 0;
   right: 0;
   z-index: 1;
-  background: #E2E1CA;
+  background: black;
 }
 .gallerycards .coninner .hoverclass {
   display: none;
@@ -605,7 +609,7 @@ ul.transition li {
 
 .galcon {
   position: fixed;
-  background: #E2E1CA;
+  background: white;
   height: 100vh;
   bottom: 0;
   left: 0;

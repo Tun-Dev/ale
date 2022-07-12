@@ -65,8 +65,9 @@ html body {
     transition: 0.3s;
     font-family: "Circula";
     font-weight: 400;
-    background-color: rgba(250, 249, 246, 1);
-    // background-color: white;
+
+    // background-color: rgba(250, 249, 246, 1);
+    background-color: white;
     // background-color: #E2E1CA;
     // cursor: none;
 }
@@ -266,7 +267,7 @@ html {
                 margin-top: 20px;
                 // overflow: hidden;
                 // display: inline-block;
-                // transform: translateY(100%);
+                transform: translateY(100%);
 
                 span {
                     color: #9a6f2d;
@@ -332,7 +333,7 @@ html {
                 font-size: 35px;
                 font-weight: 500;
                 margin: 0;
-                // transform: translateY(100%);
+                transform: translateY(100%);
             }
         }
 
@@ -369,7 +370,7 @@ html {
                 // border: 1px solid red;
                 height: 30px;
                 cursor: pointer;
-                // transform: translateY(100%);
+                transform: translateY(100%);
 
                 &::after {
                     // border-bottom: 1px solid black;
@@ -406,7 +407,8 @@ html {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background: #E2E1CA;
+    background: black;
+    // background: #E2E1CA;
 
     .load-words {
         // border: 1px solid red;
@@ -427,9 +429,10 @@ html {
             width: 100%;
             text-align: center;
             font-size: 40px;
-            font-family: "Nympha Trial Reg";
+            font-family: "EB Garamond";
             font-weight: 500;
             transform: translateY(110%);
+            color: white;
             // position: fixed;
             // overflow: hidden;
         }
@@ -477,7 +480,8 @@ html {
     }
 
     .load-bar {
-        border: 1px solid #424135;
+        // border: 1px solid #424135;
+        border: 1px solid white;
         width: 350px;
         height: 20px;
         margin: 20px;
@@ -486,7 +490,8 @@ html {
         .bar {
             position: absolute;
             left: 0;
-            background: #424135;
+            background: white;
+            // background: #424135;
             /* top: 100%; */
             // z-index: 100;
             width: 0%;
@@ -695,7 +700,8 @@ ul.transition li {
         width: 100%;
         // display: none;
         display: flex;
-        background: #E2E1CA;
+        background: white;
+        // background: #E2E1CA;
         opacity: 0;
         pointer-events: none;
         transition: all 1s ease-in-out;
@@ -730,7 +736,8 @@ ul.transition li {
                     font-size: 16px;
                     border: none;
                     background: none;
-                    color: #3C3C31;
+                    color: black;
+                    // color: #3C3C31;
                     cursor: pointer;
                 }
             }
@@ -790,7 +797,8 @@ ul.transition li {
             top: 0;
             right: 0;
             z-index: 1;
-            background: #E2E1CA;
+            background: black;
+            // background: #E2E1CA;
             // background: red;
         }
 
@@ -825,7 +833,8 @@ ul.transition li {
 
 .galcon {
     position: fixed;
-    background: #E2E1CA;
+    background: white;
+    // background: #E2E1CA;
     height: 100vh;
     bottom: 0;
     left: 0;
