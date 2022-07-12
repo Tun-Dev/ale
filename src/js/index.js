@@ -186,7 +186,8 @@ function contentAnimation() {
     tl.from(".shuffle-con", {
       duration: 2,
       opacity: 0,
-      ease: "power4.in",
+      ease: "Expo.easeInOut",
+      // ease: "power4.out",
       // height: "365px",
     });
 
@@ -213,7 +214,8 @@ function contentAnimation() {
       duration: 2,
       // y: "0%",
       height: "100%",
-      ease: "power2.ease",
+      ease: "Expo.easeInOut",
+      // ease: "power4.out",
       repeat: -1,
       delay: 1,
       stagger: {
