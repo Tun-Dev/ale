@@ -50,7 +50,7 @@ html body {
   /* Hide horizontal scrollbar */
   height: 100%;
   transition: 0.3s;
-  font-family: "Circula";
+  font-family: "EB Garamond";
   font-weight: 400;
   background-color: white;
 }
@@ -457,20 +457,36 @@ ul.transition li {
   flex-direction: row;
   justify-content: space-evenly;
   align-items: center;
-  width: 100%;
+  margin: 0 auto;
+  width: 90%;
   height: 100%;
 }
 .profilecon .left {
   width: fit-content;
   display: flex;
+  flex-direction: column;
   justify-content: center;
-  align-items: center;
+  height: 100%;
 }
 .profilecon .left img {
   width: 80%;
 }
+.profilecon .left .left-top {
+  margin-bottom: 50px;
+}
+.profilecon .left .left-top h1 {
+  font-size: 64px;
+  font-weight: 500;
+}
+.profilecon .left .left-top p {
+  font-size: 14px;
+  width: 335px;
+}
+.profilecon .left .left-bottom img {
+  max-width: 500px;
+}
 .profilecon .right {
-  width: 70%;
+  max-width: 589px;
 }
 .profilecon .right h1 {
   font-family: "EB Garamond";
@@ -482,7 +498,7 @@ ul.transition li {
 .profilecon .right h5 {
   font-family: "Slippery";
   font-weight: 400;
-  font-size: 25px;
+  font-size: 24px;
   width: 95%;
   margin: 0;
   margin-bottom: 40px;
@@ -652,77 +668,101 @@ ul.transition li {
 .contactcon .top {
   height: 90%;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-.contactcon .top h1 {
   width: 90%;
   margin: 0 auto;
+  justify-content: flex-end;
+}
+.contactcon .top .top-inner {
+  height: 100%;
+  width: 50%;
+  margin-top: 50px;
+}
+.contactcon .top .p-class {
   font-family: "EB Garamond";
-  font-size: 32px;
-  font-weight: 400;
-  overflow: hidden;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 40px;
+  margin-left: 30%;
+  margin-top: 30px;
 }
-.contactcon .top h1 span {
-  display: inline-block;
+.contactcon .top .p-class p {
+  text-indent: 50px;
+  width: 357px;
+  flex-wrap: wrap;
 }
-.contactcon .top a {
-  text-decoration: none;
-  color: black;
+.contactcon .top .div-h1 {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
 }
-.contactcon .top a .contact-p {
-  overflow: hidden;
-}
-.contactcon .top a p {
-  width: 90%;
-  margin: 0 auto;
-  text-align: center;
+.contactcon .top .div-h1 h1 {
   font-family: "EB Garamond";
+  font-weight: 500;
   font-size: 96px;
-  font-weight: 400;
-  letter-spacing: -0.1em;
+  margin: 0;
 }
-.contactcon .top a p span {
-  display: inline-block;
+.contactcon .top .div-h1 p {
+  font-family: "Slippery";
+  font-weight: 400;
+  font-size: 16px;
+  margin-bottom: 30px;
+  margin-left: 20px;
+}
+.contactcon .top .div2-h1 h1 {
+  font-family: "EB Garamond";
+  font-weight: 500;
+  font-size: 96px;
+  margin: 0;
+  margin-left: 100px;
+}
+.contactcon .top .info {
+  margin-top: 100px;
+}
+.contactcon .top .info p {
+  font-family: "EB Garamond";
+  font-weight: 500;
+  font-size: 24px;
+  margin-left: 100px;
+  margin-bottom: 20px;
+}
+.contactcon .top .info p a {
+  color: #000;
+}
+.contactcon .top .info p .mail {
+  text-decoration: none;
 }
 .contactcon .bottom {
   height: 10%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-.contactcon .bottom .botcon {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
   width: 90%;
   margin: 0 auto;
-  overflow: hidden;
-}
-.contactcon .bottom .botcon h2 {
-  margin: 0;
-  font-family: "EB Garamond";
-  font-weight: 400;
-  font-size: 32px;
-}
-.contactcon .bottom .botcon div {
   display: flex;
-  width: 250px;
+  flex-direction: row;
   justify-content: space-between;
+}
+.contactcon .bottom .bot-left {
+  height: 100%;
+  display: flex;
   align-items: center;
 }
-.contactcon .bottom .botcon div a {
-  text-decoration: none;
-  color: #000;
-  cursor: pointer;
-}
-.contactcon .bottom .botcon div p {
-  margin: 0;
-  font-family: "Slippery";
+.contactcon .bottom .bot-left p {
+  font-family: "EB Garamond";
   font-weight: 400;
-  font-size: 32px;
-  cursor: pointer;
+  font-size: 16px;
+}
+.contactcon .bottom .bot-left p a {
+  color: #000;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+.contactcon .bottom .bot-right {
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+.contactcon .bottom .bot-right p {
+  font-family: "EB Garamond";
+  font-weight: 500;
+  font-size: 16px;
 }
 
 .Articlecon {
@@ -732,10 +772,159 @@ ul.transition li {
 }
 .Articlecon .articleinner {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  height: 100%;
+  flex-direction: column;
+  width: 90%;
   margin: 0 auto;
+}
+.Articlecon .header {
+  margin-top: 50px;
+}
+.Articlecon .header h1 {
+  font-size: 64px;
+  font-weight: 600;
+  line-height: 77px;
+}
+.Articlecon .middle {
+  margin-top: 60px;
+}
+.Articlecon .middle .mid-link {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: fit-content;
+}
+.Articlecon .middle .link-img {
+  width: 48px;
+  height: 48px;
+  border: 1px solid #3C3C31;
+  border-radius: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.Articlecon .middle .link-img img {
+  border-radius: 100%;
+}
+.Articlecon .middle .link-word {
+  margin-left: 16px;
+}
+.Articlecon .middle .link-word p {
+  font-family: "Slippery";
+  font-size: 16px;
+  color: rgb(115, 115, 125);
+  width: 402px;
+}
+.Articlecon .middle .link-word p span {
+  font-weight: 700;
+}
+.Articlecon .middle .link-word p a {
+  color: rgb(115, 115, 125);
+}
+.Articlecon .article-content {
+  margin-top: 50px;
+}
+.Articlecon .article-content .card-con {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 50px;
+}
+.Articlecon .article-content .card1 {
+  width: 58%;
+}
+.Articlecon .article-content .card1 .card1-img img {
+  width: 100%;
+  box-shadow: 0px 20px 40px rgba(0, 0, 0, 0.2);
+}
+.Articlecon .article-content .card1 .card1-word {
+  display: flex;
+  flex-direction: column;
+}
+.Articlecon .article-content .card1 .card1-word h1 {
+  font-family: "Slippery";
+  font-size: 24px;
+  font-size: 700;
+  margin-top: 30px;
+  margin-bottom: 14px;
+}
+.Articlecon .article-content .card1 .card1-word p {
+  font-family: "Slippery";
+  font-size: 16px;
+  font-size: 400;
+  color: #73737D;
+  margin-bottom: 17px;
+}
+.Articlecon .article-content .card1 .card1-word span {
+  font-family: "Slippery";
+  font-size: 16px;
+  font-weight: 700;
+  color: rgba(8, 8, 11, 0.15);
+}
+.Articlecon .article-content .card1 .card1-word a {
+  margin-top: 20px;
+  text-decoration: none;
+  width: 150px;
+  color: #000;
+  cursor: pointer;
+  position: relative;
+  font-family: "Slippery";
+  font-size: 16px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+}
+.Articlecon .article-content .card1 .card1-word a img {
+  position: absolute;
+  right: 0;
+  width: 50%;
+}
+.Articlecon .article-content .card2 {
+  width: 40.8%;
+}
+.Articlecon .article-content .card2 .card2-img img {
+  width: 100%;
+  box-shadow: 0px 20px 40px rgba(0, 0, 0, 0.2);
+}
+.Articlecon .article-content .card2 .card2-word {
+  display: flex;
+  flex-direction: column;
+}
+.Articlecon .article-content .card2 .card2-word h1 {
+  font-family: "Slippery";
+  font-size: 24px;
+  font-size: 700;
+  margin-top: 30px;
+  margin-bottom: 14px;
+}
+.Articlecon .article-content .card2 .card2-word p {
+  font-family: "Slippery";
+  font-size: 16px;
+  font-size: 400;
+  color: #73737D;
+  margin-bottom: 17px;
+}
+.Articlecon .article-content .card2 .card2-word span {
+  font-family: "Slippery";
+  font-size: 16px;
+  font-weight: 700;
+  color: rgba(8, 8, 11, 0.15);
+}
+.Articlecon .article-content .card2 .card2-word a {
+  margin-top: 20px;
+  text-decoration: none;
+  width: 150px;
+  color: #000;
+  cursor: pointer;
+  position: relative;
+  font-family: "Slippery";
+  font-size: 16px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+}
+.Articlecon .article-content .card2 .card2-word a img {
+  position: absolute;
+  right: 0;
+  width: 50%;
 }
 
 .ArticleCard {

@@ -11227,7 +11227,16 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 _gsap.gsap.registerPlugin(_CSSRulePlugin.CSSRulePlugin, _CSSPlugin.CSSPlugin);
 
 var cursorPick = document.querySelector(".cursor");
-var cursor = new _cursor.Cursor(cursorPick);
+var cursor = new _cursor.Cursor(cursorPick); // For the Time Stamp on the footer
+
+function refreshTime() {
+  var timeDisplay = document.getElementById("time");
+  var dateString = new Date().toLocaleTimeString();
+  var formattedString = dateString.replace(", ", " - ");
+  timeDisplay.textContent = formattedString;
+}
+
+setInterval(refreshTime, 1000);
 
 window.onload = function () {
   localStorage.removeItem("pageloadcount");
@@ -11311,73 +11320,78 @@ function contentAnimation() {
   });
 
   if (window.location.pathname === "/index.html" || window.location.pathname === "/") {
-    loderTl.from(".load-bar", {
-      delay: 0.5,
-      opacity: 0,
-      duration: 1
-    });
-    loderTl.to(".word1", {
-      duration: 0.7,
-      y: "0%"
-    }).to(".word1", {
-      delay: 0.3,
-      duration: 0.5,
-      opacity: 0
-    }).to(".word2", {
-      duration: 0.7,
-      y: "0%"
-    }).to(".word2", {
-      delay: 0.7,
-      duration: 0.5,
-      opacity: 0
-    }).to(".word3", {
-      duration: 0.7,
-      y: "0%"
-    }).to(".word3", {
-      delay: 0.7,
-      duration: 0.5,
-      opacity: 0
-    }).to(".word4", {
-      duration: 0.7,
-      y: "0%"
-    }).to(".word4", {
-      delay: 0.7,
-      duration: 0.5,
-      opacity: 0
-    }).to(".word5", {
-      duration: 0.7,
-      y: "0%"
-    }).to(".word5", {
-      delay: 0.5,
-      duration: 0.5,
-      opacity: 0
-    }).to(".word6", {
-      duration: 0.7,
-      y: "0%"
-    });
-    loderTl.to(".bar", {
-      width: "30%",
-      duration: 6,
-      ease: "power4.out"
-    }, "-=9").to(".bar", {
-      width: "70%",
-      duration: 6,
-      ease: "power4.out"
-    }, "-=7").to(".bar", {
-      width: "100%",
-      duration: 6,
-      ease: "power4.out"
-    }, "-=4");
-    loderTl.to([".load-words", ".load-bar"], {
-      delay: 0,
-      opacity: 0
-    }).to(".home-loader", {
-      delay: 0.9,
-      opacity: 0,
-      height: 0,
-      duration: 1.5,
-      ease: "Expo.easeInOut"
-    }, "-=1");
+    // loderTl.from(".load-bar", { delay: 0.5, opacity: 0, duration: 1 });
+    // loderTl
+    //   .to(".word1", { duration: 0.7, y: "0%" })
+    //   .to(".word1", {
+    //     delay: 0.3,
+    //     duration: 0.5,
+    //     opacity: 0,
+    //   })
+    //   .to(".word2", { duration: 0.7, y: "0%" })
+    //   .to(".word2", {
+    //     delay: 0.7,
+    //     duration: 0.5,
+    //     opacity: 0,
+    //   })
+    //   .to(".word3", { duration: 0.7, y: "0%" })
+    //   .to(".word3", {
+    //     delay: 0.7,
+    //     duration: 0.5,
+    //     opacity: 0,
+    //   })
+    //   .to(".word4", { duration: 0.7, y: "0%" })
+    //   .to(".word4", {
+    //     delay: 0.7,
+    //     duration: 0.5,
+    //     opacity: 0,
+    //   })
+    //   .to(".word5", { duration: 0.7, y: "0%" })
+    //   .to(".word5", {
+    //     delay: 0.5,
+    //     duration: 0.5,
+    //     opacity: 0,
+    //   })
+    //   .to(".word6", { duration: 0.7, y: "0%" });
+    // loderTl
+    //   .to(
+    //     ".bar",
+    //     {
+    //       width: "30%",
+    //       duration: 6,
+    //       ease: "power4.out",
+    //     },
+    //     "-=9"
+    //   )
+    //   .to(
+    //     ".bar",
+    //     {
+    //       width: "70%",
+    //       duration: 6,
+    //       ease: "power4.out",
+    //     },
+    //     "-=7"
+    //   )
+    //   .to(
+    //     ".bar",
+    //     {
+    //       width: "100%",
+    //       duration: 6,
+    //       ease: "power4.out",
+    //     },
+    //     "-=4"
+    //   );
+    // loderTl.to([".load-words", ".load-bar"], { delay: 0, opacity: 0 }).to(
+    //   ".home-loader",
+    //   {
+    //     delay: 0.9,
+    //     opacity: 0,
+    //     height: 0,
+    //     duration: 1.5,
+    //     ease: "Expo.easeInOut",
+    //   },
+    //   "-=1"
+    // );
     tl.from(".shuffle-con", {
       duration: 2,
       opacity: 0,
@@ -11415,7 +11429,7 @@ function contentAnimation() {
       stagger: {
         each: 3
       }
-    });
+    }, "-=3");
 
     if (localStorage.getItem("pageloadcount")) {
       loderTl.kill();
@@ -11504,27 +11518,36 @@ function contentAnimation() {
 
   var contactTl = _gsap.gsap.timeline();
 
-  if (window.location.pathname === "/contact.html" || window.location.pathname === "/contact") {
-    contactTl.from(".contact-span", {
-      delay: 1.2,
-      yPercent: 110,
-      duration: 0.6,
-      // skewY: 10,
-      stagger: {
-        amount: 2
-      },
-      ease: "power4.inout"
-    });
-    contactTl.from(".botcon h2", {
-      yPercent: 110,
-      duration: 0.6
-    }, "-=2").from(".botcon div a", {
-      yPercent: 110,
-      duration: 0.6,
-      stagger: {
-        amount: 1
-      }
-    }, "-=2");
+  if (window.location.pathname === "/contact.html" || window.location.pathname === "/contact") {// contactTl.from(".contact-span", {
+    //   delay: 1.2,
+    //   yPercent: 110,
+    //   duration: 0.6,
+    //   // skewY: 10,
+    //   stagger: {
+    //     amount: 2,
+    //   },
+    //   ease: "power4.inout",
+    // });
+    // contactTl
+    //   .from(
+    //     ".botcon h2",
+    //     {
+    //       yPercent: 110,
+    //       duration: 0.6,
+    //     },
+    //     "-=2"
+    //   )
+    //   .from(
+    //     ".botcon div a",
+    //     {
+    //       yPercent: 110,
+    //       duration: 0.6,
+    //       stagger: {
+    //         amount: 1,
+    //       },
+    //     },
+    //     "-=2"
+    //   );
   } // tl.from(".HomeContainer", { duration: 1.5, opacity: 0 });
   // tl.from(".galleryinner", { duration: 4.5, opacity: 0 });
   // Animation for cursor to increase when hovering on links
@@ -11666,7 +11689,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "36239" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "39973" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
