@@ -262,6 +262,14 @@ function contentAnimation() {
     window.location.pathname === "/gallery.html" ||
     window.location.pathname === "/gallery"
   ) {
+    // Horizontal scroll with mouse wheel
+    const scrollContainer = document.getElementById("scroll");
+
+    scrollContainer.addEventListener("wheel", (evt) => {
+      evt.preventDefault();
+      scrollContainer.scrollLeft += evt.deltaY;
+    });
+
     // gsap.set(".galcon", {
     //   delay: 2.5,
     //   zIndex: 30,

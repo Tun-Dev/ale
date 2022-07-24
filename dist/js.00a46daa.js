@@ -11454,7 +11454,14 @@ function contentAnimation() {
   var tll = _gsap.gsap.timeline(); // Gallery Page Transition
 
 
-  if (window.location.pathname === "/gallery.html" || window.location.pathname === "/gallery") {// gsap.set(".galcon", {
+  if (window.location.pathname === "/gallery.html" || window.location.pathname === "/gallery") {
+    // Horizontal scroll with mouse wheel
+    var _scrollContainer = document.getElementById("scroll");
+
+    _scrollContainer.addEventListener("wheel", function (evt) {
+      evt.preventDefault();
+      _scrollContainer.scrollLeft += evt.deltaY;
+    }); // gsap.set(".galcon", {
     //   delay: 2.5,
     //   zIndex: 30,
     //   top: "unset",
@@ -11522,6 +11529,7 @@ function contentAnimation() {
     //   )
     //   .to(".word h5", { duration: 1.2, y: "0%", ease: "power2.out" }, "-=1");
     // galleryFooter();
+
   }
 
   var kinikaTl = _gsap.gsap.timeline();
