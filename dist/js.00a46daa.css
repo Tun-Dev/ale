@@ -536,6 +536,8 @@ ul.transition li {
   font-size: 64px;
   font-weight: 600;
   width: 479px;
+  display: flex;
+  flex-direction: column;
 }
 .gallerycon .galleryinner .gallery-div .div-words p {
   font-family: "EB Garamond";

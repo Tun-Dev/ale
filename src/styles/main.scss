@@ -717,6 +717,7 @@ ul.transition li {
         // margin-bottom: 50px;
         // border: 1px solid red;
         height: calc(100vh - 60px);
+        // scroll-behavior: none;
         // width: 100%;
         display: flex;
         scroll-snap-type: x mandatory;
@@ -754,6 +755,8 @@ ul.transition li {
                     font-size: 64px;
                     font-weight: 600;
                     width: 479px;
+                    display: flex;
+                    flex-direction: column;
                 }
 
                 p {
