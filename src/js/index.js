@@ -21,10 +21,20 @@ function refreshTime() {
 }
 setInterval(refreshTime, 1000);
 
+// To restart the page loader
 window.onload = () => {
   localStorage.removeItem("pageloadcount");
 };
 
+// Horizontal scroll with mouse wheel
+const scrollContainer = document.getElementById("scroll");
+
+scrollContainer.addEventListener("wheel", (evt) => {
+  evt.preventDefault();
+  scrollContainer.scrollLeft += evt.deltaY;
+});
+
+// GAllery footer animation
 function galleryFooter() {
   let footer = document.getElementById("footer");
 
@@ -252,75 +262,74 @@ function contentAnimation() {
     window.location.pathname === "/gallery.html" ||
     window.location.pathname === "/gallery"
   ) {
-    gsap.set(".galcon", {
-      delay: 2.5,
-      zIndex: 30,
-      top: "unset",
-      bottom: 0,
-    });
-    gsap.set(".innercon-galcon", {
-      opacity: 1,
-    });
-    tll.to(".galcon", {
-      height: window.innerHeight,
-      // duration: 1.5,
-      duration: 1,
-      ease: "Expo.easeInOut",
-    });
-    tll.set(".galcon", {
-      top: 0,
-      bottom: "unset",
-    });
-    tll
-      .from([".innercon-galcon h4", ".innercon-galcon h5"], {
-        delay: 1.5,
-        yPercent: 300,
-        duration: 1.5,
-        // skewY: 10,
-        stagger: {
-          amount: 0.3,
-        },
-        ease: "power2.out",
-      })
-      .to(".innercon-galcon", {
-        delay: 3,
-        opacity: 0,
-        duration: 1,
-        ease: "power4.out",
-      })
-      .to(
-        ".galcon",
-        {
-          delay: 0.9,
-          height: 0,
-          duration: 1.5,
-          ease: "Expo.easeInOut",
-        },
-        "-=1"
-      );
-    tll
-      .to(
-        ".after",
-        {
-          // delay: 0.5,
-          duration: 1.4,
-          width: "0%",
-          ease: "Power2.easeInOut",
-        },
-        "-=.5"
-      )
-      .from(
-        ".img-container img",
-        {
-          duration: 1.4,
-          scale: 1.6,
-          ease: "Power2.easeInOut",
-        },
-        "-=1.5"
-      )
-      .to(".word h5", { duration: 1.2, y: "0%", ease: "power2.out" }, "-=1");
-
-    galleryFooter();
+    // gsap.set(".galcon", {
+    //   delay: 2.5,
+    //   zIndex: 30,
+    //   top: "unset",
+    //   bottom: 0,
+    // });
+    // gsap.set(".innercon-galcon", {
+    //   opacity: 1,
+    // });
+    // tll.to(".galcon", {
+    //   height: window.innerHeight,
+    //   // duration: 1.5,
+    //   duration: 1,
+    //   ease: "Expo.easeInOut",
+    // });
+    // tll.set(".galcon", {
+    //   top: 0,
+    //   bottom: "unset",
+    // });
+    // tll
+    //   .from([".innercon-galcon h4", ".innercon-galcon h5"], {
+    //     delay: 1.5,
+    //     yPercent: 300,
+    //     duration: 1.5,
+    //     // skewY: 10,
+    //     stagger: {
+    //       amount: 0.3,
+    //     },
+    //     ease: "power2.out",
+    //   })
+    //   .to(".innercon-galcon", {
+    //     delay: 3,
+    //     opacity: 0,
+    //     duration: 1,
+    //     ease: "power4.out",
+    //   })
+    //   .to(
+    //     ".galcon",
+    //     {
+    //       delay: 0.9,
+    //       height: 0,
+    //       duration: 1.5,
+    //       ease: "Expo.easeInOut",
+    //     },
+    //     "-=1"
+    //   );
+    // tll
+    //   .to(
+    //     ".after",
+    //     {
+    //       // delay: 0.5,
+    //       duration: 1.4,
+    //       width: "0%",
+    //       ease: "Power2.easeInOut",
+    //     },
+    //     "-=.5"
+    //   )
+    //   .from(
+    //     ".img-container img",
+    //     {
+    //       duration: 1.4,
+    //       scale: 1.6,
+    //       ease: "Power2.easeInOut",
+    //     },
+    //     "-=1.5"
+    //   )
+    //   .to(".word h5", { duration: 1.2, y: "0%", ease: "power2.out" }, "-=1");
+    // galleryFooter();
   }
 
   var kinikaTl = gsap.timeline();
