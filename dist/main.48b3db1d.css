@@ -10,32 +10,16 @@
 }
 
 @font-face {
-  font-family: "Palagio";
-  src: url("/PalagioPersonalUse-nRoPM.b07c9bea.otf");
-}
-@font-face {
-  font-family: "Circula";
-  src: url("/circula-medium.2fc76941.otf");
-}
-@font-face {
-  font-family: "SF Pro Text Light";
-  src: url("/FontsFree-Net-SFProText-Light-1.516bd2a0.ttf");
-}
-@font-face {
-  font-family: "SF Pro Text Regular";
-  src: url("/FontsFree-Net-SFProText-Regular-1.a9474e53.ttf");
-}
-@font-face {
-  font-family: "Nympha Trial Light";
-  src: url("/NymphaTrial-Light.15501aea.ttf");
-}
-@font-face {
-  font-family: "Nympha Trial Reg";
-  src: url("/NymphaTrial-Regular.998b1241.ttf");
-}
-@font-face {
   font-family: "EB Garamond";
   src: url("/EBGaramond-VariableFont_wght.52bf1095.ttf");
+}
+@font-face {
+  font-family: "EB Garamond Med";
+  src: url("/EBGaramond-Medium.c319f0da.ttf");
+}
+@font-face {
+  font-family: "EB Garamond Reg";
+  src: url("/EBGaramond-Regular.a0ad7fc8.ttf");
 }
 @font-face {
   font-family: "Slippery";
@@ -43,7 +27,7 @@
 }
 html body {
   margin: 0;
-  color: #000000;
+  color: #3C3C31;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
@@ -67,7 +51,7 @@ html {
   pointer-events: none;
   height: 20px;
   width: 20px;
-  background: black;
+  background: #3C3C31;
   border-radius: 50%;
   display: block;
 }
@@ -91,7 +75,7 @@ html {
 
 .exit-transition {
   position: fixed;
-  background: black;
+  background: #3C3C31;
   height: 100vh;
   bottom: 0;
   left: 0;
@@ -131,7 +115,6 @@ html {
 .HomeContainer .innercon .shuffle {
   width: 287px;
   height: 365px;
-  border: 1px solid black;
 }
 .HomeContainer .innercon .shuffle-con {
   width: 287px;
@@ -149,7 +132,6 @@ html {
   position: absolute;
   width: 100%;
   height: 100%;
-  border: 1px solid black;
 }
 .HomeContainer .innercon .shuffle-con .b {
   background: url("https://res.cloudinary.com/dcoqt2wpo/image/upload/v1657646391/shuffle/ikabg_zt9ia1.png") 50% 50% no-repeat;
@@ -276,7 +258,7 @@ html {
 }
 .HomeContainer .innercon .links li a {
   text-decoration: none;
-  color: #000;
+  color: #3C3C31;
 }
 
 .home-loader {
@@ -290,7 +272,7 @@ html {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background: black;
+  background: #3C3C31;
 }
 .home-loader .load-words {
   position: relative;
@@ -415,7 +397,7 @@ ul.transition li {
 }
 .navbar3 .innerleft a {
   text-decoration: none;
-  color: black;
+  color: #3C3C31;
   cursor: pointer;
   font-family: "EB Garamond";
   font-size: 30px;
@@ -429,7 +411,7 @@ ul.transition li {
 }
 .navbar3 .innerright a {
   text-decoration: none;
-  color: #000;
+  color: #3C3C31;
   font-family: "EB Garamond";
   font-size: 22px;
   font-weight: 400;
@@ -503,6 +485,9 @@ ul.transition li {
   margin: 0;
   margin-bottom: 40px;
 }
+.profilecon .right h5 span {
+  display: none;
+}
 
 .gallerycon {
   display: flex;
@@ -538,6 +523,10 @@ ul.transition li {
   width: 479px;
   display: flex;
   flex-direction: column;
+  text-align: justify;
+}
+.gallerycon .galleryinner .gallery-div .div-words h1 span {
+  margin: 0;
 }
 .gallerycon .galleryinner .gallery-div .div-words p {
   font-family: "EB Garamond";
@@ -552,6 +541,17 @@ ul.transition li {
 }
 .gallerycon .galleryinner .gallery-div .div-imgs img {
   margin-right: 120px;
+  transition: all 0.5s linear;
+}
+.gallerycon .galleryinner .gallery-div .div-imgs img:hover {
+  filter: blur(2.5px);
+  cursor: pointer;
+}
+.gallerycon .galleryinner .gallery-div .div-imgs .mr1 {
+  width: 350px;
+}
+.gallerycon .galleryinner .gallery-div .div-imgs .mr2 {
+  width: 450px;
 }
 .gallerycon .footer {
   position: fixed;
@@ -1018,6 +1018,40 @@ ul.transition li {
 }
 .ArticleCard .bottom button:hover img {
   filter: invert(100%);
+}
+
+.footer-bottom {
+  height: 10%;
+  width: 90%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+.footer-bottom .bot-left {
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+.footer-bottom .bot-left p {
+  font-family: "EB Garamond";
+  font-weight: 400;
+  font-size: 16px;
+}
+.footer-bottom .bot-left p a {
+  color: #000;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+.footer-bottom .bot-right {
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+.footer-bottom .bot-right p {
+  font-family: "EB Garamond";
+  font-weight: 500;
+  font-size: 16px;
 }
 
 /*# sourceMappingURL=/main.48b3db1d.css.map */

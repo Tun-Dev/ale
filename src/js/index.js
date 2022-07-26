@@ -12,27 +12,32 @@ gsap.registerPlugin(CSSRulePlugin, CSSPlugin);
 let cursorPick = document.querySelector(".cursor");
 const cursor = new Cursor(cursorPick);
 
-// For the Time Stamp on the footer
-function refreshTime() {
-  const timeDisplay = document.getElementById("time");
-  const dateString = new Date().toLocaleTimeString();
-  const formattedString = dateString.replace(", ", " - ");
-  timeDisplay.textContent = formattedString;
-}
-setInterval(refreshTime, 1000);
-
 // To restart the page loader
 window.onload = () => {
   localStorage.removeItem("pageloadcount");
+
+  function refreshTime() {
+    document.querySelectorAll("[id=time]").forEach((clk) => {
+      const dateString = new Date().toLocaleTimeString();
+      const formattedString = dateString.replace(", ", " - ");
+      clk.textContent = formattedString;
+    });
+    // const timeDisplay = document.getElementById("time");
+    // const dateString = new Date().toLocaleTimeString();
+    // const formattedString = dateString.replace(", ", " - ");
+    // timeDisplay.textContent = formattedString;
+  }
+
+  setInterval(refreshTime, 1000);
 };
 
 // Horizontal scroll with mouse wheel
-const scrollContainer = document.getElementById("scroll");
+// const scrollContainer = document.getElementById("scroll");
 
-scrollContainer.addEventListener("wheel", (evt) => {
-  evt.preventDefault();
-  scrollContainer.scrollLeft += evt.deltaY;
-});
+// scrollContainer.addEventListener("wheel", (evt) => {
+//   evt.preventDefault();
+//   scrollContainer.scrollLeft += evt.deltaY;
+// });
 
 // GAllery footer animation
 function galleryFooter() {
@@ -129,78 +134,78 @@ function contentAnimation() {
     window.location.pathname === "/index.html" ||
     window.location.pathname === "/"
   ) {
-    // loderTl.from(".load-bar", { delay: 0.5, opacity: 0, duration: 1 });
-    // loderTl
-    //   .to(".word1", { duration: 0.7, y: "0%" })
-    //   .to(".word1", {
-    //     delay: 0.3,
-    //     duration: 0.5,
-    //     opacity: 0,
-    //   })
-    //   .to(".word2", { duration: 0.7, y: "0%" })
-    //   .to(".word2", {
-    //     delay: 0.7,
-    //     duration: 0.5,
-    //     opacity: 0,
-    //   })
-    //   .to(".word3", { duration: 0.7, y: "0%" })
-    //   .to(".word3", {
-    //     delay: 0.7,
-    //     duration: 0.5,
-    //     opacity: 0,
-    //   })
-    //   .to(".word4", { duration: 0.7, y: "0%" })
-    //   .to(".word4", {
-    //     delay: 0.7,
-    //     duration: 0.5,
-    //     opacity: 0,
-    //   })
-    //   .to(".word5", { duration: 0.7, y: "0%" })
-    //   .to(".word5", {
-    //     delay: 0.5,
-    //     duration: 0.5,
-    //     opacity: 0,
-    //   })
-    //   .to(".word6", { duration: 0.7, y: "0%" });
-    // loderTl
-    //   .to(
-    //     ".bar",
-    //     {
-    //       width: "30%",
-    //       duration: 6,
-    //       ease: "power4.out",
-    //     },
-    //     "-=9"
-    //   )
-    //   .to(
-    //     ".bar",
-    //     {
-    //       width: "70%",
-    //       duration: 6,
-    //       ease: "power4.out",
-    //     },
-    //     "-=7"
-    //   )
-    //   .to(
-    //     ".bar",
-    //     {
-    //       width: "100%",
-    //       duration: 6,
-    //       ease: "power4.out",
-    //     },
-    //     "-=4"
-    //   );
-    // loderTl.to([".load-words", ".load-bar"], { delay: 0, opacity: 0 }).to(
-    //   ".home-loader",
-    //   {
-    //     delay: 0.9,
-    //     opacity: 0,
-    //     height: 0,
-    //     duration: 1.5,
-    //     ease: "Expo.easeInOut",
-    //   },
-    //   "-=1"
-    // );
+    loderTl.from(".load-bar", { delay: 0.5, opacity: 0, duration: 1 });
+    loderTl
+      .to(".word1", { duration: 0.7, y: "0%" })
+      .to(".word1", {
+        delay: 0.3,
+        duration: 0.5,
+        opacity: 0,
+      })
+      .to(".word2", { duration: 0.7, y: "0%" })
+      .to(".word2", {
+        delay: 0.7,
+        duration: 0.5,
+        opacity: 0,
+      })
+      .to(".word3", { duration: 0.7, y: "0%" })
+      .to(".word3", {
+        delay: 0.7,
+        duration: 0.5,
+        opacity: 0,
+      })
+      .to(".word4", { duration: 0.7, y: "0%" })
+      .to(".word4", {
+        delay: 0.7,
+        duration: 0.5,
+        opacity: 0,
+      })
+      .to(".word5", { duration: 0.7, y: "0%" })
+      .to(".word5", {
+        delay: 0.5,
+        duration: 0.5,
+        opacity: 0,
+      })
+      .to(".word6", { duration: 0.7, y: "0%" });
+    loderTl
+      .to(
+        ".bar",
+        {
+          width: "30%",
+          duration: 6,
+          ease: "power4.out",
+        },
+        "-=9"
+      )
+      .to(
+        ".bar",
+        {
+          width: "70%",
+          duration: 6,
+          ease: "power4.out",
+        },
+        "-=7"
+      )
+      .to(
+        ".bar",
+        {
+          width: "100%",
+          duration: 6,
+          ease: "power4.out",
+        },
+        "-=4"
+      );
+    loderTl.to([".load-words", ".load-bar"], { delay: 0, opacity: 0 }).to(
+      ".home-loader",
+      {
+        delay: 0.9,
+        opacity: 0,
+        height: 0,
+        duration: 1.5,
+        ease: "Expo.easeInOut",
+      },
+      "-=1"
+    );
 
     tl.from(".shuffle-con", {
       duration: 2,
@@ -359,6 +364,7 @@ function contentAnimation() {
     window.location.pathname === "/contact.html" ||
     window.location.pathname === "/contact"
   ) {
+    // For the Time Stamp on the footer
     // contactTl.from(".contact-span", {
     //   delay: 1.2,
     //   yPercent: 110,

@@ -189,7 +189,7 @@ var reloadCSS = require('_css_loader');
 
 module.hot.dispose(reloadCSS);
 module.hot.accept(reloadCSS);
-},{"./../fonts/PalagioPersonalUse-nRoPM.otf":[["PalagioPersonalUse-nRoPM.b07c9bea.otf","fonts/PalagioPersonalUse-nRoPM.otf"],"fonts/PalagioPersonalUse-nRoPM.otf"],"./../fonts/circula-medium.otf":[["circula-medium.2fc76941.otf","fonts/circula-medium.otf"],"fonts/circula-medium.otf"],"./../fonts/FontsFree-Net-SFProText-Light-1.ttf":[["FontsFree-Net-SFProText-Light-1.516bd2a0.ttf","fonts/FontsFree-Net-SFProText-Light-1.ttf"],"fonts/FontsFree-Net-SFProText-Light-1.ttf"],"./../fonts/FontsFree-Net-SFProText-Regular-1.ttf":[["FontsFree-Net-SFProText-Regular-1.a9474e53.ttf","fonts/FontsFree-Net-SFProText-Regular-1.ttf"],"fonts/FontsFree-Net-SFProText-Regular-1.ttf"],"./../fonts/NymphaTrial-Light.ttf":[["NymphaTrial-Light.15501aea.ttf","fonts/NymphaTrial-Light.ttf"],"fonts/NymphaTrial-Light.ttf"],"./../fonts/NymphaTrial-Regular.ttf":[["NymphaTrial-Regular.998b1241.ttf","fonts/NymphaTrial-Regular.ttf"],"fonts/NymphaTrial-Regular.ttf"],"./../fonts/EBGaramond-VariableFont_wght.ttf":[["EBGaramond-VariableFont_wght.52bf1095.ttf","fonts/EBGaramond-VariableFont_wght.ttf"],"fonts/EBGaramond-VariableFont_wght.ttf"],"./../fonts/SlipperyTrial-Regular.otf":[["SlipperyTrial-Regular.b7ceaba1.otf","fonts/SlipperyTrial-Regular.otf"],"fonts/SlipperyTrial-Regular.otf"],"./../assets/images/noise.gif":[["noise.92b4a529.gif","assets/images/noise.gif"],"assets/images/noise.gif"],"_css_loader":"../node_modules/parcel-bundler/src/builtins/css-loader.js"}],"../node_modules/gsap/dist/gsap.js":[function(require,module,exports) {
+},{"./../fonts/EBGaramond-VariableFont_wght.ttf":[["EBGaramond-VariableFont_wght.52bf1095.ttf","fonts/EBGaramond-VariableFont_wght.ttf"],"fonts/EBGaramond-VariableFont_wght.ttf"],"./../fonts/EBGaramond-Medium.ttf":[["EBGaramond-Medium.c319f0da.ttf","fonts/EBGaramond-Medium.ttf"],"fonts/EBGaramond-Medium.ttf"],"./../fonts/EBGaramond-Regular.ttf":[["EBGaramond-Regular.a0ad7fc8.ttf","fonts/EBGaramond-Regular.ttf"],"fonts/EBGaramond-Regular.ttf"],"./../fonts/SlipperyTrial-Regular.otf":[["SlipperyTrial-Regular.b7ceaba1.otf","fonts/SlipperyTrial-Regular.otf"],"fonts/SlipperyTrial-Regular.otf"],"./../assets/images/noise.gif":[["noise.92b4a529.gif","assets/images/noise.gif"],"assets/images/noise.gif"],"_css_loader":"../node_modules/parcel-bundler/src/builtins/css-loader.js"}],"../node_modules/gsap/dist/gsap.js":[function(require,module,exports) {
 var define;
 var global = arguments[3];
 (function (global, factory) {
@@ -11227,27 +11227,31 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 _gsap.gsap.registerPlugin(_CSSRulePlugin.CSSRulePlugin, _CSSPlugin.CSSPlugin);
 
 var cursorPick = document.querySelector(".cursor");
-var cursor = new _cursor.Cursor(cursorPick); // For the Time Stamp on the footer
-
-function refreshTime() {
-  var timeDisplay = document.getElementById("time");
-  var dateString = new Date().toLocaleTimeString();
-  var formattedString = dateString.replace(", ", " - ");
-  timeDisplay.textContent = formattedString;
-}
-
-setInterval(refreshTime, 1000); // To restart the page loader
+var cursor = new _cursor.Cursor(cursorPick); // To restart the page loader
 
 window.onload = function () {
   localStorage.removeItem("pageloadcount");
+
+  function refreshTime() {
+    document.querySelectorAll("[id=time]").forEach(function (clk) {
+      var dateString = new Date().toLocaleTimeString();
+      var formattedString = dateString.replace(", ", " - ");
+      clk.textContent = formattedString;
+    }); // const timeDisplay = document.getElementById("time");
+    // const dateString = new Date().toLocaleTimeString();
+    // const formattedString = dateString.replace(", ", " - ");
+    // timeDisplay.textContent = formattedString;
+  }
+
+  setInterval(refreshTime, 1000);
 }; // Horizontal scroll with mouse wheel
+// const scrollContainer = document.getElementById("scroll");
+// scrollContainer.addEventListener("wheel", (evt) => {
+//   evt.preventDefault();
+//   scrollContainer.scrollLeft += evt.deltaY;
+// });
+// GAllery footer animation
 
-
-var scrollContainer = document.getElementById("scroll");
-scrollContainer.addEventListener("wheel", function (evt) {
-  evt.preventDefault();
-  scrollContainer.scrollLeft += evt.deltaY;
-}); // GAllery footer animation
 
 function galleryFooter() {
   var footer = document.getElementById("footer");
@@ -11327,78 +11331,73 @@ function contentAnimation() {
   });
 
   if (window.location.pathname === "/index.html" || window.location.pathname === "/") {
-    // loderTl.from(".load-bar", { delay: 0.5, opacity: 0, duration: 1 });
-    // loderTl
-    //   .to(".word1", { duration: 0.7, y: "0%" })
-    //   .to(".word1", {
-    //     delay: 0.3,
-    //     duration: 0.5,
-    //     opacity: 0,
-    //   })
-    //   .to(".word2", { duration: 0.7, y: "0%" })
-    //   .to(".word2", {
-    //     delay: 0.7,
-    //     duration: 0.5,
-    //     opacity: 0,
-    //   })
-    //   .to(".word3", { duration: 0.7, y: "0%" })
-    //   .to(".word3", {
-    //     delay: 0.7,
-    //     duration: 0.5,
-    //     opacity: 0,
-    //   })
-    //   .to(".word4", { duration: 0.7, y: "0%" })
-    //   .to(".word4", {
-    //     delay: 0.7,
-    //     duration: 0.5,
-    //     opacity: 0,
-    //   })
-    //   .to(".word5", { duration: 0.7, y: "0%" })
-    //   .to(".word5", {
-    //     delay: 0.5,
-    //     duration: 0.5,
-    //     opacity: 0,
-    //   })
-    //   .to(".word6", { duration: 0.7, y: "0%" });
-    // loderTl
-    //   .to(
-    //     ".bar",
-    //     {
-    //       width: "30%",
-    //       duration: 6,
-    //       ease: "power4.out",
-    //     },
-    //     "-=9"
-    //   )
-    //   .to(
-    //     ".bar",
-    //     {
-    //       width: "70%",
-    //       duration: 6,
-    //       ease: "power4.out",
-    //     },
-    //     "-=7"
-    //   )
-    //   .to(
-    //     ".bar",
-    //     {
-    //       width: "100%",
-    //       duration: 6,
-    //       ease: "power4.out",
-    //     },
-    //     "-=4"
-    //   );
-    // loderTl.to([".load-words", ".load-bar"], { delay: 0, opacity: 0 }).to(
-    //   ".home-loader",
-    //   {
-    //     delay: 0.9,
-    //     opacity: 0,
-    //     height: 0,
-    //     duration: 1.5,
-    //     ease: "Expo.easeInOut",
-    //   },
-    //   "-=1"
-    // );
+    loderTl.from(".load-bar", {
+      delay: 0.5,
+      opacity: 0,
+      duration: 1
+    });
+    loderTl.to(".word1", {
+      duration: 0.7,
+      y: "0%"
+    }).to(".word1", {
+      delay: 0.3,
+      duration: 0.5,
+      opacity: 0
+    }).to(".word2", {
+      duration: 0.7,
+      y: "0%"
+    }).to(".word2", {
+      delay: 0.7,
+      duration: 0.5,
+      opacity: 0
+    }).to(".word3", {
+      duration: 0.7,
+      y: "0%"
+    }).to(".word3", {
+      delay: 0.7,
+      duration: 0.5,
+      opacity: 0
+    }).to(".word4", {
+      duration: 0.7,
+      y: "0%"
+    }).to(".word4", {
+      delay: 0.7,
+      duration: 0.5,
+      opacity: 0
+    }).to(".word5", {
+      duration: 0.7,
+      y: "0%"
+    }).to(".word5", {
+      delay: 0.5,
+      duration: 0.5,
+      opacity: 0
+    }).to(".word6", {
+      duration: 0.7,
+      y: "0%"
+    });
+    loderTl.to(".bar", {
+      width: "30%",
+      duration: 6,
+      ease: "power4.out"
+    }, "-=9").to(".bar", {
+      width: "70%",
+      duration: 6,
+      ease: "power4.out"
+    }, "-=7").to(".bar", {
+      width: "100%",
+      duration: 6,
+      ease: "power4.out"
+    }, "-=4");
+    loderTl.to([".load-words", ".load-bar"], {
+      delay: 0,
+      opacity: 0
+    }).to(".home-loader", {
+      delay: 0.9,
+      opacity: 0,
+      height: 0,
+      duration: 1.5,
+      ease: "Expo.easeInOut"
+    }, "-=1");
     tl.from(".shuffle-con", {
       duration: 2,
       opacity: 0,
@@ -11456,11 +11455,10 @@ function contentAnimation() {
 
   if (window.location.pathname === "/gallery.html" || window.location.pathname === "/gallery") {
     // Horizontal scroll with mouse wheel
-    var _scrollContainer = document.getElementById("scroll");
-
-    _scrollContainer.addEventListener("wheel", function (evt) {
+    var scrollContainer = document.getElementById("scroll");
+    scrollContainer.addEventListener("wheel", function (evt) {
       evt.preventDefault();
-      _scrollContainer.scrollLeft += evt.deltaY;
+      scrollContainer.scrollLeft += evt.deltaY;
     }); // gsap.set(".galcon", {
     //   delay: 2.5,
     //   zIndex: 30,
@@ -11529,7 +11527,6 @@ function contentAnimation() {
     //   )
     //   .to(".word h5", { duration: 1.2, y: "0%", ease: "power2.out" }, "-=1");
     // galleryFooter();
-
   }
 
   var kinikaTl = _gsap.gsap.timeline();
@@ -11544,7 +11541,8 @@ function contentAnimation() {
 
   var contactTl = _gsap.gsap.timeline();
 
-  if (window.location.pathname === "/contact.html" || window.location.pathname === "/contact") {// contactTl.from(".contact-span", {
+  if (window.location.pathname === "/contact.html" || window.location.pathname === "/contact") {// For the Time Stamp on the footer
+    // contactTl.from(".contact-span", {
     //   delay: 1.2,
     //   yPercent: 110,
     //   duration: 0.6,
@@ -11715,7 +11713,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "38337" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "42869" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
