@@ -502,7 +502,6 @@ ul.transition li {
   width: 100%;
   z-index: 50;
   display: none;
-  border: 1px solid red;
 }
 .gallerycon .popup .left-pop {
   width: 50%;
