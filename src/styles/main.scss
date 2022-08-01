@@ -816,16 +816,19 @@ ul.transition li {
 
         .popup {
             position: fixed;
-            top: 0;
+            // top: 0;
             left: 0;
+            bottom: 0;
+            // right: 0;
             // background: rgb(0, 0, 0, .5);
             background-color: white;
             height: calc(100vh - 60px);
-            margin-top: 60px;
+            // margin-top: 60px;
             width: 100%;
             z-index: 50;
             display: none;
-            transition: all cubic-bezier(0.55, 0.055, 0.675, 0.19);
+            border: 1px solid red;
+            // transition: all cubic-bezier(0.55, 0.055, 0.675, 0.19);
 
             .left-pop {
                 width: 50%;
