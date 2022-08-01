@@ -267,6 +267,17 @@ function contentAnimation() {
     window.location.pathname === "/gallery.html" ||
     window.location.pathname === "/gallery"
   ) {
+    // Popup for pictures
+    document.querySelectorAll(".gallery-div .div-imgs img").forEach((image) => {
+      image.onclick = () => {
+        document.querySelector(".popup").style.display = "flex";
+        document.querySelector(".popup .right-pop img").src =
+          image.getAttribute("src");
+      };
+    });
+    document.querySelector(".popup .left-pop button").onclick = () => {
+      document.querySelector(".popup").style.display = "none";
+    };
     // Horizontal scroll with mouse wheel
     const scrollContainer = document.getElementById("scroll");
 
