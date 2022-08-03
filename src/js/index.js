@@ -273,6 +273,10 @@ function contentAnimation() {
         document.querySelector(".popup").style.display = "flex";
         document.querySelector(".popup .right-pop img").src =
           image.getAttribute("src");
+        document.querySelector(".popup .left-pop .left-word h1").innerHTML =
+          image.getAttribute("data-title");
+        document.querySelector(".popup .left-pop .left-word p").innerHTML =
+          image.getAttribute("data-body");
       };
     });
     document.querySelector(".popup .left-pop button").onclick = () => {

@@ -54,7 +54,8 @@ html body {
     font-weight: 400;
 
     // background-color: rgba(250, 249, 246, 1);
-    background-color: white;
+    // background-color: white;
+    background: #FAF9F6;
     // background-color: #E2E1CA;
     // cursor: none;
 }
@@ -662,10 +663,30 @@ ul.transition li {
         }
 
         .left-bottom {
+            position: relative;
+            // background-image: url("https://res.cloudinary.com/dcoqt2wpo/image/upload/v1658138750/aleruchi/ale_z3bkur.jpg");
+            // background-size: cover;
+            // max-width: 412.11px;
+            // height: 500px;
+            // mix-blend-mode: lighten;
+            // filter: blur(1px);
+            // background-blend-mode: lighten;
+
+
             img {
                 max-width: 500px;
                 // mix-blend-mode: lighten;
-                // filter: blur(1px);
+                // filter: blur(30px);
+            }
+
+            .mix-img {
+                position: absolute;
+                max-width: 500px;
+                left: 0;
+                z-index: 1;
+                border: 1px solid blue;
+                mix-blend-mode: lighten;
+                filter: blur(2px);
             }
         }
     }
@@ -688,9 +709,11 @@ ul.transition li {
             font-family: "Slippery";
             font-weight: 400;
             font-size: 24px;
-            width: 95%;
+            width: 100%;
             margin: 0;
-            margin-bottom: 40px;
+            margin-bottom: 32px;
+            text-align: justify;
+            line-height: 44px;
 
             span {
                 display: none;
@@ -711,7 +734,8 @@ ul.transition li {
         bottom: 0;
         // right: 0;
         // background: rgb(0, 0, 0, .5);
-        background-color: white;
+        // background-color: white;
+        background: #FAF9F6;
         height: calc(100vh - 60px);
         // margin-top: 60px;
         width: 100%;
@@ -721,7 +745,7 @@ ul.transition li {
         // transition: all cubic-bezier(0.55, 0.055, 0.675, 0.19);
 
         .left-pop {
-            width: 50%;
+            width: 40%;
             // border: 1px solid red;
             display: flex;
             flex-direction: column;
@@ -736,29 +760,32 @@ ul.transition li {
                 cursor: pointer;
                 background: none;
                 border: none;
-                margin-left: 5%;
+                margin-left: 10%;
             }
 
             .left-word {
                 height: 94%;
-                width: 60%;
+                width: 75%;
                 margin: 0 auto;
                 // border: 1px solid blue;
                 // margin-top: 5%;
                 display: flex;
                 flex-direction: column;
                 justify-content: center;
+                // align-items: center;
+                text-align: left;
 
                 h1 {
                     font-size: 64px;
                     font-weight: 600;
+                    // text-align: left;
                 }
 
                 p {
                     font-weight: 400;
                     font-size: 16px;
                     line-height: 30px;
-                    width: 335px;
+                    max-width: 500px;
                 }
 
                 button {
@@ -770,7 +797,7 @@ ul.transition li {
         }
 
         .right-pop {
-            width: 50%;
+            width: 60%;
             // border: 1px solid yellow;
             display: flex;
             justify-content: center;

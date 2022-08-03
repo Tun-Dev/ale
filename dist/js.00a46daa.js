@@ -11459,6 +11459,8 @@ function contentAnimation() {
       image.onclick = function () {
         document.querySelector(".popup").style.display = "flex";
         document.querySelector(".popup .right-pop img").src = image.getAttribute("src");
+        document.querySelector(".popup .left-pop .left-word h1").innerHTML = image.getAttribute("data-title");
+        document.querySelector(".popup .left-pop .left-word p").innerHTML = image.getAttribute("data-body");
       };
     });
 
@@ -11725,7 +11727,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "40225" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "46541" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
