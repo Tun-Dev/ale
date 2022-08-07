@@ -292,36 +292,6 @@ html {
   transform: translateY(110%);
   color: white;
 }
-.home-loader .word7 {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-}
-.home-loader .word7 span {
-  border: 2px solid #424135;
-  padding: 4px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 0;
-  height: 55px;
-  width: 100px;
-  transform: translateY(110%);
-}
-.home-loader .word7 span a {
-  text-decoration: none;
-  list-style: none;
-  color: #424135;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 25px;
-  font-family: "Nympha Trial Reg";
-  font-weight: 500;
-  justify-self: center;
-  margin: 0;
-}
 .home-loader .load-bar {
   border: 1px solid white;
   width: 350px;
@@ -338,48 +308,6 @@ html {
   height: 100%;
   overflow: hidden;
   overflow-x: hidden;
-}
-
-ul.transition {
-  display: flex;
-  position: absolute;
-  z-index: 10;
-  height: 100vh;
-  width: 100%;
-  top: 0;
-  left: 0;
-  margin: 0;
-  pointer-events: none;
-}
-
-ul.transition li {
-  transform: scaleY(0);
-  list-style: none;
-  background: #424135;
-  width: 20%;
-}
-
-.loading-screen {
-  position: relative;
-  padding-left: 0;
-  padding-right: 0;
-  padding-top: 0;
-  background-color: #4BEDC2;
-  width: 100%;
-  height: 100%;
-  transform: scaleY(0) skewX(0);
-  transform-origin: top left;
-}
-
-.loading-container {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100vh;
-  overflow: hidden;
-  z-index: 10;
-  pointer-events: none;
 }
 
 .navbar3 .inner {
@@ -512,14 +440,14 @@ ul.transition li {
   left: 0;
   bottom: 0;
   background: #FAF9F6;
-  height: calc(100vh - 60px);
+  height: 0;
   width: 100%;
   z-index: 50;
-  display: none;
+  display: flex;
 }
 .gallerycon .popup .left-pop {
   width: 40%;
-  display: flex;
+  display: none;
   flex-direction: column;
   justify-content: flex-end;
 }
@@ -540,6 +468,10 @@ ul.transition li {
   flex-direction: column;
   justify-content: center;
   text-align: left;
+  margin-bottom: 200px;
+}
+.gallerycon .popup .left-pop .left-word .hide {
+  overflow: hidden;
 }
 .gallerycon .popup .left-pop .left-word h1 {
   font-size: 64px;
@@ -551,13 +483,36 @@ ul.transition li {
   line-height: 30px;
   max-width: 500px;
 }
-.gallerycon .popup .left-pop .left-word button {
-  margin-bottom: 200px;
+.gallerycon .popup .left-pop .left-word .view-btn {
+  width: 170px;
+  margin-left: 0;
+  margin-top: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.gallerycon .popup .left-pop .left-word .view-btn img {
+  width: 25%;
 }
 .gallerycon .popup .right-pop {
   width: 60%;
-  display: flex;
+  display: none;
   justify-content: center;
+  position: relative;
+}
+.gallerycon .popup .right-pop .img-cover {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #FAF9F6;
+}
+.gallerycon .pop.show {
+  -webkit-transition: 3s;
+  -moz-transition: 3s;
+  -ms-transition: 3s;
+  -o-transition: 3s;
+  transition: 3s;
+  height: calc(100vh - 60px);
 }
 .gallerycon .galleryinner {
   height: calc(100vh - 60px);

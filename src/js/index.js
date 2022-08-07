@@ -268,20 +268,94 @@ function contentAnimation() {
     window.location.pathname === "/gallery"
   ) {
     // Popup for pictures
-    document.querySelectorAll(".gallery-div .div-imgs img").forEach((image) => {
-      image.onclick = () => {
-        document.querySelector(".popup").style.display = "flex";
+
+    var openPopup = document.querySelectorAll(".gallery-div .div-imgs img");
+    var closePopup = document.querySelector(".popup .left-pop button");
+
+    var popupTL = gsap.timeline({ paused: true });
+
+    popupTL.to(".popup", {
+      duration: 0.9,
+      height: "calc(100vh - 60px)",
+      ease: "Power2.easeInOut",
+    });
+    popupTL
+      .to([".left-pop", ".right-pop"], {
+        duration: 0.7,
+        display: "flex",
+      })
+      .to(
+        ".right-pop .img-cover",
+        {
+          duration: 1,
+          // y: "0%",
+          height: "0%",
+          ease: "Expo.easeInOut",
+        },
+        "-=1"
+      )
+      .from(
+        [".left-word h1", ".view-btn"],
+        {
+          yPercent: 110,
+          duration: 1,
+          // skewY: 10,
+          // stagger: {
+          //   amount: 0.3,
+          // },
+          ease: "power2.out",
+        }
+        // "-=.5"
+      )
+      .from(
+        ".left-word p",
+        {
+          opacity: 0,
+          duration: 0.9,
+          ease: "power2.out",
+        },
+        "-=.9"
+      );
+    // .to(".left-pop .left-word h1 span", {
+    //   opacity: 0,
+    //   duration: 1,
+    //   ease: "power4.out",
+    // })
+    popupTL.reverse();
+
+    openPopup.forEach((popup) => {
+      popup.onclick = () => {
         document.querySelector(".popup .right-pop img").src =
-          image.getAttribute("src");
+          popup.getAttribute("src");
         document.querySelector(".popup .left-pop .left-word h1").innerHTML =
-          image.getAttribute("data-title");
+          popup.getAttribute("data-title");
         document.querySelector(".popup .left-pop .left-word p").innerHTML =
-          image.getAttribute("data-body");
+          popup.getAttribute("data-body");
+        popupTL.reversed(!popupTL.reversed());
       };
     });
-    document.querySelector(".popup .left-pop button").onclick = () => {
-      document.querySelector(".popup").style.display = "none";
+
+    closePopup.onclick = () => {
+      popupTL.reversed(!popupTL.reversed());
     };
+
+    // document.querySelectorAll(".gallery-div .div-imgs img").forEach((image) => {
+    //   image.onclick = () => {
+    //     // document.querySelector(".popup").style.display = "flex";
+    //     // height: calc(100vh - 60px);
+    //     document.querySelector(".popup").style.height = "calc(100vh - 60px)";
+    //     // document.querySelector(".popup").style.transition = "height 2s";
+    //     document.querySelector(".popup .right-pop img").src =
+    //       image.getAttribute("src");
+    //     document.querySelector(".popup .left-pop .left-word h1").innerHTML =
+    //       image.getAttribute("data-title");
+    //     document.querySelector(".popup .left-pop .left-word p").innerHTML =
+    //       image.getAttribute("data-body");
+    //   };
+    // });
+    // document.querySelector(".popup .left-pop button").onclick = () => {
+    //   document.querySelector(".popup").style.display = "none";
+    // };
     // Horizontal scroll with mouse wheel
     const scrollContainer = document.getElementById("scroll");
 

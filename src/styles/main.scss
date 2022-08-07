@@ -433,45 +433,45 @@ html {
 
     }
 
-    .word7 {
-        // border: 1px solid red;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        overflow: hidden;
-        // width: 200px;
+    // .word7 {
+    //     // border: 1px solid red;
+    //     display: flex;
+    //     align-items: center;
+    //     justify-content: center;
+    //     overflow: hidden;
+    //     // width: 200px;
 
-        span {
-            // width: 50%;
-            border: 2px solid #424135;
-            padding: 4px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0;
-            height: 55px;
-            width: 100px;
+    //     span {
+    //         // width: 50%;
+    //         border: 2px solid #424135;
+    //         padding: 4px;
+    //         display: flex;
+    //         align-items: center;
+    //         justify-content: center;
+    //         margin: 0;
+    //         height: 55px;
+    //         width: 100px;
 
-            transform: translateY(110%);
+    //         transform: translateY(110%);
 
-            a {
-                text-decoration: none;
-                list-style: none;
-                color: #424135;
-                // border: 1px solid black;
-                // width: 400px;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                // text-align: center;
-                font-size: 25px;
-                font-family: "Nympha Trial Reg";
-                font-weight: 500;
-                justify-self: center;
-                margin: 0;
-            }
-        }
-    }
+    //         a {
+    //             text-decoration: none;
+    //             list-style: none;
+    //             color: #424135;
+    //             // border: 1px solid black;
+    //             // width: 400px;
+    //             display: flex;
+    //             align-items: center;
+    //             justify-content: center;
+    //             // text-align: center;
+    //             font-size: 25px;
+    //             font-family: "Nympha Trial Reg";
+    //             font-weight: 500;
+    //             justify-self: center;
+    //             margin: 0;
+    //         }
+    //     }
+    // }
 
     .load-bar {
         // border: 1px solid #424135;
@@ -497,49 +497,49 @@ html {
 
 }
 
-ul.transition {
-    display: flex;
-    position: absolute;
-    z-index: 10;
-    height: 100vh;
-    width: 100%;
-    top: 0;
-    left: 0;
-    margin: 0;
-    pointer-events: none;
-}
+// ul.transition {
+//     display: flex;
+//     position: absolute;
+//     z-index: 10;
+//     height: 100vh;
+//     width: 100%;
+//     top: 0;
+//     left: 0;
+//     margin: 0;
+//     pointer-events: none;
+// }
 
-ul.transition li {
-    transform: scaleY(0);
-    // background: #000;
-    list-style: none;
-    background: #424135;
-    width: 20%;
-}
+// ul.transition li {
+//     transform: scaleY(0);
+//     // background: #000;
+//     list-style: none;
+//     background: #424135;
+//     width: 20%;
+// }
 
 
-.loading-screen {
-    position: relative;
-    padding-left: 0;
-    padding-right: 0;
-    padding-top: 0;
-    background-color: #4BEDC2;
-    width: 100%;
-    height: 100%;
-    transform: scaleY(0) skewX(0);
-    transform-origin: top left;
-}
+// .loading-screen {
+//     position: relative;
+//     padding-left: 0;
+//     padding-right: 0;
+//     padding-top: 0;
+//     background-color: #4BEDC2;
+//     width: 100%;
+//     height: 100%;
+//     transform: scaleY(0) skewX(0);
+//     transform-origin: top left;
+// }
 
-.loading-container {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100vh;
-    overflow: hidden;
-    z-index: 10;
-    pointer-events: none;
-}
+// .loading-container {
+//     position: fixed;
+//     top: 0;
+//     left: 0;
+//     width: 100%;
+//     height: 100vh;
+//     overflow: hidden;
+//     z-index: 10;
+//     pointer-events: none;
+// }
 
 .navbar3 {
     // border: 1px solid red;
@@ -736,18 +736,21 @@ ul.transition li {
         // background: rgb(0, 0, 0, .5);
         // background-color: white;
         background: #FAF9F6;
-        height: calc(100vh - 60px);
+        // height: calc(100vh - 60px);
+        height: 0;
         // margin-top: 60px;
         width: 100%;
         z-index: 50;
-        display: none;
+        display: flex;
+        // display: none;
         // border: 1px solid red;
         // transition: all cubic-bezier(0.55, 0.055, 0.675, 0.19);
 
         .left-pop {
             width: 40%;
             // border: 1px solid red;
-            display: flex;
+            // display: flex;
+            display: none;
             flex-direction: column;
             justify-content: flex-end;
 
@@ -774,11 +777,19 @@ ul.transition li {
                 justify-content: center;
                 // align-items: center;
                 text-align: left;
+                margin-bottom: 200px;
+
+                .hide {
+                    overflow: hidden;
+                }
 
                 h1 {
                     font-size: 64px;
                     font-weight: 600;
+                    // transform: translateY(110%);
                     // text-align: left;
+                    // position: relative;
+                    // overflow: hidden;
                 }
 
                 p {
@@ -788,8 +799,24 @@ ul.transition li {
                     max-width: 500px;
                 }
 
+                .view-btn {
+                    width: 170px;
+                    // border: 1px solid red;
+                    margin-left: 0;
+                    margin-top: 15px;
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+
+                    img {
+                        width: 25%;
+                        // width: 0px;
+                    }
+                }
+
                 button {
-                    margin-bottom: 200px;
+                    // margin-bottom: 200px;
+                    // transform: translateY(110%);
                 }
             }
 
@@ -799,8 +826,19 @@ ul.transition li {
         .right-pop {
             width: 60%;
             // border: 1px solid yellow;
-            display: flex;
+            // display: flex;
+            display: none;
             justify-content: center;
+            position: relative;
+
+            .img-cover {
+                position: absolute;
+                // border: 1px solid red;
+                width: 100%;
+                height: 100%;
+                background: #FAF9F6;
+
+            }
 
             img {
                 // width: 100%;
@@ -813,6 +851,15 @@ ul.transition li {
 
             // align-items: center;
         }
+    }
+
+    .pop.show {
+        -webkit-transition: 3s;
+        -moz-transition: 3s;
+        -ms-transition: 3s;
+        -o-transition: 3s;
+        transition: 3s;
+        height: calc(100vh - 60px);
     }
 
     .galleryinner {
