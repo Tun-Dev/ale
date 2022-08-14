@@ -357,12 +357,27 @@ function contentAnimation() {
     //   document.querySelector(".popup").style.display = "none";
     // };
     // Horizontal scroll with mouse wheel
+
+    var x = window.matchMedia("(min-width: 800px)");
     const scrollContainer = document.getElementById("scroll");
 
-    scrollContainer.addEventListener("wheel", (evt) => {
-      evt.preventDefault();
-      scrollContainer.scrollLeft += evt.deltaY;
-    });
+    function testing(x) {
+      if (x.matches) {
+        scrollContainer.addEventListener("wheel", (evt) => {
+          evt.preventDefault();
+          scrollContainer.scrollLeft += evt.deltaY;
+        });
+      } else {
+        scrollContainer.addEventListener("wheel", (evt) => {
+          evt.preventDefault();
+          // evt.defaultPrevented();
+          scrollContainer.scrollTop += evt.deltaX;
+        });
+      }
+    }
+
+    testing(x);
+    x.addEventListener("change", testing);
 
     // gsap.set(".galcon", {
     //   delay: 2.5,

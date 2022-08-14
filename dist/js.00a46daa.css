@@ -56,19 +56,6 @@ html {
   display: block;
 }
 
-.noise::before {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  content: "";
-  opacity: 0.01;
-  z-index: -1;
-  pointer-events: none;
-  background: url(/noise.92b4a529.gif);
-}
-
 .exit-h1 {
   overflow: hidden;
 }
@@ -1073,6 +1060,224 @@ html {
   font-family: "EB Garamond";
   font-weight: 500;
   font-size: 16px;
+}
+
+@media only screen and (max-width: 800px) {
+  .cursor {
+    display: none;
+  }
+  .exit-transition h1 {
+    font-size: 15vw;
+  }
+  .HomeContainer .innercon {
+    width: 95%;
+  }
+  .HomeContainer .innercon .shuffle-con {
+    width: 187px;
+    height: 265px;
+  }
+  .HomeContainer .innercon .name h1 {
+    font-size: 10vw;
+  }
+  .HomeContainer .innercon .title h4 {
+    font-size: 5vw;
+  }
+  .HomeContainer .innercon .links li {
+    font-size: 4vw;
+  }
+  .profilecon {
+    display: flex;
+    height: 100%;
+  }
+  .profilecon .innercon {
+    display: flex;
+    flex-direction: column;
+  }
+  .profilecon .left {
+    margin-top: 30px;
+    margin-bottom: 35px;
+    width: 100%;
+    height: 100%;
+  }
+  .profilecon .left .left-top {
+    margin-bottom: 50px;
+  }
+  .profilecon .left .left-top h1 {
+    font-size: 11vw;
+    font-weight: 500;
+  }
+  .profilecon .left .left-top p {
+    font-size: 3.5vw;
+    width: 335px;
+  }
+  .profilecon .left .left-bottom {
+    width: 100%;
+    display: flex;
+  }
+  .profilecon .left .left-bottom img {
+    margin: 0 auto;
+    width: 100%;
+  }
+  .profilecon .left .left-bottom .mix-img {
+    display: none;
+  }
+  .profilecon .right h5 {
+    font-family: "Slippery";
+    font-weight: 400;
+    font-size: 24px;
+    width: 100%;
+    margin: 0;
+    margin-bottom: 32px;
+    text-align: left;
+    line-height: 44px;
+  }
+  .profilecon .right h5 span {
+    display: none;
+  }
+  .gallerycon {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+  .gallerycon .popup {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    background: #FAF9F6;
+    height: 0;
+    width: 100%;
+    z-index: 50;
+    display: flex;
+  }
+  .gallerycon .popup .left-pop {
+    width: 40%;
+    display: none;
+    flex-direction: column;
+    justify-content: flex-end;
+  }
+  .gallerycon .popup .left-pop button {
+    font-size: 16px;
+    font-family: "EB Garamond";
+    width: 100px;
+    cursor: pointer;
+    background: none;
+    border: none;
+    margin-left: 10%;
+  }
+  .gallerycon .popup .left-pop .left-word {
+    height: 94%;
+    width: 75%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: left;
+    margin-bottom: 200px;
+  }
+  .gallerycon .popup .left-pop .left-word .hide {
+    overflow: hidden;
+  }
+  .gallerycon .popup .left-pop .left-word h1 {
+    font-size: 64px;
+    font-weight: 600;
+  }
+  .gallerycon .popup .left-pop .left-word p {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 30px;
+    max-width: 500px;
+  }
+  .gallerycon .popup .left-pop .left-word .view-btn {
+    width: 170px;
+    margin-left: 0;
+    margin-top: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .gallerycon .popup .left-pop .left-word .view-btn img {
+    width: 25%;
+  }
+  .gallerycon .popup .right-pop {
+    width: 60%;
+    display: none;
+    justify-content: center;
+    position: relative;
+  }
+  .gallerycon .popup .right-pop .img-cover {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #FAF9F6;
+  }
+  .gallerycon .pop.show {
+    -webkit-transition: 3s;
+    -moz-transition: 3s;
+    -ms-transition: 3s;
+    -o-transition: 3s;
+    transition: 3s;
+    height: calc(100vh - 60px);
+  }
+  .gallerycon .galleryinner {
+    display: flex;
+    flex-direction: column;
+    scroll-snap-type: x mandatory;
+    overflow-x: scroll;
+  }
+  .gallerycon .galleryinner::-webkit-scrollbar {
+    display: none;
+  }
+  .gallerycon .galleryinner .gallery-div {
+    flex: none;
+    display: flex;
+    flex-direction: column;
+    margin-right: 300px;
+  }
+  .gallerycon .galleryinner .gallery-div .div-words {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    margin-left: 3%;
+    margin-right: 200px;
+  }
+  .gallerycon .galleryinner .gallery-div .div-words h1 {
+    font-family: "EB Garamond";
+    font-size: 64px;
+    font-weight: 600;
+    width: 479px;
+    display: flex;
+    flex-direction: column;
+    text-align: justify;
+  }
+  .gallerycon .galleryinner .gallery-div .div-words h1 span {
+    margin: 0;
+  }
+  .gallerycon .galleryinner .gallery-div .div-words p {
+    font-family: "EB Garamond";
+    font-size: 16px;
+    font-weight: 400;
+    width: 413px;
+  }
+  .gallerycon .galleryinner .gallery-div .div-imgs {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .gallerycon .galleryinner .gallery-div .div-imgs img {
+    margin-right: 120px;
+    transition: all 0.5s linear;
+  }
+  .gallerycon .galleryinner .gallery-div .div-imgs img:hover {
+    filter: blur(2.5px);
+    cursor: pointer;
+  }
+  .gallerycon .galleryinner .gallery-div .div-imgs .mr1 {
+    width: 350px;
+  }
+  .gallerycon .galleryinner .gallery-div .div-imgs .mr2 {
+    width: 450px;
+  }
 }
 
 /*# sourceMappingURL=/js.00a46daa.css.map */
