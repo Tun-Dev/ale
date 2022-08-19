@@ -1151,7 +1151,6 @@ html {
   .home-loader .load-words {
     width: 90%;
     height: 50px;
-    border: 1px solid red;
     position: relative;
     overflow: hidden;
   }
