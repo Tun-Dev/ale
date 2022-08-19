@@ -561,8 +561,8 @@ window.onload = ()=>{
     }
     setInterval(refreshTime, 1000);
 };
-console.log(configFile);
-let configContent = await fs.readFile(configFile, "utf8");
+// console.log(configFile);
+// let configContent = await fs.readFile(configFile, "utf8");
 // Horizontal scroll with mouse wheel
 // const scrollContainer = document.getElementById("scroll");
 // scrollContainer.addEventListener("wheel", (evt) => {
