@@ -561,8 +561,6 @@ window.onload = ()=>{
     }
     setInterval(refreshTime, 1000);
 };
-// console.log(configFile);
-// let configContent = await fs.readFile(configFile, "utf8");
 // Horizontal scroll with mouse wheel
 // const scrollContainer = document.getElementById("scroll");
 // scrollContainer.addEventListener("wheel", (evt) => {
@@ -579,10 +577,8 @@ window.onload = ()=>{
 // var word4 = document.getElementById("word4");
 // var word5 = document.getElementById("word5");
 const navMobile = ()=>{
-    var menuToggle = document.getElementById("menuToggle");
-    var menubar = (0, _gsap.gsap).timeline({
-        paused: true
-    });
+    var menuToggles = document.querySelectorAll("#menuToggle");
+    var menubar = (0, _gsap.gsap).timeline();
     menubar.to("#bar1", {
         duration: 0.5,
         attr: {
@@ -608,9 +604,7 @@ const navMobile = ()=>{
         ease: "Power4.easeInOut"
     }, "start");
     menubar.reverse();
-    var navtl = (0, _gsap.gsap).timeline({
-        paused: true
-    });
+    var navtl = (0, _gsap.gsap).timeline();
     navtl.to("#fullpageMenu", {
         duration: 0.7,
         // display: "block",
@@ -639,9 +633,15 @@ const navMobile = ()=>{
         }
     });
     navtl.reverse();
-    menuToggle.addEventListener("click", ()=>{
-        menubar.reversed(!menubar.reversed());
-        navtl.reversed(!navtl.reversed());
+    menuToggles.forEach((menuToggle)=>{
+        menuToggle.onclick = ()=>{
+            menubar.reversed(!menubar.reversed());
+            navtl.reversed(!navtl.reversed());
+        };
+    // menuToggle.addEventListener("click", () => {
+    //   menubar.reversed(!menubar.reversed());
+    //   navtl.reversed(!navtl.reversed());
+    // });
     });
 };
 // GAllery footer animation
@@ -924,118 +924,20 @@ function contentAnimation() {
         testing(x);
         x.addEventListener("change", testing);
         navMobile();
-    // gsap.set(".galcon", {
-    //   delay: 2.5,
-    //   zIndex: 30,
-    //   top: "unset",
-    //   bottom: 0,
-    // });
-    // gsap.set(".innercon-galcon", {
-    //   opacity: 1,
-    // });
-    // tll.to(".galcon", {
-    //   height: window.innerHeight,
-    //   // duration: 1.5,
-    //   duration: 1,
-    //   ease: "Expo.easeInOut",
-    // });
-    // tll.set(".galcon", {
-    //   top: 0,
-    //   bottom: "unset",
-    // });
-    // tll
-    //   .from([".innercon-galcon h4", ".innercon-galcon h5"], {
-    //     delay: 1.5,
-    //     yPercent: 300,
-    //     duration: 1.5,
-    //     // skewY: 10,
-    //     stagger: {
-    //       amount: 0.3,
-    //     },
-    //     ease: "power2.out",
-    //   })
-    //   .to(".innercon-galcon", {
-    //     delay: 3,
-    //     opacity: 0,
-    //     duration: 1,
-    //     ease: "power4.out",
-    //   })
-    //   .to(
-    //     ".galcon",
-    //     {
-    //       delay: 0.9,
-    //       height: 0,
-    //       duration: 1.5,
-    //       ease: "Expo.easeInOut",
-    //     },
-    //     "-=1"
-    //   );
-    // tll
-    //   .to(
-    //     ".after",
-    //     {
-    //       // delay: 0.5,
-    //       duration: 1.4,
-    //       width: "0%",
-    //       ease: "Power2.easeInOut",
-    //     },
-    //     "-=.5"
-    //   )
-    //   .from(
-    //     ".img-container img",
-    //     {
-    //       duration: 1.4,
-    //       scale: 1.6,
-    //       ease: "Power2.easeInOut",
-    //     },
-    //     "-=1.5"
-    //   )
-    //   .to(".word h5", { duration: 1.2, y: "0%", ease: "power2.out" }, "-=1");
-    // galleryFooter();
     }
     var kinikaTl = (0, _gsap.gsap).timeline();
-    if (window.location.pathname === "/kinika.html" || window.location.pathname === "/kinika") // navMobile();
-    kinikaTl.from(".innercon .right", {
-        delay: 1.2,
-        duration: 1.5,
-        opacity: 0
-    });
+    if (window.location.pathname === "/kinika.html" || window.location.pathname === "/kinika") {
+        navMobile();
+        kinikaTl.from(".innercon .right", {
+            delay: 1.2,
+            duration: 1.5,
+            opacity: 0
+        });
+    }
     var contactTl = (0, _gsap.gsap).timeline();
     if (window.location.pathname === "/contact.html" || window.location.pathname === "/contact") {
         console.log("Contact");
         navMobile();
-    // For the Time Stamp on the footer
-    // contactTl.from(".contact-span", {
-    //   delay: 1.2,
-    //   yPercent: 110,
-    //   duration: 0.6,
-    //   // skewY: 10,
-    //   stagger: {
-    //     amount: 2,
-    //   },
-    //   ease: "power4.inout",
-    // });
-    // contactTl
-    //   .from(
-    //     ".botcon h2",
-    //     {
-    //       yPercent: 110,
-    //       duration: 0.6,
-    //     },
-    //     "-=2"
-    //   )
-    //   .from(
-    //     ".botcon div a",
-    //     {
-    //       yPercent: 110,
-    //       duration: 0.6,
-    //       stagger: {
-    //         amount: 1,
-    //       },
-    //     },
-    //     "-=2"
-    //   );
-    // navMobile();
     }
     if (window.location.pathname === "/articles.html" || window.location.pathname === "/articles") {
         console.log("Article");
