@@ -297,6 +297,14 @@ html {
   overflow-x: hidden;
 }
 
+.navbar3-mobile {
+  display: none;
+}
+
+.fullpage-menu {
+  display: none;
+}
+
 .navbar3 .inner {
   display: flex;
   flex-direction: row;
@@ -535,6 +543,9 @@ html {
 }
 .gallerycon .galleryinner .gallery-div .div-words h1 span {
   margin: 0;
+}
+.gallerycon .galleryinner .gallery-div .div-words h2 {
+  display: none;
 }
 .gallerycon .galleryinner .gallery-div .div-words p {
   font-family: "EB Garamond";
@@ -1069,8 +1080,179 @@ html {
   .exit-transition h1 {
     font-size: 15vw;
   }
+  .navbar3 {
+    display: none;
+  }
+  .navbar3-mobile {
+    display: flex;
+    position: fixed;
+    width: 100%;
+    z-index: 15;
+    margin-bottom: 20px;
+    background: rgba(250, 249, 246, 0.5);
+    backdrop-filter: blur(13px);
+    overflow: hidden;
+  }
+  .navbar3-mobile .wrapper2 {
+    height: 70px;
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .navbar3-mobile .wrapper2 .navtitle a {
+    margin: 0;
+    font-family: "Palagio";
+    font-weight: 400;
+    font-size: 32px;
+    text-decoration: none;
+    color: #000;
+  }
+  .navbar3-mobile .menu-toggle {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    outline: none;
+    text-decoration: none;
+  }
+  .navbar3-mobile .menu-toggle .hamburger path {
+    fill: none;
+    stroke: #000;
+    stroke-linecap: round;
+  }
+  .fullpage-menu {
+    display: flex;
+    z-index: 9;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 0vh;
+    overflow: hidden;
+    background: rgba(250, 249, 246, 0.5);
+    backdrop-filter: blur(13px);
+  }
+  .fullpage-menu .fullpage-menu-inner {
+    display: none;
+    align-items: center;
+    width: 100%;
+    justify-content: center;
+    height: 100vh;
+    padding: 100px 60px;
+    border: 1px solid red;
+  }
+  .fullpage-menu .title {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 84.09px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .fullpage-menu .title .titleinner {
+    width: 90%;
+    margin: 0 auto;
+    overflow: hidden;
+  }
+  .fullpage-menu .title .titleinner h5 {
+    margin: 0;
+    font-family: "Palagio";
+    font-weight: 400;
+    font-size: 32px;
+    transform: translateY(110%);
+  }
+  .fullpage-menu nav {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+  }
+  .fullpage-menu nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding-inline-start: 0;
+  }
+  .fullpage-menu nav li {
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+  }
+  .fullpage-menu nav li + li {
+    margin-top: 30px;
+  }
+  .fullpage-menu nav li a {
+    font-size: 11vw;
+    text-decoration: none;
+    font-family: "EB Garamond Med";
+    color: #000;
+    overflow: hidden;
+    display: inline-block;
+    transform: translateY(110%);
+  }
+  .fullpage-menu nav li a span {
+    position: relative;
+    margin: 0;
+    padding: 0;
+  }
+  .fullpage-menu nav li:hover a span::before {
+    height: 100%;
+  }
+  .home-loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: #3C3C31;
+  }
+  .home-loader .load-words {
+    border: 1px solid red;
+    position: relative;
+    width: 90%;
+    overflow: hidden;
+    height: 50px;
+  }
+  .home-loader .load-words h1 {
+    margin: 0 auto;
+    position: absolute;
+    height: 30px;
+    width: 100%;
+    text-align: center;
+    font-size: 6vw;
+    font-family: "EB Garamond";
+    font-weight: 500;
+    transform: translateY(150%);
+    color: white;
+  }
+  .home-loader .load-bar {
+    border: 1px solid white;
+    width: 85%;
+    height: 20px;
+    margin: 20px;
+    position: relative;
+  }
+  .home-loader .load-bar .bar {
+    position: absolute;
+    left: 0;
+    background: white;
+    /* top: 100%; */
+    width: 0%;
+    height: 100%;
+    overflow: hidden;
+    overflow-x: hidden;
+  }
+  .HomeContainer {
+    width: 100%;
+  }
   .HomeContainer .innercon {
-    width: 95%;
+    width: 100%;
   }
   .HomeContainer .innercon .shuffle-con {
     width: 187px;
@@ -1090,6 +1272,7 @@ html {
     height: 100%;
   }
   .profilecon .innercon {
+    margin-top: 80px;
     display: flex;
     flex-direction: column;
   }
@@ -1140,20 +1323,23 @@ html {
     height: 100%;
   }
   .gallerycon .popup {
-    position: absolute;
-    left: 0;
+    position: fixed;
     bottom: 0;
     background: #FAF9F6;
     height: 0;
     width: 100%;
     z-index: 50;
     display: flex;
+    flex-direction: column-reverse;
+    justify-content: space-between;
   }
   .gallerycon .popup .left-pop {
-    width: 40%;
+    width: 100%;
+    margin-top: 0;
+    margin-bottom: 30px;
+  }
+  .gallerycon .popup .left-pop .float-btn {
     display: none;
-    flex-direction: column;
-    justify-content: flex-end;
   }
   .gallerycon .popup .left-pop button {
     font-size: 16px;
@@ -1165,44 +1351,55 @@ html {
     margin-left: 10%;
   }
   .gallerycon .popup .left-pop .left-word {
-    height: 94%;
-    width: 75%;
+    height: 100%;
+    width: 100%;
     margin: 0 auto;
     display: flex;
     flex-direction: column;
     justify-content: center;
     text-align: left;
-    margin-bottom: 200px;
   }
   .gallerycon .popup .left-pop .left-word .hide {
     overflow: hidden;
   }
   .gallerycon .popup .left-pop .left-word h1 {
-    font-size: 64px;
+    font-size: 32px;
     font-weight: 600;
+    margin-top: 0;
+    width: 95%;
+    margin: 0 auto;
   }
   .gallerycon .popup .left-pop .left-word p {
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 30px;
-    max-width: 500px;
+    line-height: 25px;
+    width: 95%;
+    margin: 0 auto;
   }
   .gallerycon .popup .left-pop .left-word .view-btn {
-    width: 170px;
-    margin-left: 0;
-    margin-top: 15px;
+    margin-top: 10px;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    margin-left: 3%;
   }
   .gallerycon .popup .left-pop .left-word .view-btn img {
-    width: 25%;
+    width: 30%;
   }
   .gallerycon .popup .right-pop {
-    width: 60%;
-    display: none;
-    justify-content: center;
+    width: 100%;
+    height: 70%;
     position: relative;
+  }
+  .gallerycon .popup .right-pop .float-btn {
+    position: absolute;
+    left: 0;
+    top: 0;
+    margin-top: 20px;
+    margin-left: 25px;
+    background: none;
+    color: white;
+    border: none;
+    font-size: 16px;
+  }
+  .gallerycon .popup .right-pop .float-btn span {
+    font-size: 30px;
   }
   .gallerycon .popup .right-pop .img-cover {
     position: absolute;
@@ -1210,73 +1407,71 @@ html {
     height: 100%;
     background: #FAF9F6;
   }
-  .gallerycon .pop.show {
-    -webkit-transition: 3s;
-    -moz-transition: 3s;
-    -ms-transition: 3s;
-    -o-transition: 3s;
-    transition: 3s;
-    height: calc(100vh - 60px);
+  .gallerycon .popup .right-pop img {
+    width: 100%;
   }
   .gallerycon .galleryinner {
+    margin-top: 80px;
+    height: 100%;
+    width: 100%;
     display: flex;
     flex-direction: column;
-    scroll-snap-type: x mandatory;
-    overflow-x: scroll;
-  }
-  .gallerycon .galleryinner::-webkit-scrollbar {
-    display: none;
   }
   .gallerycon .galleryinner .gallery-div {
-    flex: none;
+    flex: auto;
     display: flex;
     flex-direction: column;
-    margin-right: 300px;
+    width: 100%;
+    margin-bottom: 100px;
   }
   .gallerycon .galleryinner .gallery-div .div-words {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: center;
+    width: 90%;
     margin-left: 3%;
-    margin-right: 200px;
+    margin-right: 0px;
+    margin: 0 auto;
+    margin-bottom: 30px;
   }
   .gallerycon .galleryinner .gallery-div .div-words h1 {
-    font-family: "EB Garamond";
-    font-size: 64px;
-    font-weight: 600;
-    width: 479px;
-    display: flex;
-    flex-direction: column;
-    text-align: justify;
+    display: none;
   }
-  .gallerycon .galleryinner .gallery-div .div-words h1 span {
-    margin: 0;
+  .gallerycon .galleryinner .gallery-div .div-words h2 {
+    font-family: "EB Garamond";
+    font-size: 32px;
+    font-weight: 600;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 24px;
   }
   .gallerycon .galleryinner .gallery-div .div-words p {
-    font-family: "EB Garamond";
     font-size: 16px;
-    font-weight: 400;
-    width: 413px;
+    width: 100%;
+    line-height: 30px;
+    vertical-align: auto;
   }
   .gallerycon .galleryinner .gallery-div .div-imgs {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    width: 100%;
   }
   .gallerycon .galleryinner .gallery-div .div-imgs img {
-    margin-right: 120px;
-    transition: all 0.5s linear;
-  }
-  .gallerycon .galleryinner .gallery-div .div-imgs img:hover {
-    filter: blur(2.5px);
-    cursor: pointer;
+    margin-right: 0px;
   }
   .gallerycon .galleryinner .gallery-div .div-imgs .mr1 {
-    width: 350px;
+    width: 70%;
+    margin-bottom: 20px;
   }
   .gallerycon .galleryinner .gallery-div .div-imgs .mr2 {
-    width: 450px;
+    width: 80%;
+    margin-bottom: 20px;
+  }
+  .gallerycon .galleryinner .gallery-div .div-imgs .mr3 {
+    width: 70%;
+    margin-bottom: 20px;
+  }
+  .gallerycon .galleryinner .gallery-div .div-imgs .mr4 {
+    width: 80%;
+    margin-bottom: 20px;
   }
 }
 

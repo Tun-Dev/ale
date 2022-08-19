@@ -39,6 +39,86 @@ window.onload = () => {
 //   scrollContainer.scrollLeft += evt.deltaY;
 // });
 
+// var bar1 = document.getElementById("bar1");
+// var bar2 = document.getElementById("bar2");
+// var bar3 = document.getElementById("bar3");
+// var fullpageMenu = document.getElementById("fullpageMenu");
+// var word = document.getElementById("word");
+// var word2 = document.getElementById("word2");
+// var word3 = document.getElementById("word3");
+// var word4 = document.getElementById("word4");
+// var word5 = document.getElementById("word5");
+
+const navMobile = () => {
+  var menuToggle = document.getElementById("menuToggle");
+  var menubar = gsap.timeline({ paused: true });
+
+  menubar.to(
+    "#bar1",
+    {
+      duration: 0.5,
+      attr: { d: "M8, 2 L2,8" },
+      x: 1,
+      ease: "Power2.easeInOut",
+    },
+    "start"
+  );
+  menubar.to(
+    "#bar2",
+    {
+      duration: 0.5,
+      attr: { d: "M8, 8 L2,2" },
+      x: 1,
+      ease: "Power4.easeInOut",
+    },
+    "start"
+  );
+  menubar.to(
+    "#bar3",
+    {
+      duration: 0.5,
+      attr: { d: "M8, 8 L2,2" },
+      x: 1,
+      ease: "Power4.easeInOut",
+    },
+    "start"
+  );
+  menubar.reverse();
+
+  var navtl = gsap.timeline({ paused: true });
+
+  navtl.to("#fullpageMenu", {
+    duration: 0.7,
+    // display: "block",
+    height: "100vh",
+    opacity: 1,
+    ease: "Power4.easeInOut",
+  });
+  navtl.to("#fullpageMenuInner", {
+    duration: 0.5,
+    display: "flex",
+    // height: "100vh",
+    // opacity: 1,
+    ease: "Power4.easeInOut",
+  });
+  navtl.to(["#word", "#word2", "#word3", "#word4"], {
+    y: "0%",
+    duration: 0.5,
+    // skewX: 10,
+    stagger: {
+      each: 0.2,
+      // amount: 0.15,
+    },
+  });
+
+  navtl.reverse();
+
+  menuToggle.addEventListener("click", () => {
+    menubar.reversed(!menubar.reversed());
+    navtl.reversed(!navtl.reversed());
+  });
+};
+
 // GAllery footer animation
 function galleryFooter() {
   let footer = document.getElementById("footer");
@@ -271,12 +351,16 @@ function contentAnimation() {
 
     var openPopup = document.querySelectorAll(".gallery-div .div-imgs img");
     var closePopup = document.querySelector(".popup .left-pop button");
+    var closePopup2 = document.querySelectorAll(".float-btn");
 
     var popupTL = gsap.timeline({ paused: true });
 
     popupTL.to(".popup", {
       duration: 0.9,
-      height: "calc(100vh - 60px)",
+      // height: "calc(100vh - 60px)",
+      height: "100%",
+      bottom: 0,
+      // zIndex: 99,
       ease: "Power2.easeInOut",
     });
     popupTL
@@ -335,9 +419,15 @@ function contentAnimation() {
       };
     });
 
-    closePopup.onclick = () => {
-      popupTL.reversed(!popupTL.reversed());
-    };
+    closePopup2.forEach((close) => {
+      close.onclick = () => {
+        popupTL.reversed(!popupTL.reversed());
+      };
+    });
+
+    // closePopup2.onclick = () => {
+    //   popupTL.reversed(!popupTL.reversed());
+    // };
 
     // document.querySelectorAll(".gallery-div .div-imgs img").forEach((image) => {
     //   image.onclick = () => {
@@ -378,6 +468,8 @@ function contentAnimation() {
 
     testing(x);
     x.addEventListener("change", testing);
+
+    navMobile();
 
     // gsap.set(".galcon", {
     //   delay: 2.5,
@@ -455,6 +547,7 @@ function contentAnimation() {
     window.location.pathname === "/kinika.html" ||
     window.location.pathname === "/kinika"
   ) {
+    // navMobile();
     kinikaTl.from(".innercon .right", {
       delay: 1.2,
       duration: 1.5,
@@ -468,6 +561,8 @@ function contentAnimation() {
     window.location.pathname === "/contact.html" ||
     window.location.pathname === "/contact"
   ) {
+    console.log("Contact");
+    navMobile();
     // For the Time Stamp on the footer
     // contactTl.from(".contact-span", {
     //   delay: 1.2,
@@ -499,6 +594,15 @@ function contentAnimation() {
     //     },
     //     "-=2"
     //   );
+    // navMobile();
+  }
+
+  if (
+    window.location.pathname === "/articles.html" ||
+    window.location.pathname === "/articles"
+  ) {
+    console.log("Article");
+    navMobile();
   }
 
   // tl.from(".HomeContainer", { duration: 1.5, opacity: 0 });
@@ -534,9 +638,14 @@ function contentAnimation() {
 
   // console.log(window.location.pathname);
 
-  if (window.location.pathname === "/gallery") {
-    update();
+  if (
+    window.location.pathname === "/gallery" ||
+    window.location.pathname === "/gallery.html"
+  ) {
+    // update();
   }
+
+  // Navbar mobile animation
 }
 
 function delay(n) {
