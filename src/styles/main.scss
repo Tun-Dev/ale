@@ -1758,6 +1758,9 @@ html {
         overflow: hidden;
         background: rgba(250, 249, 246, 0.5);
         backdrop-filter: blur(13px);
+        -webkit-backdrop-filter: blur(13px);
+
+
 
 
         .fullpage-menu-inner {

@@ -1050,6 +1050,7 @@ html {
     height: 0;
     -webkit-backdrop-filter: blur(13px);
     backdrop-filter: blur(13px);
+    -webkit-backdrop-filter: blur(13px);
     background: #faf9f680;
     display: flex;
     position: fixed;
