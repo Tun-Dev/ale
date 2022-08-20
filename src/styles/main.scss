@@ -34,6 +34,7 @@
 $EBG-Reg: "EB Garamond Reg";
 $EBG-Med: "EB Garamond Med";
 $EBG: "EB Garamond";
+$font-color: #3C3C31;
 
 
 
@@ -690,6 +691,10 @@ html {
                 margin-left: 10%;
             }
 
+            .float-btn {
+                margin-top: 50px;
+            }
+
             .left-word {
                 height: 94%;
                 width: 75%;
@@ -705,6 +710,7 @@ html {
 
                 .hide {
                     overflow: hidden;
+                    // margin-top: 20px;
                 }
 
                 h1 {
@@ -766,6 +772,10 @@ html {
 
             img {
                 // width: 100%;
+            }
+
+            .float-btn {
+                display: none;
             }
 
             // img {
@@ -1464,9 +1474,9 @@ html {
                 a {
                     margin-top: 20px;
                     text-decoration: none;
-                    // border: 1px solid;
+                    // border: 1px solid red;
                     width: 150px;
-                    color: #000;
+                    color: $font-color;
                     cursor: pointer;
                     position: relative;
                     font-family: "Slippery";
@@ -1474,13 +1484,20 @@ html {
                     font-weight: 700;
                     display: flex;
                     align-items: center;
+                    transition: all 0.5s ease-in-out;
+
+                    &:hover {
+                        width: 200px;
+                    }
 
                     img {
                         position: absolute;
                         // left: 0;
                         right: 0;
-                        width: 50%;
+                        width: 75px;
                     }
+
+
 
                 }
             }
@@ -1530,9 +1547,9 @@ html {
                 a {
                     margin-top: 20px;
                     text-decoration: none;
-                    // border: 1px solid;
+                    // border: 1px solid black;
                     width: 150px;
-                    color: #000;
+                    color: $font-color;
                     cursor: pointer;
                     position: relative;
                     font-family: "Slippery";
@@ -1540,12 +1557,17 @@ html {
                     font-weight: 700;
                     display: flex;
                     align-items: center;
+                    transition: all 0.5s ease-in-out;
+
+                    &:hover {
+                        width: 200px;
+                    }
 
                     img {
                         position: absolute;
                         // left: 0;
                         right: 0;
-                        width: 50%;
+                        width: 75px;
                     }
 
                 }
@@ -1756,7 +1778,7 @@ html {
         width: 100%;
         height: 0vh;
         overflow: hidden;
-        background: rgba(250, 249, 246, 0.5);
+        background: rgba(250, 249, 246, 0.8);
         backdrop-filter: blur(13px);
         -webkit-backdrop-filter: blur(13px);
 
@@ -1831,7 +1853,8 @@ html {
                     text-decoration: none;
                     // font-family: "Nympha Trial Reg";
                     font-family: $EBG-Med;
-                    color: #000;
+                    color: $font-color;
+                    // color: #000;
                     overflow: hidden;
                     display: inline-block;
                     transform: translateY(110%);
@@ -2082,7 +2105,7 @@ html {
             .left-pop {
                 width: 100%;
                 margin-top: 0;
-                margin-bottom: 30px;
+                margin-bottom: 90px;
 
 
                 .float-btn {
@@ -2122,6 +2145,8 @@ html {
                         margin-top: 0;
                         width: 95%;
                         margin: 0 auto;
+                        margin-top: 0px;
+                        margin-bottom: 16px;
                     }
 
                     p {
@@ -2145,14 +2170,15 @@ html {
 
             .right-pop {
                 width: 100%;
-                height: 70%;
+                height: 60vh;
                 position: relative;
+                border: 1px solid red;
 
                 .float-btn {
                     position: absolute;
                     left: 0;
                     top: 0;
-                    margin-top: 60px;
+                    margin-top: 46px;
                     margin-left: 25px;
                     background: none;
                     color: white;
@@ -2176,6 +2202,7 @@ html {
 
                 img {
                     width: 100%;
+                    object-fit: cover;
                 }
 
             }
@@ -2189,12 +2216,18 @@ html {
             display: flex;
             flex-direction: column;
 
+            .divider {
+                border: 1px solid $font-color;
+
+                margin: 60px;
+            }
+
             .gallery-div {
                 flex: auto;
                 display: flex;
                 flex-direction: column;
                 width: 100%;
-                margin-bottom: 100px;
+                margin-bottom: 0px;
 
 
                 .div-words {
@@ -2217,7 +2250,7 @@ html {
                         width: 100%;
                         display: flex;
                         flex-direction: row;
-                        margin-bottom: 24px;
+                        margin-bottom: 14px;
 
                     }
 
@@ -2412,12 +2445,61 @@ html {
                 // border: 1px solid black;
 
                 margin-bottom: 50px;
+
+                .card1-img {
+                    // border: 1px solid red;
+                    height: 280px;
+
+                    img {
+                        height: 280px;
+                        object-fit: cover;
+                    }
+                }
+
+                .card1-word {
+
+                    a {
+                        // border: 1px solid black;
+                        width: 180px;
+                        color: $font-color;
+
+                        img {
+                            width: 50px;
+                        }
+
+                    }
+                }
+
             }
 
             .card2 {
                 width: 100%;
                 margin-bottom: 50px;
                 // border: 1px solid blue;
+
+                .card2-img {
+                    // border: 1px solid blue;
+                    height: 280px;
+
+                    img {
+                        height: 280px;
+                        object-fit: cover;
+                    }
+                }
+
+                .card2-word {
+
+                    a {
+                        // border: 1px solid black;
+                        width: 180px;
+                        color: $font-color;
+
+                        img {
+                            width: 50px;
+                        }
+
+                    }
+                }
 
             }
         }

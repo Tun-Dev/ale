@@ -496,6 +496,10 @@ html {
   font-size: 16px;
 }
 
+.gallerycon .popup .left-pop .float-btn {
+  margin-top: 50px;
+}
+
 .gallerycon .popup .left-pop .left-word {
   height: 94%;
   width: 75%;
@@ -547,6 +551,10 @@ html {
   height: 100%;
   background: #faf9f6;
   position: absolute;
+}
+
+.gallerycon .popup .right-pop .float-btn {
+  display: none;
 }
 
 .gallerycon .pop.show {
@@ -875,7 +883,7 @@ html {
 
 .Articlecon .article-content .card1 .card1-word a {
   width: 150px;
-  color: #000;
+  color: #3c3c31;
   cursor: pointer;
   align-items: center;
   margin-top: 20px;
@@ -883,12 +891,17 @@ html {
   font-size: 16px;
   font-weight: 700;
   text-decoration: none;
+  transition: all .5s ease-in-out;
   display: flex;
   position: relative;
 }
 
+.Articlecon .article-content .card1 .card1-word a:hover {
+  width: 200px;
+}
+
 .Articlecon .article-content .card1 .card1-word a img {
-  width: 50%;
+  width: 75px;
   position: absolute;
   right: 0;
 }
@@ -930,7 +943,7 @@ html {
 
 .Articlecon .article-content .card2 .card2-word a {
   width: 150px;
-  color: #000;
+  color: #3c3c31;
   cursor: pointer;
   align-items: center;
   margin-top: 20px;
@@ -938,12 +951,17 @@ html {
   font-size: 16px;
   font-weight: 700;
   text-decoration: none;
+  transition: all .5s ease-in-out;
   display: flex;
   position: relative;
 }
 
+.Articlecon .article-content .card2 .card2-word a:hover {
+  width: 200px;
+}
+
 .Articlecon .article-content .card2 .card2-word a img {
-  width: 50%;
+  width: 75px;
   position: absolute;
   right: 0;
 }
@@ -1051,7 +1069,7 @@ html {
     -webkit-backdrop-filter: blur(13px);
     backdrop-filter: blur(13px);
     -webkit-backdrop-filter: blur(13px);
-    background: #faf9f680;
+    background: #faf9f6cc;
     display: flex;
     position: fixed;
     top: 0;
@@ -1116,7 +1134,7 @@ html {
   }
 
   .fullpage-menu nav li a {
-    color: #000;
+    color: #3c3c31;
     font-family: EB Garamond Med;
     font-size: 11vw;
     text-decoration: none;
@@ -1288,7 +1306,7 @@ html {
   .gallerycon .popup .left-pop {
     width: 100%;
     margin-top: 0;
-    margin-bottom: 30px;
+    margin-bottom: 90px;
   }
 
   .gallerycon .popup .left-pop .float-btn {
@@ -1321,7 +1339,7 @@ html {
 
   .gallerycon .popup .left-pop .left-word h1 {
     width: 95%;
-    margin: 0 auto;
+    margin: 0 auto 16px;
     font-size: 32px;
     font-weight: 600;
   }
@@ -1344,7 +1362,8 @@ html {
 
   .gallerycon .popup .right-pop {
     width: 100%;
-    height: 70%;
+    height: 60vh;
+    border: 1px solid red;
     position: relative;
   }
 
@@ -1352,7 +1371,7 @@ html {
     color: #fff;
     background: none;
     border: none;
-    margin-top: 60px;
+    margin-top: 46px;
     margin-left: 25px;
     font-size: 16px;
     position: absolute;
@@ -1373,6 +1392,7 @@ html {
 
   .gallerycon .popup .right-pop img {
     width: 100%;
+    object-fit: cover;
   }
 
   .gallerycon .galleryinner {
@@ -1383,11 +1403,16 @@ html {
     display: flex;
   }
 
+  .gallerycon .galleryinner .divider {
+    border: 1px solid #3c3c31;
+    margin: 60px;
+  }
+
   .gallerycon .galleryinner .gallery-div {
     width: 100%;
     flex-direction: column;
     flex: auto;
-    margin-bottom: 100px;
+    margin-bottom: 0;
     display: flex;
   }
 
@@ -1403,7 +1428,7 @@ html {
   .gallerycon .galleryinner .gallery-div .div-words h2 {
     width: 100%;
     flex-direction: row;
-    margin-bottom: 24px;
+    margin-bottom: 14px;
     font-family: EB Garamond;
     font-size: 32px;
     font-weight: 600;
@@ -1570,9 +1595,50 @@ html {
     display: flex;
   }
 
-  .Articlecon .article-content .card1, .Articlecon .article-content .card2 {
+  .Articlecon .article-content .card1 {
     width: 100%;
     margin-bottom: 50px;
+  }
+
+  .Articlecon .article-content .card1 .card1-img {
+    height: 280px;
+  }
+
+  .Articlecon .article-content .card1 .card1-img img {
+    height: 280px;
+    object-fit: cover;
+  }
+
+  .Articlecon .article-content .card1 .card1-word a {
+    width: 180px;
+    color: #3c3c31;
+  }
+
+  .Articlecon .article-content .card1 .card1-word a img {
+    width: 50px;
+  }
+
+  .Articlecon .article-content .card2 {
+    width: 100%;
+    margin-bottom: 50px;
+  }
+
+  .Articlecon .article-content .card2 .card2-img {
+    height: 280px;
+  }
+
+  .Articlecon .article-content .card2 .card2-img img {
+    height: 280px;
+    object-fit: cover;
+  }
+
+  .Articlecon .article-content .card2 .card2-word a {
+    width: 180px;
+    color: #3c3c31;
+  }
+
+  .Articlecon .article-content .card2 .card2-word a img {
+    width: 50px;
   }
 }
 
