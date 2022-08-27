@@ -415,7 +415,7 @@ function contentAnimation() {
 
     openPopup.forEach((popup) => {
       popup.onclick = () => {
-        document.querySelector(".popup .right-pop img").src =
+        document.querySelector(".popup .right-pop .popupimg").src =
           popup.getAttribute("src");
         document.querySelector(".popup .left-pop .left-word h1").innerHTML =
           popup.getAttribute("data-title");

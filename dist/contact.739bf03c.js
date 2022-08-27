@@ -876,7 +876,7 @@ function contentAnimation() {
         popupTL.reverse();
         openPopup.forEach((popup)=>{
             popup.onclick = ()=>{
-                document.querySelector(".popup .right-pop img").src = popup.getAttribute("src");
+                document.querySelector(".popup .right-pop .popupimg").src = popup.getAttribute("src");
                 document.querySelector(".popup .left-pop .left-word h1").innerHTML = popup.getAttribute("data-title");
                 document.querySelector(".popup .left-pop .left-word p").innerHTML = popup.getAttribute("data-body");
                 popupTL.reversed(!popupTL.reversed());

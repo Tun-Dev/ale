@@ -1069,12 +1069,16 @@ html {
     -webkit-backdrop-filter: blur(13px);
     backdrop-filter: blur(13px);
     -webkit-backdrop-filter: blur(13px);
-    background: #faf9f6cc;
+    background: #faf9f6e6;
     display: flex;
     position: fixed;
     top: 0;
     left: 0;
     overflow: hidden;
+  }
+
+  .fullpage-menu ::-ms-backdrop {
+    filter: blur(13px);
   }
 
   .fullpage-menu .fullpage-menu-inner {
@@ -1374,6 +1378,7 @@ html {
     margin-top: 46px;
     margin-left: 25px;
     font-size: 16px;
+    display: flex;
     position: absolute;
     top: 0;
     left: 0;
@@ -1381,6 +1386,10 @@ html {
 
   .gallerycon .popup .right-pop .float-btn span {
     font-size: 25px;
+  }
+
+  .gallerycon .popup .right-pop .float-btn span .svgg, .gallerycon .popup .right-pop .float-btn span img {
+    fill: #fff;
   }
 
   .gallerycon .popup .right-pop .img-cover {
