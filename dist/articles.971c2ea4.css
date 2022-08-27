@@ -1066,19 +1066,12 @@ html {
     z-index: 9;
     width: 100%;
     height: 0;
-    -webkit-backdrop-filter: blur(13px);
-    backdrop-filter: blur(13px);
-    -webkit-backdrop-filter: blur(13px);
-    background: #faf9f6e6;
+    background: #faf9f6f2;
     display: flex;
     position: fixed;
     top: 0;
     left: 0;
     overflow: hidden;
-  }
-
-  .fullpage-menu ::-ms-backdrop {
-    filter: blur(13px);
   }
 
   .fullpage-menu .fullpage-menu-inner {
@@ -1338,6 +1331,7 @@ html {
   }
 
   .gallerycon .popup .left-pop .left-word .hide {
+    color: #3c3c31;
     overflow: hidden;
   }
 
@@ -1355,6 +1349,7 @@ html {
   }
 
   .gallerycon .popup .left-pop .left-word .view-btn {
+    color: #3c3c31;
     margin-top: 10px;
     margin-left: 3%;
     display: flex;
@@ -1367,14 +1362,16 @@ html {
   .gallerycon .popup .right-pop {
     width: 100%;
     height: 60vh;
-    border: 1px solid red;
     position: relative;
   }
 
   .gallerycon .popup .right-pop .float-btn {
     color: #fff;
+    width: 70px;
     background: none;
     border: none;
+    justify-content: space-between;
+    align-items: center;
     margin-top: 46px;
     margin-left: 25px;
     font-size: 16px;
@@ -1385,11 +1382,13 @@ html {
   }
 
   .gallerycon .popup .right-pop .float-btn span {
-    font-size: 25px;
+    width: 25px;
+    display: flex;
   }
 
-  .gallerycon .popup .right-pop .float-btn span .svgg, .gallerycon .popup .right-pop .float-btn span img {
+  .gallerycon .popup .right-pop .float-btn span .svgg {
     fill: #fff;
+    transform: scaleX(-1);
   }
 
   .gallerycon .popup .right-pop .img-cover {
@@ -1413,8 +1412,9 @@ html {
   }
 
   .gallerycon .galleryinner .divider {
-    border: 1px solid #3c3c31;
-    margin: 60px;
+    width: 90%;
+    border-bottom: 1px solid #3c3c31;
+    margin: 60px auto;
   }
 
   .gallerycon .galleryinner .gallery-div {
