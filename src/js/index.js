@@ -1,13 +1,7 @@
 import "../styles/main.scss";
-// import "../styles/kinika.scss";
 import { Cursor } from "./cursor";
 import barba from "@barba/core";
-// import CSSRulePlugin from "gsap-trial/CSSRulePlugin";
 import { gsap } from "gsap/dist/gsap";
-import { CSSPlugin } from "gsap/CSSPlugin";
-import { CSSRulePlugin } from "gsap/CSSRulePlugin";
-
-gsap.registerPlugin(CSSRulePlugin, CSSPlugin);
 
 let cursorPick = document.querySelector(".cursor");
 const cursor = new Cursor(cursorPick);
@@ -16,39 +10,19 @@ const cursor = new Cursor(cursorPick);
 window.onload = () => {
   localStorage.removeItem("pageloadcount");
 
+  // Timer for contact page
   function refreshTime() {
     document.querySelectorAll("[id=time]").forEach((clk) => {
       const dateString = new Date().toLocaleTimeString();
       const formattedString = dateString.replace(", ", " - ");
       clk.textContent = formattedString;
     });
-    // const timeDisplay = document.getElementById("time");
-    // const dateString = new Date().toLocaleTimeString();
-    // const formattedString = dateString.replace(", ", " - ");
-    // timeDisplay.textContent = formattedString;
   }
 
   setInterval(refreshTime, 1000);
 };
 
-// Horizontal scroll with mouse wheel
-// const scrollContainer = document.getElementById("scroll");
-
-// scrollContainer.addEventListener("wheel", (evt) => {
-//   evt.preventDefault();
-//   scrollContainer.scrollLeft += evt.deltaY;
-// });
-
-// var bar1 = document.getElementById("bar1");
-// var bar2 = document.getElementById("bar2");
-// var bar3 = document.getElementById("bar3");
-// var fullpageMenu = document.getElementById("fullpageMenu");
-// var word = document.getElementById("word");
-// var word2 = document.getElementById("word2");
-// var word3 = document.getElementById("word3");
-// var word4 = document.getElementById("word4");
-// var word5 = document.getElementById("word5");
-
+// Mobile Navbar animation
 const navMobile = () => {
   var menuToggles = document.querySelectorAll("#menuToggle");
   var menubar = gsap.timeline();
@@ -89,7 +63,6 @@ const navMobile = () => {
 
   navtl.to("#fullpageMenu", {
     duration: 0.7,
-    // display: "block",
     height: "100vh",
     opacity: 1,
     ease: "Power4.easeInOut",
@@ -97,17 +70,13 @@ const navMobile = () => {
   navtl.to("#fullpageMenuInner", {
     duration: 0.5,
     display: "flex",
-    // height: "100vh",
-    // opacity: 1,
     ease: "Power4.easeInOut",
   });
   navtl.to(["#word", "#word2", "#word3", "#word4"], {
     y: "0%",
     duration: 0.5,
-    // skewX: 10,
     stagger: {
       each: 0.2,
-      // amount: 0.15,
     },
   });
 
@@ -118,42 +87,10 @@ const navMobile = () => {
       menubar.reversed(!menubar.reversed());
       navtl.reversed(!navtl.reversed());
     };
-    // menuToggle.addEventListener("click", () => {
-    //   menubar.reversed(!menubar.reversed());
-    //   navtl.reversed(!navtl.reversed());
-    // });
   });
 };
 
-// GAllery footer animation
-function galleryFooter() {
-  let footer = document.getElementById("footer");
-
-  window.onscroll = function () {
-    scrollFunction();
-  };
-
-  function scrollFunction() {
-    if (
-      document.body.scrollTop > 20 ||
-      document.documentElement.scrollTop > 20
-    ) {
-      // footer.style.display = "flex";
-      footer.classList.add("active");
-    } else {
-      footer.classList.remove("active");
-
-      // footer.style.display = "none";
-    }
-  }
-
-  const button = document.getElementById("backToTop");
-  button.onclick = function () {
-    document.body.scrollTop = 0; // For Safari
-    document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
-  };
-}
-
+// Transition between pages animation
 function pageTransition() {
   var tl = gsap.timeline();
 
@@ -167,7 +104,6 @@ function pageTransition() {
   });
   tl.to(".exit-transition", {
     height: window.innerHeight,
-    // duration: 1.5,
     duration: 1,
     ease: "Expo.easeInOut",
   })
@@ -204,18 +140,12 @@ function pageTransition() {
     );
 }
 
+// Content animation, this means all animations that are in every page is here due to barbajs setup
 function contentAnimation() {
   var tl = gsap.timeline();
-
-  // Home page Transitions
-  // tl.set(".imgcon", { autoAlpha: 1 });
-
   var loderTl = gsap.timeline();
-  var shuffleTl = gsap.timeline({
-    repeat: -1,
-    // repeatRefresh: true,
-  });
 
+  // Animation for home page for both the loader and home page
   if (
     window.location.pathname === "/index.html" ||
     window.location.pathname === "/"
@@ -324,10 +254,9 @@ function contentAnimation() {
       ".shuffle-con > .block",
       {
         duration: 2,
-        // y: "0%",
         height: "100%",
         ease: "Expo.easeInOut",
-        // ease: "power4.out",
+
         repeat: -1,
         delay: 1,
         stagger: {
@@ -337,14 +266,14 @@ function contentAnimation() {
       "-=3"
     );
 
+    // This checks if the home page has been loaded once, then adds to the local storage so loader won't play again until you refresh the page, should fix soon tho :)
     if (localStorage.getItem("pageloadcount")) {
       loderTl.kill();
       gsap.to(".home-loader", { opacity: 0, display: "none" });
-      // document.querySelector(".home-loader").style.display = "none";
     }
   }
+  // Sets the local storage to 1 so the loader won't play again until you refresh the page.
   localStorage.setItem("pageloadcount", "1");
-  // loader();
 
   var tll = gsap.timeline();
 
@@ -353,20 +282,16 @@ function contentAnimation() {
     window.location.pathname === "/gallery.html" ||
     window.location.pathname === "/gallery"
   ) {
-    // Popup for pictures
-
     var openPopup = document.querySelectorAll(".gallery-div .div-imgs img");
-    var closePopup = document.querySelector(".popup .left-pop button");
-    var closePopup2 = document.querySelectorAll(".float-btn");
+    var closePopup = document.querySelectorAll(".float-btn");
 
     var popupTL = gsap.timeline({ paused: true });
 
+    // Popup animation
     popupTL.to(".popup", {
       duration: 0.9,
-      // height: "calc(100vh - 60px)",
       height: "100%",
       bottom: 0,
-      // zIndex: 99,
       ease: "Power2.easeInOut",
     });
     popupTL
@@ -378,25 +303,16 @@ function contentAnimation() {
         ".right-pop .img-cover",
         {
           duration: 1,
-          // y: "0%",
           height: "0%",
           ease: "Expo.easeInOut",
         },
         "-=1"
       )
-      .from(
-        [".left-word h1", ".view-btn"],
-        {
-          yPercent: 110,
-          duration: 1,
-          // skewY: 10,
-          // stagger: {
-          //   amount: 0.3,
-          // },
-          ease: "power2.out",
-        }
-        // "-=.5"
-      )
+      .from([".left-word h1", ".view-btn"], {
+        yPercent: 110,
+        duration: 1,
+        ease: "power2.out",
+      })
       .from(
         ".left-word p",
         {
@@ -406,13 +322,9 @@ function contentAnimation() {
         },
         "-=.9"
       );
-    // .to(".left-pop .left-word h1 span", {
-    //   opacity: 0,
-    //   duration: 1,
-    //   ease: "power4.out",
-    // })
     popupTL.reverse();
 
+    // This listens to each click on the image and then plays the popup animation
     openPopup.forEach((popup) => {
       popup.onclick = () => {
         document.querySelector(".popup .right-pop .popupimg").src =
@@ -427,35 +339,14 @@ function contentAnimation() {
       };
     });
 
-    closePopup2.forEach((close) => {
+    // This listens to each click on the close button and then closes the popup animation
+    closePopup.forEach((close) => {
       close.onclick = () => {
         popupTL.reversed(!popupTL.reversed());
       };
     });
 
-    // closePopup2.onclick = () => {
-    //   popupTL.reversed(!popupTL.reversed());
-    // };
-
-    // document.querySelectorAll(".gallery-div .div-imgs img").forEach((image) => {
-    //   image.onclick = () => {
-    //     // document.querySelector(".popup").style.display = "flex";
-    //     // height: calc(100vh - 60px);
-    //     document.querySelector(".popup").style.height = "calc(100vh - 60px)";
-    //     // document.querySelector(".popup").style.transition = "height 2s";
-    //     document.querySelector(".popup .right-pop img").src =
-    //       image.getAttribute("src");
-    //     document.querySelector(".popup .left-pop .left-word h1").innerHTML =
-    //       image.getAttribute("data-title");
-    //     document.querySelector(".popup .left-pop .left-word p").innerHTML =
-    //       image.getAttribute("data-body");
-    //   };
-    // });
-    // document.querySelector(".popup .left-pop button").onclick = () => {
-    //   document.querySelector(".popup").style.display = "none";
-    // };
-    // Horizontal scroll with mouse wheel
-
+    // This sets the scroll to horital when page width is more than 800px
     var x = window.matchMedia("(min-width: 800px)");
     const scrollContainer = document.getElementById("scroll");
 
@@ -468,7 +359,6 @@ function contentAnimation() {
       } else {
         scrollContainer.addEventListener("wheel", (evt) => {
           evt.preventDefault();
-          // evt.defaultPrevented();
           scrollContainer.scrollTop += evt.deltaX;
         });
       }
@@ -480,6 +370,7 @@ function contentAnimation() {
     navMobile();
   }
 
+  // Profile page transition
   var kinikaTl = gsap.timeline();
 
   if (
@@ -494,28 +385,23 @@ function contentAnimation() {
     });
   }
 
-  var contactTl = gsap.timeline();
-
+  // Contact page transition
   if (
     window.location.pathname === "/contact.html" ||
     window.location.pathname === "/contact"
   ) {
-    console.log("Contact");
     navMobile();
   }
 
+  // Article page transition
   if (
     window.location.pathname === "/articles.html" ||
     window.location.pathname === "/articles"
   ) {
-    console.log("Article");
     navMobile();
   }
 
-  // tl.from(".HomeContainer", { duration: 1.5, opacity: 0 });
-  // tl.from(".galleryinner", { duration: 4.5, opacity: 0 });
-
-  // Animation for cursor to increase when hovering on links
+  // This listen to mouseenter and mouseleave for cursor to increase on enter and decrease on leave on elements like a and button
   document.querySelectorAll("a").forEach((link) => {
     link.addEventListener("mouseenter", () => cursor.enter());
     link.addEventListener("mouseleave", () => cursor.leave());
@@ -524,35 +410,6 @@ function contentAnimation() {
     link.addEventListener("mouseenter", () => cursor.enter());
     link.addEventListener("mouseleave", () => cursor.leave());
   });
-
-  // Skew scrolling for gallery page
-
-  const section = document.querySelector(".galleryinner");
-
-  let currentPos = window.pageYOffset;
-
-  const update = () => {
-    const newPos = window.pageYOffset;
-    const diff = newPos - currentPos;
-    const speed = diff * 0.15;
-
-    section.style.transform = `skewY(${speed}deg)`;
-
-    currentPos = newPos;
-
-    requestAnimationFrame(() => update());
-  };
-
-  // console.log(window.location.pathname);
-
-  if (
-    window.location.pathname === "/gallery" ||
-    window.location.pathname === "/gallery.html"
-  ) {
-    // update();
-  }
-
-  // Navbar mobile animation
 }
 
 function delay(n) {
@@ -564,6 +421,7 @@ function delay(n) {
   });
 }
 
+// Barbajs setup
 barba.init({
   sync: true,
 

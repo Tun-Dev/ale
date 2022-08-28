@@ -183,37 +183,6 @@ html {
   margin: 0;
 }
 
-.HomeContainer .innercon .name .imgcon {
-  z-index: -1;
-  width: 182px;
-  position: absolute;
-  bottom: 0;
-  right: 0;
-}
-
-.HomeContainer .innercon .name .imgcon .imgcon-inner {
-  width: 182px;
-  height: 400px;
-  position: relative;
-  overflow: hidden;
-}
-
-.HomeContainer .innercon .name .imgcon .imgcon-inner img {
-  width: 182px;
-  position: absolute;
-  bottom: 0;
-}
-
-.HomeContainer .innercon .name .imgcon .after {
-  width: 100%;
-  height: 100%;
-  z-index: 1;
-  background: #fff;
-  position: absolute;
-  bottom: 0;
-  right: 0;
-}
-
 .HomeContainer .innercon .title {
   width: 100%;
   flex-direction: row;
