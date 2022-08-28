@@ -711,6 +711,12 @@ html {
                 .hide {
                     overflow: hidden;
                     // margin-top: 20px;
+
+
+                    a {
+                        text-decoration: none;
+                        color: $font-color;
+                    }
                 }
 
                 h1 {
@@ -737,6 +743,7 @@ html {
                     display: flex;
                     justify-content: space-between;
                     align-items: center;
+
 
                     img {
                         width: 25%;
@@ -1219,6 +1226,7 @@ html {
                     color: #000;
                     margin-left: 10px;
                     margin-right: 10px;
+
                 }
             }
         }

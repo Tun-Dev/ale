@@ -514,6 +514,11 @@ html {
   overflow: hidden;
 }
 
+.gallerycon .popup .left-pop .left-word .hide a {
+  color: #3c3c31;
+  text-decoration: none;
+}
+
 .gallerycon .popup .left-pop .left-word h1 {
   font-size: 64px;
   font-weight: 600;

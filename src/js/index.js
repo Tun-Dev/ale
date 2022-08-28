@@ -421,6 +421,8 @@ function contentAnimation() {
           popup.getAttribute("data-title");
         document.querySelector(".popup .left-pop .left-word p").innerHTML =
           popup.getAttribute("data-body");
+        document.querySelector(".popup .left-pop .left-word a").href =
+          popup.getAttribute("data-link");
         popupTL.reversed(!popupTL.reversed());
       };
     });

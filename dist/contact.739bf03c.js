@@ -879,6 +879,7 @@ function contentAnimation() {
                 document.querySelector(".popup .right-pop .popupimg").src = popup.getAttribute("src");
                 document.querySelector(".popup .left-pop .left-word h1").innerHTML = popup.getAttribute("data-title");
                 document.querySelector(".popup .left-pop .left-word p").innerHTML = popup.getAttribute("data-body");
+                document.querySelector(".popup .left-pop .left-word a").href = popup.getAttribute("data-link");
                 popupTL.reversed(!popupTL.reversed());
             };
         });
